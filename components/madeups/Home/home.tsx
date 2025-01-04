@@ -6,6 +6,7 @@ import ReactCountryFlag from "react-country-flag";
 import TextReveal from "@/components/ui/text-reveal";
 import { useState, useEffect } from "react";
 import NumberTicker from "@/components/ui/number-ticker";
+import { Plane } from "lucide-react";
 
 const destinationCards = [
   {
@@ -324,36 +325,39 @@ const HomePage = () => {
                   className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 relative hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Image Section */}
-                  <div className="relative h-48">
+                  <div className="relative h-48 flex items-end justify-center">
                     <Image
                       src={destination.image}
                       alt={`${destination.country} cityscape`}
                       fill
                       className="object-cover"
                     />
+                    <div className="z-10 -mb-3  w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                      <Plane color="white" size={20} />
+                    </div>
                   </div>
 
                   {/* Content Section */}
                   <div className="p-6">
-                    <div className="flex items-center space-x-3 mb-2">
+                    <div className="flex items-start space-x-3 mb-2">
                       <ReactCountryFlag
                         countryCode={destination.countryCode}
                         svg
                         style={{
-                          width: "24px",
-                          height: "24px",
+                          width: "44px",
+                          height: "44px",
+                          objectFit: "cover",
                         }}
                         title={destination.country}
-                        className="rounded-full"
+                        className="rounded-full border-primary border-[1px]"
                       />
-                      <h3 className="text-xl font-medium">
-                        {destination.country}
-                      </h3>
+                      <div>
+                        <h3 className=" font-light">{destination.country}</h3>
+                        <p className="text-gray-600 text-sm">
+                          {destination.description}
+                        </p>
+                      </div>
                     </div>
-
-                    <p className="text-gray-600 text-sm">
-                      {destination.description}
-                    </p>
 
                     {/* Ticket perforation line */}
                     <div className="relative my-4">
