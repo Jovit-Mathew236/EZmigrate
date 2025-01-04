@@ -330,6 +330,7 @@ const HomePage = () => {
                       src={destination.image}
                       alt={`${destination.country} cityscape`}
                       fill
+                      quality={100}
                       className="object-cover"
                     />
                     <div className="z-10 -mb-3  w-8 h-8 bg-black rounded-full flex items-center justify-center">
