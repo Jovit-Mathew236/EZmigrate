@@ -61,15 +61,42 @@ const studentStories = [
     name: "Jincy Ouseph",
     avatar: "/images/female.png",
     testimonial:
-      "I was really pleased with EZmigrate's assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick.",
+      '"I was really pleased with EZmigrate\'s assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick."',
   },
   {
     name: "Santhosh Kumar",
     avatar: "/images/male.png",
     testimonial:
-      "I was really pleased with EZmigrate's assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick.",
+      '"I was really pleased with EZmigrate\'s assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick."',
   },
   // Add more testimonials as needed
+];
+
+const blogPosts = [
+  {
+    title: "Top Study Abroad Destinations for 2024",
+    image: "/images/blog1.png",
+    readTime: "13 mins read",
+    date: "November 28, 2024",
+    author: "Anjaly Chandran",
+    alt: "Study Abroad 2024",
+  },
+  {
+    title: "Why Studying Abroad is a Game-Changer",
+    image: "/images/blog2.png",
+    readTime: "25 mins read",
+    date: "November 28, 2024",
+    author: "John",
+    alt: "Why Study Abroad",
+  },
+  {
+    title: "Affordable Countries for Quality Education",
+    image: "/images/blog3.png",
+    readTime: "5 mins read",
+    date: "November 28, 2024",
+    author: "Evan",
+    alt: "Affordable Education",
+  },
 ];
 
 const TestimonialCard = ({
@@ -93,7 +120,7 @@ const TestimonialCard = ({
         />
         <figcaption className="text-lg font-medium">{name}</figcaption>
       </div>
-      <blockquote className="mt-4 text-gray-600">{testimonial}</blockquote>
+      <p className="mt-4 text-gray-600 font-light">{testimonial}</p>
     </figure>
   );
 };
@@ -367,7 +394,7 @@ const HomePage = () => {
               .map((destination, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 relative hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white shadow-lg overflow-hidden relative hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Image Section */}
                   <div className="relative h-48 flex items-end justify-center">
@@ -547,7 +574,7 @@ const HomePage = () => {
             <div className="space-y-6">
               <Link
                 href="mailto:info@ezmigrate.co.nz"
-                className="block p-6 bg-white border rounded-lg hover:shadow-lg transition-shadow duration-300"
+                className="block p-6 bg-white border hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -567,7 +594,7 @@ const HomePage = () => {
 
               <Link
                 href="https://wa.me/911234567890"
-                className="block p-6 bg-white border rounded-lg hover:shadow-lg transition-shadow duration-300"
+                className="block p-6 bg-white border hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -614,6 +641,48 @@ const HomePage = () => {
 
             <div className="hidden md:block pointer-events-none absolute inset-y-0 -left-1 w-24 bg-gradient-to-r from-stone-500"></div>
             <div className="hidden md:block pointer-events-none absolute inset-y-0 -right-1 w-24 bg-gradient-to-l from-stone-500"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Blog Posts Section */}
+      <div className="relative z-10 bg-black text-white py-10 md:py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl md:text-6xl font-light mb-10 md:mb-16">
+            Blog Posts
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <div key={index} className="group">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.alt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-4 space-y-2">
+                  <div className="flex justify-between text-sm text-gray-400">
+                    <span className="font-light text-xs">{post.readTime}</span>
+                    <span className="font-light text-xs">{post.date}</span>
+                  </div>
+                  <h3 className="text-xl font-light">{post.title}</h3>
+                  <p className="text-sm text-gray-400">By {post.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 md:mt-16">
+            <Link
+              href="/blog"
+              className="inline-flex w-full md:w-auto justify-center items-center border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300"
+            >
+              Explore all posts
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </div>
         </div>
       </div>

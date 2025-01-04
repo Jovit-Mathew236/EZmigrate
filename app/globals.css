@@ -29,7 +29,8 @@
 @layer base {
   /* Base font settings */
   html,
-  p {
+  p,
+  span {
     font-family: var(--font-axiforma), sans-serif;
   }
   a {
