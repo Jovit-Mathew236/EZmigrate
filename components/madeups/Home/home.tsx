@@ -322,7 +322,7 @@ const HomePage = () => {
               .map((destination, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 relative hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white rounded-sm shadow-lg overflow-hidden border border-gray-100 relative hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Image Section */}
                   <div className="relative h-48 flex items-end justify-center">
@@ -395,7 +395,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link
               href="/destinations"
-              className="inline-flex items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors duration-300"
+              className="inline-flex w-full md:w-auto justify-center items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors duration-300"
             >
               View more destinations
               <svg
