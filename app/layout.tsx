@@ -68,7 +68,7 @@ export const metadata: Metadata = {
       "Expert guidance for international education, helping students find the perfect course, university, and destination worldwide.",
     images: [
       {
-        url: "/images/logowhite.png",
+        url: "/public/logowhite.png",
         width: 1200,
         height: 630,
         alt: "EZmigrate - Study Abroad Consultants",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: "EZmigrate - Study Abroad Consultants",
     description:
       "Expert guidance for international education, helping students find the perfect course, university, and destination worldwide.",
-    images: ["/images/logowhite.png"],
+    images: ["/public/logowhite.png"],
     creator: "@ezmigrate",
     site: "@ezmigrate",
   },
