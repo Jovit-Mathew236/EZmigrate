@@ -6,7 +6,10 @@ import ReactCountryFlag from "react-country-flag";
 import TextReveal from "@/components/ui/text-reveal";
 import { useState, useEffect } from "react";
 import NumberTicker from "@/components/ui/number-ticker";
-import { Plane } from "lucide-react";
+import { ArrowRight, Mail, Plane } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import Marquee from "@/components/ui/marquee";
 
 const destinationCards = [
   {
@@ -52,6 +55,48 @@ const destinationCards = [
     link: "/destinations/australia",
   },
 ];
+
+const studentStories = [
+  {
+    name: "Jincy Ouseph",
+    avatar: "/images/female.png",
+    testimonial:
+      "I was really pleased with EZmigrate's assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick.",
+  },
+  {
+    name: "Santhosh Kumar",
+    avatar: "/images/male.png",
+    testimonial:
+      "I was really pleased with EZmigrate's assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick.",
+  },
+  // Add more testimonials as needed
+];
+
+const TestimonialCard = ({
+  name,
+  avatar,
+  testimonial,
+}: {
+  name: string;
+  avatar: string;
+  testimonial: string;
+}) => {
+  return (
+    <figure className="relative w-72 md:w-96 cursor-pointer overflow-hidden border border-stone-400 p-6 mx-4 bg-white">
+      <div className="flex flex-row items-center gap-4">
+        <Image
+          className="rounded-full border-2 border-stone-500 w-12 h-12 p-2 object-contain"
+          width={100}
+          height={100}
+          alt={name}
+          src={avatar}
+        />
+        <figcaption className="text-lg font-medium">{name}</figcaption>
+      </div>
+      <blockquote className="mt-4 text-gray-600">{testimonial}</blockquote>
+    </figure>
+  );
+};
 
 const HomePage = () => {
   // Add state for managing visible cards
@@ -308,7 +353,7 @@ const HomePage = () => {
       </div>
 
       {/* Destinations Section */}
-      <div className="relative z-10 bg-white py-20">
+      <div className="relative z-10 bg-stone-600 py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-light mb-4">Destinations</h2>
           <p className="text-xl md:text-2xl font-light mb-12">
@@ -322,7 +367,7 @@ const HomePage = () => {
               .map((destination, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-sm shadow-lg overflow-hidden border border-gray-100 relative hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 relative hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Image Section */}
                   <div className="relative h-48 flex items-end justify-center">
@@ -448,6 +493,127 @@ const HomePage = () => {
                 />
               </svg>
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Connect with Expert Section */}
+      <div className="relative z-10 bg-stone-600 py-20">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Column */}
+            <div>
+              <h2 className="text-4xl md:text-6xl font-light mb-6">
+                Connect with our
+                <br />
+                Study Abroad Expert
+              </h2>
+              <p className="text-lg font-light md:text-xl text-gray-600 mb-8">
+                At EZmigrate, we guide you every step of the way from choosing
+                your study destination to finding the perfect course and
+                university, ensuring a seamless journey toward your global
+                dreams.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/schedule"
+                  className="inline-flex justify-center items-center bg-black text-white px-8 py-3 hover:bg-gray-800 transition-colors duration-300"
+                >
+                  Schedule an appointment
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+                <Link
+                  href="/learn-more"
+                  className="inline-flex justify-center items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors duration-300"
+                >
+                  Learn more
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-6">
+              <Link
+                href="mailto:info@ezmigrate.co.nz"
+                className="block p-6 bg-white border rounded-lg hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="text-info">
+                      <Mail size={32} />
+                    </div>
+                    <div>
+                      <h3 className="text-sm text-gray-600 font-regular">
+                        Email
+                      </h3>
+                      <p className="text-lg font-bold">info@ezmigrate.co.nz</p>
+                    </div>
+                  </div>
+                  <ArrowRight size={32} strokeWidth={1} />
+                </div>
+              </Link>
+
+              <Link
+                href="https://wa.me/911234567890"
+                className="block p-6 bg-white border rounded-lg hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="text-info">
+                      <FontAwesomeIcon
+                        icon={faWhatsapp}
+                        size="2x"
+                        // style={{ color: "hsl(var(--info))" }}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-sm text-gray-600 font-regular">
+                        WhatsApp
+                      </h3>
+                      <p className="text-lg font-bold">+91 12345 67890</p>
+                    </div>
+                  </div>
+                  <ArrowRight size={32} strokeWidth={1} />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Student Stories Section */}
+      <div className="relative z-10 bg-stone-500 py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-light mb-4">
+              Student Stories
+            </h2>
+            <p className="text-xl md:text-2xl font-light text-gray-600">
+              Hear from our success stories
+            </p>
+          </div>
+
+          <div className="relative">
+            <Marquee pauseOnHover className="[--duration:40s]" showControls>
+              {studentStories.map((story, index) => (
+                <TestimonialCard key={index} {...story} />
+              ))}
+            </Marquee>
+
+            <div className="hidden md:block pointer-events-none absolute inset-y-0 -left-1 w-24 bg-gradient-to-r from-stone-500"></div>
+            <div className="hidden md:block pointer-events-none absolute inset-y-0 -right-1 w-24 bg-gradient-to-l from-stone-500"></div>
           </div>
         </div>
       </div>
