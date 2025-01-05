@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ReactCountryFlag from "react-country-flag";
@@ -49,6 +50,23 @@ const destinationCards = [
 ];
 
 const DestinationsSection = () => {
+  const [visibleCards, setVisibleCards] = useState(6);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleCards(window.innerWidth < 768 ? 3 : 6);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="relative z-10 bg-stone-600 py-20">
       <div className="container mx-auto px-6">
@@ -59,7 +77,7 @@ const DestinationsSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinationCards.map((destination, index) => (
+          {destinationCards.slice(0, visibleCards).map((destination, index) => (
             <div
               key={index}
               className="bg-white shadow-lg overflow-hidden relative hover:shadow-xl transition-shadow duration-300"

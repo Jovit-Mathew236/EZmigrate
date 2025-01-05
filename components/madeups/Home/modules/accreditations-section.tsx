@@ -15,6 +15,11 @@ const AccreditationsSection = () => {
   return (
     <div className="relative z-10 bg-white py-10 md:py-20">
       <div className="container mx-auto px-6">
+        <h2 className=" lg:hidden text-4xl md:text-6xl font-light mb-6">
+          Accreditations
+          <br />
+          and membership
+        </h2>
         <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24">
           <div className="flex-1">
             <h2 className="hidden lg:block text-4xl md:text-6xl font-light mb-6">

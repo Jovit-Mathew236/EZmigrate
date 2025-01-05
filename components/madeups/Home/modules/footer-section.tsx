@@ -82,13 +82,13 @@ const FooterSection = () => {
               <h3 className="text-xl mb-6">Newsletter</h3>
               <div className="space-y-2">
                 <p className="text-gray-300">Subscribe to our newsletter</p>
-                <div className="space-y-4 md:space-y-0 flex flex-col md:flex-row gap-4">
+                <div className="md:space-y-0 flex md:flex-row gap-4">
                   <input
                     type="email"
                     placeholder="Email"
                     className="flex-1 px-4 py-2 bg-transparent border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-white"
                   />
-                  <button className="w-full md:w-auto px-6 py-2 bg-white text-black hover:bg-gray-200 transition-colors">
+                  <button className="text-sm md:text-base md:w-auto px-2 md:px-6 py-2 bg-white text-black hover:bg-gray-200 transition-colors">
                     Subscribe
                   </button>
                 </div>
