@@ -1,0 +1,44 @@
+import Link from "next/link";
+
+interface MobileMenuProps {
+  isOpen: boolean;
+}
+
+const MobileMenu = ({ isOpen }: MobileMenuProps) => {
+  return (
+    <div
+      className={`fixed inset-0 bg-black transform transition-transform duration-300 ease-in-out z-40 ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+    >
+      <div className="flex flex-col h-full pt-20 px-6">
+        {[
+          "Home",
+          "Services",
+          "Study Abroad",
+          "Visa",
+          "Programs",
+          "About",
+          "Careers",
+          "Blog Posts",
+        ].map((item) => (
+          <Link
+            key={item}
+            href={`/${item.toLowerCase().replace(" ", "-")}`}
+            className="py-4 text-white text-2xl font-light border-b border-white/10"
+          >
+            {item}
+          </Link>
+        ))}
+        <Link
+          href="/contact-us"
+          className="mt-auto mb-8 py-4 text-center text-white text-2xl font-light bg-blue-600"
+        >
+          Contact Us
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default MobileMenu;
