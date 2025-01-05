@@ -159,7 +159,77 @@ const accreditationLogos = [
   },
 ];
 
+// Add this new component for the mobile menu overlay
+const MobileMenu = ({ isOpen }: { isOpen: boolean }) => {
+  return (
+    <div
+      className={`fixed inset-0 bg-black transform transition-transform duration-300 ease-in-out z-40 ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+    >
+      <div className="flex flex-col h-full pt-20 px-6">
+        <Link
+          href="/"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Home
+        </Link>
+        <Link
+          href="/services"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Services
+        </Link>
+        <Link
+          href="/study-abroad"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Study Abroad
+        </Link>
+        <Link
+          href="/visa"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Visa
+        </Link>
+        <Link
+          href="/programs"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Programs
+        </Link>
+        <Link
+          href="/about"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          About
+        </Link>
+        <Link
+          href="/careers"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Careers
+        </Link>
+        <Link
+          href="/blog-posts"
+          className="py-4 text-white text-2xl font-light border-b border-white/10"
+        >
+          Blog Posts
+        </Link>
+        <Link
+          href="/contact-us"
+          className="mt-auto mb-8 py-4 text-center text-white text-2xl font-light bg-blue-600"
+        >
+          Contact Us
+        </Link>
+      </div>
+    </div>
+  );
+};
+
 const HomePage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // Add state for managing visible cards
   const [visibleCards, setVisibleCards] = useState(3);
 
@@ -179,6 +249,18 @@ const HomePage = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Add this useEffect to prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <main className="relative min-h-screen">
       {/* Video Background */}
@@ -196,14 +278,14 @@ const HomePage = () => {
 
       {/* Navbar */}
       <nav className="absolute top-0 w-full z-50">
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto px-6 py-4 bg-white md:bg-transparent">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/EZmigrateWhite.svg"
                 alt="EZmigrate Logo"
-                className="h-8"
+                className="h-8 w-fit [filter:invert(1)] md:filter-none"
                 width={160}
                 height={40}
                 priority
@@ -259,25 +341,44 @@ const HomePage = () => {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button className="md:hidden text-white">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Mobile Login Button - Always visible on mobile */}
+            <div className="flex flex-row items-center">
+              <Link
+                href="/login"
+                className="md:hidden px-3 py-2 bg-black text-white text-sm"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+                Login
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden w-6 h-6 flex flex-col justify-center items-center ml-4"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <span
+                  className={`
+                block w-8 h-[2px] bg-black 
+                transition-all duration-300 ease-in-out
+                ${isMenuOpen ? "rotate-45 translate-y-[2px]" : "-translate-y-1"}
+              `}
+                ></span>
+                <span
+                  className={`
+                block w-8 h-[2px] bg-black
+                transition-all duration-300 ease-in-out
+                ${
+                  isMenuOpen ? "-rotate-45 -translate-y-[0px]" : "translate-y-1"
+                }
+              `}
+                ></span>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <MobileMenu isOpen={isMenuOpen} />
 
       {/* Hero Content */}
       <div className="relative z-10 flex items-end justify-start min-h-screen pb-20">
