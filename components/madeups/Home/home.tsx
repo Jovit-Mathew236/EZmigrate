@@ -306,13 +306,13 @@ const HomePage = () => {
       {/* Navbar */}
       <nav
         className={`
-          fixed top-0 w-full z-50 transition-all duration-300
+          fixed md:absolute top-0 w-full z-50 transition-all duration-300
           ${
             isScrolled
               ? !isScrollingUp
-                ? "backdrop-blur-md bg-white/50 shadow-md"
-                : "bg-white"
-              : "bg-white"
+                ? "backdrop-blur-md bg-white/50 md:bg-transparent shadow-md md:shadow-none"
+                : "bg-white md:bg-transparent"
+              : "bg-white md:bg-transparent"
           }
         `}
       >
@@ -332,7 +332,7 @@ const HomePage = () => {
                   h-8 w-fit transition-all duration-300
                   ${
                     isScrolled
-                      ? "[filter:invert(1)]"
+                      ? "[filter:invert(1)] md:filter-none"
                       : "[filter:invert(1)] md:filter-none"
                   }
                 `}
@@ -343,7 +343,7 @@ const HomePage = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-12">
+            <div className="hidden md:flex items-center text-black md:text-white space-x-12">
               {/* Update link colors based on scroll */}
               {[
                 "Home",
@@ -353,27 +353,30 @@ const HomePage = () => {
                 "About",
                 "Contact",
                 "Careers",
-                "Login",
               ].map((item) => (
                 <Link
                   key={item}
                   href={`/${item.toLowerCase().replace(" ", "-")}`}
                   className={`
                     text-sm transition-colors duration-300
-                    ${
-                      !isScrolled
-                        ? "text-gray-800 hover:text-black"
-                        : "text-white hover:text-gray-300"
-                    }
+                    ${!isScrolled ? " hover:text-black" : "text-white"}
                   `}
                 >
                   {item}
                 </Link>
               ))}
+              <Link
+                href={"/login"}
+                className={`
+                    hidden md:block text-sm bg-black text-white px-4 py-2 transition-colors duration-300
+                  `}
+              >
+                Login
+              </Link>
             </div>
 
             {/* Mobile Login Button and Menu */}
-            <div className="flex flex-row items-center">
+            <div className="md:hidden flex flex-row items-center">
               <Link
                 href="/login"
                 className="md:hidden px-3 py-2 bg-black text-white text-sm"
