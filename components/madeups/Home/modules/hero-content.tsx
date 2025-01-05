@@ -5,7 +5,7 @@ const HeroContent = () => {
     <div className="relative z-10 flex items-end justify-start min-h-screen pb-20">
       <div className="container mx-auto px-6 relative">
         <div className="max-w-3xl text-white mb-6">
-          <h1 className="text-4xl md:text-6xl font-light text-white mb-6">
+          <h1 className="text-3xl md:text-6xl font-light text-white mb-6">
             Empowering Dreams of
             <br />
             Studying Abroad

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
+import FooterSection from "@/components/madeups/Home/modules/footer-section";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -111,6 +113,8 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <body className={`antialiased ${poppins.variable} ${axiforma.variable}`}>
         {children}
+        <AccreditationsSection />
+        <FooterSection />
       </body>
     </html>
   );
