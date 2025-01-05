@@ -233,7 +233,12 @@ const HomePage = () => {
   // Add state for managing visible cards
   const [visibleCards, setVisibleCards] = useState(3);
 
-  // Add useEffect to handle viewport changes
+  // Add these state declarations in the HomePage component
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Add this useEffect to handle viewport changes
   useEffect(() => {
     const handleResize = () => {
       setVisibleCards(window.innerWidth < 740 ? 3 : 6);
@@ -261,6 +266,28 @@ const HomePage = () => {
     };
   }, [isMenuOpen]);
 
+  // Add this useEffect in the HomePage component
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Determine scroll direction
+      setIsScrollingUp(currentScrollY < lastScrollY);
+
+      // Check if page is scrolled
+      setIsScrolled(currentScrollY > 20);
+
+      // Update last scroll position
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <main className="relative min-h-screen">
       {/* Video Background */}
@@ -277,15 +304,38 @@ const HomePage = () => {
       <div className="absolute inset-0 bg-black/50 -z-5" />
 
       {/* Navbar */}
-      <nav className="absolute top-0 w-full z-50">
-        <div className="container mx-auto px-6 py-4 bg-white md:bg-transparent">
+      <nav
+        className={`
+          fixed top-0 w-full z-50 transition-all duration-300
+          ${
+            isScrolled
+              ? !isScrollingUp
+                ? "backdrop-blur-md bg-white/50 shadow-md"
+                : "bg-white"
+              : "bg-white"
+          }
+        `}
+      >
+        <div
+          className={`
+          container mx-auto px-6 py-4
+          ${!isScrolled ? "" : "md:bg-transparent"}
+        `}
+        >
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/EZmigrateWhite.svg"
                 alt="EZmigrate Logo"
-                className="h-8 w-fit [filter:invert(1)] md:filter-none"
+                className={`
+                  h-8 w-fit transition-all duration-300
+                  ${
+                    isScrolled
+                      ? "[filter:invert(1)]"
+                      : "[filter:invert(1)] md:filter-none"
+                  }
+                `}
                 width={160}
                 height={40}
                 priority
@@ -294,54 +344,35 @@ const HomePage = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-12">
-              <Link href="/" className="text-white hover:text-gray-300 text-sm">
-                Home
-              </Link>
-              <Link
-                href="/services"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                Services
-              </Link>
-              <Link
-                href="/study-abroad"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                Study Abroad
-              </Link>
-              <Link
-                href="/programs"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                Programs
-              </Link>
-              <Link
-                href="/about"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/careers"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                Careers
-              </Link>
-              <Link
-                href="/login"
-                className="text-white hover:text-gray-300 text-sm"
-              >
-                Login
-              </Link>
+              {/* Update link colors based on scroll */}
+              {[
+                "Home",
+                "Services",
+                "Study Abroad",
+                "Programs",
+                "About",
+                "Contact",
+                "Careers",
+                "Login",
+              ].map((item) => (
+                <Link
+                  key={item}
+                  href={`/${item.toLowerCase().replace(" ", "-")}`}
+                  className={`
+                    text-sm transition-colors duration-300
+                    ${
+                      !isScrolled
+                        ? "text-gray-800 hover:text-black"
+                        : "text-white hover:text-gray-300"
+                    }
+                  `}
+                >
+                  {item}
+                </Link>
+              ))}
             </div>
 
-            {/* Mobile Login Button - Always visible on mobile */}
+            {/* Mobile Login Button and Menu */}
             <div className="flex flex-row items-center">
               <Link
                 href="/login"
@@ -357,19 +388,25 @@ const HomePage = () => {
               >
                 <span
                   className={`
-                block w-8 h-[2px] bg-black 
-                transition-all duration-300 ease-in-out
-                ${isMenuOpen ? "rotate-45 translate-y-[2px]" : "-translate-y-1"}
-              `}
+                    block w-8 h-[2px] transition-all duration-300 ease-in-out
+                    ${isScrolled ? "bg-black" : "bg-black"}
+                    ${
+                      isMenuOpen
+                        ? "rotate-45 translate-y-[2px]"
+                        : "-translate-y-1"
+                    }
+                  `}
                 ></span>
                 <span
                   className={`
-                block w-8 h-[2px] bg-black
-                transition-all duration-300 ease-in-out
-                ${
-                  isMenuOpen ? "-rotate-45 -translate-y-[0px]" : "translate-y-1"
-                }
-              `}
+                    block w-8 h-[2px] transition-all duration-300 ease-in-out
+                    ${isScrolled ? "bg-black" : "bg-black"}
+                    ${
+                      isMenuOpen
+                        ? "-rotate-45 -translate-y-[0px]"
+                        : "translate-y-1"
+                    }
+                  `}
                 ></span>
               </button>
             </div>
