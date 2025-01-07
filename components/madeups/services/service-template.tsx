@@ -177,7 +177,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="w-full p-3 border border-gray-300"
+                    className="w-fit md:w-full p-3 border border-gray-300"
                     required
                   />
                 </div>
@@ -206,7 +206,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                 <div>
                   <label className="block mb">Phone Number*</label>
                   <div className="flex">
-                    <div className="flex items-center border border-gray-300 px-3">
+                    <div className="flex items-center border border-gray-300 pl-3 pr-6 md:px-3">
                       <ReactCountryFlag
                         countryCode="IN"
                         svg
@@ -220,7 +220,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
-                      className="flex-1 p-3 border border-gray-300 border-l-0"
+                      className="flex-1 p-3 border border-gray-300 w-full md:w-fit border-l-0"
                       required
                     />
                   </div>
@@ -236,7 +236,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                 <div>
                   <label className="block mb-2">Whatsapp Number*</label>
                   <div className="flex">
-                    <div className="flex items-center border border-gray-300 px-3">
+                    <div className="flex items-center border border-gray-300 pl-3 pr-6 md:px-3">
                       <ReactCountryFlag
                         countryCode="IN"
                         svg
@@ -250,7 +250,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
-                      className="flex-1 p-3 border border-gray-300 border-l-0"
+                      className="flex-1 p-3 border border-gray-300 w-full md:w-fit border-l-0"
                       required
                     />
                   </div>
