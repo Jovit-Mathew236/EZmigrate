@@ -2,16 +2,12 @@ import { serviceContents } from "@/types/services";
 import ServiceTemplate from "@/components/madeups/services/service-template";
 import { notFound } from "next/navigation";
 
-interface ServicePageProps {
-  params: {
-    service: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
+type Params = Promise<{ service: string }>;
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const serviceSlug = params.service.toLowerCase();
-  const content = serviceContents[serviceSlug];
+export default async function ServicePage(props: { params: Params }) {
+  const params = await props.params;
+  const { service } = params;
+  const content = serviceContents[service];
 
   if (!content) {
     notFound();
@@ -20,6 +16,7 @@ export default function ServicePage({ params }: ServicePageProps) {
   return <ServiceTemplate content={content} />;
 }
 
+// Uncomment this to enable static generation
 export function generateStaticParams() {
   return Object.keys(serviceContents).map((service) => ({
     service: service,
