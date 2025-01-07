@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ServiceContent } from "@/types/services";
-import Link from "next/link";
+// import Link from "next/link";
 import { ArrowRight, Handshake, Slash } from "lucide-react";
 import {
   Breadcrumb,
@@ -12,6 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import ReactCountryFlag from "react-country-flag";
 
 interface ServiceTemplateProps {
   content: ServiceContent;
@@ -29,7 +30,7 @@ const FAQItem = ({
   onToggle: (index: number) => void;
 }) => {
   return (
-    <div className="border-b border-black py-6">
+    <div className="border-b-2 border-black py-6">
       <button
         onClick={() => onToggle(index)}
         className="flex justify-between items-center w-full text-left"
@@ -86,19 +87,19 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           autoPlay
           loop
           muted
-          className="fixed bg-top top-0 left-0 w-full h-80 md:h-72 object-cover -z-10"
+          className="fixed bg-top top-0 left-0 w-full h-80 md:h-96 object-cover -z-10"
         >
           <source src="/video/services.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 -z-5 max-h-80 md:max-h-72" />
+        <div className="absolute inset-0 bg-black/50 -z-5 max-h-80 md:max-h-96" />
 
         {/* Content */}
-        <div className="relative z-10 flex items-end justify-start min-h-80 md:min-h-72 pb-20">
+        <div className="relative z-10 flex items-end justify-start min-h-80 md:min-h-96 pb-20">
           <div className="container mx-auto px-6 relative">
             <div className="max-w-3xl text-white mb-3">
-              <h1 className="text-4xl font-extralight text-white -mb-16 md:mb-3">
+              <h1 className="text-5xl font-extralight text-white -mb-16 md:mb-3">
                 {content.title}
               </h1>
             </div>
@@ -107,7 +108,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
       </div>
 
       {/* Main Description Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-6">
           <Breadcrumb className="mb-8 hidden md:block">
             <BreadcrumbList>
@@ -151,20 +152,119 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          <div className="max-w-2xl float-right">
-            <h2 className="text-2xl md:text-3xl font-light mb-8">
-              {content.subTitle}
-            </h2>
-            <p className="text-gray-700 font-light mb-8 max-w-lg">
-              {content.mainDescription}
-            </p>
-            <Link
-              href="/contact"
-              className="w-full justify-center md:justify-start md:w-fit px-8 py-3 text-info hover:bg-info hover:text-white border border-info flex items-center gap-2"
-            >
-              Let&apos;s talk
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="max-w-2xl md:mt-20">
+              <h2 className="text-xl md:text-3xl font-normal mb-8">
+                {content.subTitle}
+              </h2>
+              <p className="text-base md:text-xl text-gray-700 font-light mb-8 max-w-xl">
+                {content.mainDescription}
+              </p>
+              {/* <Link
+                href="/contact"
+                className="w-full justify-center md:justify-start md:w-fit px-8 py-3 text-info hover:bg-info hover:text-white border border-info flex items-center gap-2"
+              >
+                Let&apos;s talk
+                <ArrowRight className="w-4 h-4" />
+              </Link> */}
+            </div>
+            {/* Form */}
+            <div className="md:-mt-64 z-10 bg-white px-0 md:px-8 py-12 w-full max-w-md md:shadow-md">
+              <h2 className="text-2xl font-normal mb-8">Let&apos;s Connect!</h2>
+              <form className="space-y-4">
+                <div>
+                  <label className="block mb">Name*</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your name"
+                    className="w-full p-3 border border-gray-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block mb">Service*</label>
+                  <select
+                    className="w-full p-3 border border-gray-300 appearance-none bg-white"
+                    required
+                  >
+                    <option>{content.title}</option>
+                    {/* Add more options as needed */}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block mb">Email*</label>
+                  <input
+                    type="email"
+                    placeholder="Enter email"
+                    className="w-full p-3 border border-gray-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block mb">Phone Number*</label>
+                  <div className="flex">
+                    <div className="flex items-center border border-gray-300 px-3">
+                      <ReactCountryFlag
+                        countryCode="IN"
+                        svg
+                        style={{
+                          width: "24px",
+                          height: "16px",
+                        }}
+                        title="India"
+                      />
+                      <span className="ml-2">+91</span>
+                    </div>
+                    <input
+                      type="tel"
+                      className="flex-1 p-3 border border-gray-300 border-l-0"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="flex items-center gap-2">
+                    <input type="checkbox" className="w-4 h-4" />
+                    <span className="text-sm">Use this as WhatsApp number</span>
+                  </label>
+                </div>
+
+                <div>
+                  <label className="block mb-2">Whatsapp Number*</label>
+                  <div className="flex">
+                    <div className="flex items-center border border-gray-300 px-3">
+                      <ReactCountryFlag
+                        countryCode="IN"
+                        svg
+                        style={{
+                          width: "24px",
+                          height: "16px",
+                        }}
+                        title="India"
+                      />
+                      <span className="ml-2">+91</span>
+                    </div>
+                    <input
+                      type="tel"
+                      className="flex-1 p-3 border border-gray-300 border-l-0"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="bg-black text-white px-8 py-3 flex float-right items-center gap-2"
+                >
+                  Send Enquiry
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
