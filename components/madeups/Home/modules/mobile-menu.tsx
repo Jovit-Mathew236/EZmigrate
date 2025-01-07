@@ -2,9 +2,14 @@ import Link from "next/link";
 
 interface MobileMenuProps {
   isOpen: boolean;
+  onClose: () => void;
 }
 
-const MobileMenu = ({ isOpen }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  const handleClick = () => {
+    onClose();
+  };
+
   return (
     <div
       className={`fixed inset-0 bg-black transform transition-transform duration-300 ease-in-out z-40 ${
@@ -24,8 +29,11 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
         ].map((item) => (
           <Link
             key={item}
-            href={`/${item.toLowerCase().replace(" ", "-")}`}
+            href={
+              item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`
+            }
             className="py-4 text-white text-2xl font-light border-b border-white/10"
+            onClick={handleClick}
           >
             {item}
           </Link>
@@ -33,6 +41,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
         <Link
           href="/contact-us"
           className="mt-auto mb-8 py-4 text-center text-white text-2xl font-light bg-blue-600"
+          onClick={handleClick}
         >
           Contact Us
         </Link>

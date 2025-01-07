@@ -1,6 +1,38 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+
+const services = [
+  {
+    name: "Educational Counselling",
+    slug: "educational-counselling",
+  },
+  {
+    name: "Career Counselling",
+    slug: "career-counselling",
+  },
+  {
+    name: "University Application Assistance",
+    slug: "university-application-assistance",
+  },
+  {
+    name: "Visa & Immigration Services",
+    slug: "visa-immigration-services",
+  },
+  {
+    name: "Personal Guidance",
+    slug: "personal-guidance",
+  },
+  {
+    name: "Seamless Transition",
+    slug: "seamless-transition",
+  },
+  {
+    name: "Mentorship & Support",
+    slug: "mentorship-support",
+  },
+];
 
 const ServicePage = () => {
   return (
@@ -54,22 +86,14 @@ const ServicePage = () => {
                   </a>
                 </div> */}
 
-                {[
-                  "Educational Counselling",
-                  "Career Counselling",
-                  "University Application Assistance",
-                  "Visa & Immigration Services",
-                  "Personalised Guidance",
-                  "Seamless Transition",
-                  "Mentorship & Support",
-                ].map((service, index) => (
+                {services.map((service, index) => (
                   <div key={index} className="border-b pb-4">
-                    <a
-                      href="#"
-                      className=" hover:text-blue-600 flex items-center justify-between group"
+                    <Link
+                      href={`/services/core-offering/${service.slug}`}
+                      className="hover:text-blue-600 flex items-center justify-between group"
                     >
                       <h3 className="text-xl font-light md:font-normal hover:text-blue-600 cursor-pointer">
-                        {service}
+                        {service.name}
                       </h3>
 
                       <ArrowRight
@@ -77,7 +101,7 @@ const ServicePage = () => {
                         strokeWidth={2}
                         className="text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"
                       />
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>

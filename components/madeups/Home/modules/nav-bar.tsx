@@ -2,13 +2,27 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import MobileMenu from "@/components/madeups/Home/modules/mobile-menu";
 
 const NavBar = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, []);
+
+  const handleRedirect = (item: string) => {
+    console.log("item", item);
+    setIsMenuOpen(false);
+    const path =
+      item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`;
+    router.push(path);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,31 +81,31 @@ const NavBar = () => {
                 "Contact",
                 "Careers",
               ].map((item) => (
-                <Link
+                <button
                   key={item}
-                  href={`/${item.toLowerCase().replace(" ", "-")}`}
                   className={`text-sm transition-colors duration-300 ${
                     !isScrolled ? "hover:text-black" : "text-white"
                   }`}
+                  onClick={() => handleRedirect(item)}
                 >
                   {item}
-                </Link>
+                </button>
               ))}
-              <Link
-                href={"/login"}
+              <button
+                onClick={() => router.push("/login")}
                 className="hidden md:block text-sm bg-black text-white px-4 py-2 transition-colors duration-300"
               >
                 Login
-              </Link>
+              </button>
             </div>
 
             <div className="md:hidden flex flex-row items-center">
-              <Link
-                href="/login"
+              <button
+                onClick={() => router.push("/login")}
                 className="md:hidden px-3 py-2 bg-black text-white text-sm"
               >
                 Login
-              </Link>
+              </button>
               <button
                 className="md:hidden w-6 h-6 flex flex-col justify-center items-center ml-4"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -119,7 +133,7 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
-      <MobileMenu isOpen={isMenuOpen} />
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );
 };
