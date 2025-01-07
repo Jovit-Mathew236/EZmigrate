@@ -9,7 +9,7 @@ const ConnectExpertSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-6xl font-light mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
               Connect with our
               <br />
               Study Abroad Expert

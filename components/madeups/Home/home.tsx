@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import NavBar from "@/components/madeups/Home/modules/nav-bar";
+// import NavBar from "@/components/madeups/Home/modules/nav-bar";
 import HeroContent from "@/components/madeups/Home/modules/hero-content";
 import StatsSection from "@/components/madeups/Home/modules/stats-section";
 import DestinationsSection from "@/components/madeups/Home/modules/destinations-section";
@@ -8,7 +8,7 @@ import StorySection from "@/components/madeups/Home/modules/story-section";
 import ConnectExpertSection from "@/components/madeups/Home/modules/connect-expert-section";
 import StudentStoriesSection from "@/components/madeups/Home/modules/student-stories-section";
 import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
-// import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
+import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
 // import FooterSection from "@/components/madeups/Home/modules/footer-section";
 
 const HomePage = () => {
@@ -27,7 +27,7 @@ const HomePage = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50 -z-5" />
 
-      <NavBar />
+      {/* <NavBar /> */}
       <HeroContent />
       <StatsSection />
       <DestinationsSection />
@@ -35,8 +35,8 @@ const HomePage = () => {
       <ConnectExpertSection />
       <StudentStoriesSection />
       <BlogPostsSection />
-      {/* <AccreditationsSection />
-      <FooterSection /> */}
+      <AccreditationsSection />
+      {/* <FooterSection /> */}
     </main>
   );
 };

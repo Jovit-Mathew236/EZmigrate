@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
 import FooterSection from "@/components/madeups/Home/modules/footer-section";
+import NavBar from "@/components/madeups/Home/modules/nav-bar";
+import ConnectExpertSection from "@/components/madeups/Home/modules/connect-expert-section";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["100", "200", "300", "400", "500", "600"],
   variable: "--font-poppins",
 });
 
@@ -112,8 +113,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`antialiased ${poppins.variable} ${axiforma.variable}`}>
+        <NavBar />
         {children}
-        <AccreditationsSection />
+        <ConnectExpertSection />
         <FooterSection />
       </body>
     </html>
