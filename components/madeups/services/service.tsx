@@ -64,7 +64,7 @@ const ServicePage = () => {
       </div>
 
       {/* Core Offerings Section */}
-      <section className="py-16 bg-white">
+      <section id="core-offerings" className="py-16 bg-white scroll-mt-0">
         <div className="container mx-auto px-6">
           <div className="flex justify-between flex-col md:flex-row items-center gap-8">
             {/* Services List - Order changes on mobile */}

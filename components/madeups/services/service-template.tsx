@@ -29,7 +29,7 @@ const FAQItem = ({
   onToggle: (index: number) => void;
 }) => {
   return (
-    <div className="border-b border-gray-200 py-6">
+    <div className="border-b border-black py-6">
       <button
         onClick={() => onToggle(index)}
         className="flex justify-between items-center w-full text-left"
@@ -37,19 +37,26 @@ const FAQItem = ({
         <h1 className="text-lg text-black font-bold">{item.question}</h1>
         <span className="ml-6">
           <svg
-            className={`w-6 h-6 transform transition-transform duration-200 ${
-              isOpen ? "rotate-180" : ""
-            }`}
+            className="w-6 h-6 transition-transform duration-200"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M20 12H4"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 4v16m8-8H4"
+              />
+            )}
           </svg>
         </span>
       </button>
@@ -79,19 +86,19 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           autoPlay
           loop
           muted
-          className="fixed bg-top top-0 left-0 w-full h-96 md:h-72 object-cover -z-10"
+          className="fixed bg-top top-0 left-0 w-full h-80 md:h-72 object-cover -z-10"
         >
           <source src="/video/services.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 -z-5 max-h-96 md:max-h-72" />
+        <div className="absolute inset-0 bg-black/50 -z-5 max-h-80 md:max-h-72" />
 
         {/* Content */}
-        <div className="relative z-10 flex items-end justify-start min-h-96 md:min-h-72 pb-20">
+        <div className="relative z-10 flex items-end justify-start min-h-80 md:min-h-72 pb-20">
           <div className="container mx-auto px-6 relative">
             <div className="max-w-3xl text-white mb-3">
-              <h1 className="text-3xl md:text-4xl font-extralight text-white mb-10 md:mb-3">
+              <h1 className="text-4xl font-extralight text-white -mb-16 md:mb-3">
                 {content.title}
               </h1>
             </div>
@@ -128,8 +135,8 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
               </BreadcrumbSeparator>
               <BreadcrumbItem>
                 <BreadcrumbLink
-                  href="/services"
-                  className="text-black hover:text-gray-200"
+                  href="/services#core-offerings"
+                  className="text-black hover:text-gray-200 scroll-smooth"
                 >
                   Core Offerings
                 </BreadcrumbLink>
@@ -146,7 +153,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           </Breadcrumb>
           <div className="max-w-2xl float-right">
             <h2 className="text-2xl md:text-3xl font-light mb-8">
-              Comprehensive Guidance to Achieve Your Academic Aspirations
+              {content.subTitle}
             </h2>
             <p className="text-gray-700 font-light mb-8 max-w-lg">
               {content.mainDescription}
@@ -195,8 +202,8 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
       {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-light mb-12">FAQ</h2>
-          <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-normal mb-12">FAQ</h2>
+          <div className="mx-auto">
             {content.faq.map((item, index) => (
               <FAQItem
                 key={index}
