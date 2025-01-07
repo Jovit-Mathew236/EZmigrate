@@ -6,6 +6,7 @@ interface ServicePageProps {
   params: {
     service: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export default function ServicePage({ params }: ServicePageProps) {
