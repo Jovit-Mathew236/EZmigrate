@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import MobileMenu from "@/components/madeups/Home/modules/mobile-menu";
+import clsx from "clsx";
 
 const NavBar = () => {
   const router = useRouter();
@@ -76,6 +77,7 @@ const NavBar = () => {
                 "Home",
                 "Services",
                 "Study Abroad",
+                "Visa",
                 "Programs",
                 "About",
                 "Contact",
@@ -83,9 +85,17 @@ const NavBar = () => {
               ].map((item) => (
                 <button
                   key={item}
-                  className={`text-sm transition-colors duration-300 ${
-                    !isScrolled ? "hover:text-black" : "text-white"
-                  }`}
+                  className={clsx(
+                    "text-smtransition-colors duration-300",
+                    "relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full",
+                    "after:origin-bottom-right after:scale-x-0 after:transition-transform",
+                    "after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)]",
+                    "hover:after:origin-bottom-left hover:after:scale-x-100",
+                    {
+                      "hover:text-stone-600 after:bg-stone-600": !isScrolled,
+                      "text-white after:bg-white": isScrolled,
+                    }
+                  )}
                   onClick={() => handleRedirect(item)}
                 >
                   {item}

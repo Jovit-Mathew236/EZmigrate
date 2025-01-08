@@ -80,7 +80,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen xl:min-h-fit">
       {/* Hero Banner Section */}
       <div>
         <video
@@ -157,7 +157,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
               <h2 className="text-xl md:text-3xl font-normal mb-8">
                 {content.subTitle}
               </h2>
-              <p className="text-base md:text-xl text-gray-700 font-light mb-8 max-w-xl">
+              <p className="text-base md:text-xl xl:text-2xl text-gray-700 font-light mb-8 max-w-xl xl:max-w-3xl">
                 {content.mainDescription}
               </p>
               {/* <Link
