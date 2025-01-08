@@ -79,7 +79,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="w-fit md:w-full p-3 border border-gray-300"
+                    className="w-full md:w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
                   />
                 </div>
@@ -87,7 +87,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                 <div>
                   <label className="block mb">{content.formOptionTitle}*</label>
                   <select
-                    className="w-full p-3 border border-gray-300 appearance-none bg-white"
+                    className="w-full p-3 border border-b-black border-stone-400 appearance-none bg-white"
                     required
                   >
                     {content.formSelectOptions?.map((option) => (
@@ -103,7 +103,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                   <input
                     type="email"
                     placeholder="Enter email"
-                    className="w-full p-3 border border-gray-300"
+                    className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
                   />
                 </div>
@@ -111,7 +111,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                 <div>
                   <label className="block mb">Phone Number*</label>
                   <div className="flex">
-                    <div className="flex items-center border border-gray-300 pl-3 pr-6 md:px-3">
+                    <div className="flex items-center border border-b-black border-stone-400 pl-3 pr-6 md:px-3">
                       <ReactCountryFlag
                         countryCode="IN"
                         svg
@@ -125,7 +125,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
-                      className="flex-1 p-3 border border-gray-300 w-full md:w-fit border-l-0"
+                      className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
                   </div>
@@ -141,7 +141,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                 <div>
                   <label className="block mb-2">Whatsapp Number*</label>
                   <div className="flex">
-                    <div className="flex items-center border border-gray-300 pl-3 pr-6 md:px-3">
+                    <div className="flex items-center border border-b-black border-stone-400 pl-3 pr-6 md:px-3">
                       <ReactCountryFlag
                         countryCode="IN"
                         svg
@@ -155,7 +155,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
-                      className="flex-1 p-3 border border-gray-300 w-full md:w-fit border-l-0"
+                      className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
                   </div>

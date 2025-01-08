@@ -66,7 +66,7 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
   programs: {
     title: "Our Programs",
     backgroundVideo: {
-      src: "/video/visa.mp4",
+      src: "/video/program.mp4",
       type: "video/mp4",
       position: "center",
     },
