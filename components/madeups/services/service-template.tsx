@@ -152,7 +152,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col justify-between md:flex-row gap-x-8">
             <div className="max-w-2xl md:mt-20">
               <h2 className="text-xl md:text-3xl font-normal mb-8">
                 {content.subTitle}
