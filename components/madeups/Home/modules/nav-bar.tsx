@@ -15,7 +15,7 @@ const NavBar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   // Define which routes have dark backgrounds
-  const darkBackgroundRoutes = ["/about", "/contact"];
+  const darkBackgroundRoutes = ["/about", "/contact", "/careers"];
   const isDarkBackground = darkBackgroundRoutes.includes(pathname);
 
   useEffect(() => {
