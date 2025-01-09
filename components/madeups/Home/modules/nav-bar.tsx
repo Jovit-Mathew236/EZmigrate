@@ -15,7 +15,7 @@ const NavBar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   // Define which routes have dark backgrounds
-  const darkBackgroundRoutes = ["/about"];
+  const darkBackgroundRoutes = ["/about", "/contact"];
   const isDarkBackground = darkBackgroundRoutes.includes(pathname);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const NavBar = () => {
     <>
       <nav
         className={`
-          fixed md:absolute top-0 w-full z-50 transition-all duration-300
+          fixed md:absolute top-0 w-full z-50 transition-all duration-300 shadow-md md:shadow-none
           ${
             isScrollingUp
               ? "bg-white md:bg-transparent"

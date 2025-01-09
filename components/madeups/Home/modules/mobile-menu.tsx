@@ -39,7 +39,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </Link>
         ))}
         <Link
-          href="/contact-us"
+          href="/contact"
           className="mt-auto mb-8 py-4 text-center text-white text-2xl font-light bg-blue-600"
           onClick={handleClick}
         >
