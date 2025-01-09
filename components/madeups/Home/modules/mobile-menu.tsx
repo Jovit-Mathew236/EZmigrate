@@ -25,12 +25,16 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           "Programs",
           "About",
           "Careers",
-          "Blog Posts",
+          "Join our Team",
         ].map((item) => (
           <Link
             key={item}
             href={
-              item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`
+              item === "Home"
+                ? "/"
+                : item === "Join our Team"
+                ? "/careers"
+                : `/${item.toLowerCase().replace(" ", "-")}`
             }
             className="py-4 text-white text-2xl font-light border-b border-white/10"
             onClick={handleClick}

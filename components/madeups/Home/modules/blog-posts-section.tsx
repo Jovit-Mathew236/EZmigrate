@@ -62,7 +62,7 @@ const BlogPostsSection = () => {
 
         <div className="text-center mt-10 md:mt-16">
           <Link
-            href="/blog"
+            href="/blogs"
             className="inline-flex font-light w-full md:w-auto justify-center items-center border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300"
           >
             Explore all posts

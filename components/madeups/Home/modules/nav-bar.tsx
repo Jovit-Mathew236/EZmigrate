@@ -16,7 +16,9 @@ const NavBar = () => {
 
   // Define which routes have dark backgrounds
   const darkBackgroundRoutes = ["/about", "/contact", "/careers"];
+  const whitebglogin = ["/blogs"];
   const isDarkBackground = darkBackgroundRoutes.includes(pathname);
+  const isWhiteBgLogin = whitebglogin.includes(pathname);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -26,7 +28,11 @@ const NavBar = () => {
     console.log("item", item);
     setIsMenuOpen(false);
     const path =
-      item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`;
+      item === "Home"
+        ? "/"
+        : item === "Join our Team"
+        ? "/careers"
+        : `/${item.toLowerCase().replace(" ", "-")}`;
     router.push(path);
   };
 
@@ -96,7 +102,7 @@ const NavBar = () => {
                 "Programs",
                 "About",
                 "Contact",
-                "Careers",
+                "Join our Team",
               ].map((item) => (
                 <button
                   key={item}
@@ -121,7 +127,9 @@ const NavBar = () => {
 
               <button
                 onClick={() => router.push("/login")}
-                className="hidden md:block text-sm px-4 py-2 transition-colors duration-300 bg-black text-white"
+                className={`hidden md:block text-sm px-4 py-2 transition-colors duration-300 ${
+                  isWhiteBgLogin ? "bg-white text-black" : "bg-black text-white"
+                }`}
               >
                 Login
               </button>
