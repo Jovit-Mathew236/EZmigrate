@@ -123,7 +123,7 @@ export default function Blogs() {
 
   return (
     <div className="relative min-h-screen bg-black text-white pt-28 pb-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-5">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl md:text-5xl font-light">Blog Posts</h2>
           <div className="relative">
