@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import FooterSection from "@/components/madeups/Home/modules/footer-section";
 import NavBar from "@/components/madeups/Home/modules/nav-bar";
-import ConnectExpertSection from "@/components/madeups/Home/modules/connect-expert-section";
+import { ConditionalConnectExpert } from "./ConditionalConnectExpert";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,6 +32,23 @@ const axiforma = localFont({
   ],
   variable: "--font-axiforma",
 });
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`antialiased ${poppins.variable} ${axiforma.variable}`}>
+        <NavBar />
+        {children}
+        <ConditionalConnectExpert />
+        <FooterSection />
+      </body>
+    </html>
+  );
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://e-zmigrate.vercel.app/"),
@@ -104,20 +121,3 @@ export const metadata: Metadata = {
     yahoo: "your-yahoo-verification-code",
   },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`antialiased ${poppins.variable} ${axiforma.variable}`}>
-        <NavBar />
-        {children}
-        <ConnectExpertSection />
-        <FooterSection />
-      </body>
-    </html>
-  );
-}
