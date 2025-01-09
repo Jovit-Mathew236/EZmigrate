@@ -37,7 +37,7 @@ const CareersPage = () => {
         {/* curretn opening */}
       </div>
       {/* Current Openings Section */}
-      <div className="bg-black text-white mx-auto px-5 py-8 mt-20 md:py-12">
+      <div className="bg-black text-white mx-auto px-5 py-8 md:py-12">
         <div className="container mx-auto">
           <h2 className="text-4xl font-light mb-20">Current Openings</h2>
 
