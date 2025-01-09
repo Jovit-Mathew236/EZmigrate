@@ -2,8 +2,12 @@ import { getBlogPost } from "@/types/blog-data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getBlogPost(params.slug);
+type Params = Promise<{ slug: string }>;
+
+export default async function BlogPost(props: { params: Params }) {
+  const params = await props.params;
+  const { slug } = params;
+  const post = getBlogPost(slug);
 
   if (!post) {
     notFound();
