@@ -1,11 +1,12 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import { useState, useMemo } from "react";
 
 const blogPosts = [
   {
+    id: "top-study-abroad-destinations-2024",
     title: "Top Study Abroad Destinations for 2024",
     image: "/images/blog1.png",
     readTime: "13 mins read",
@@ -14,6 +15,7 @@ const blogPosts = [
     alt: "Study Abroad 2024",
   },
   {
+    id: "why-studying-abroad-game-changer",
     title: "Why Studying Abroad is a Game-Changer",
     image: "/images/blog2.png",
     readTime: "25 mins read",
@@ -22,6 +24,7 @@ const blogPosts = [
     alt: "Why Study Abroad",
   },
   {
+    id: "affordable-countries-quality-education",
     title: "Affordable Countries for Quality Education",
     image: "/images/blog3.png",
     readTime: "5 mins read",
@@ -30,6 +33,7 @@ const blogPosts = [
     alt: "Affordable Education",
   },
   {
+    id: "top-study-abroad-destinations-2024",
     title: "Top Study Abroad Destinations for 2024",
     image: "/images/blog1.png",
     readTime: "13 mins read",
@@ -38,6 +42,7 @@ const blogPosts = [
     alt: "Study Abroad 2024",
   },
   {
+    id: "why-studying-abroad-game-changer",
     title: "Why Studying Abroad is a Game-Changer",
     image: "/images/blog2.png",
     readTime: "25 mins read",
@@ -46,6 +51,7 @@ const blogPosts = [
     alt: "Why Study Abroad",
   },
   {
+    id: "affordable-countries-quality-education",
     title: "Affordable Countries for Quality Education",
     image: "/images/blog3.png",
     readTime: "5 mins read",
@@ -54,6 +60,7 @@ const blogPosts = [
     alt: "Affordable Education",
   },
   {
+    id: "top-study-abroad-destinations-2024",
     title: "Top Study Abroad Destinations for 2024",
     image: "/images/blog1.png",
     readTime: "13 mins read",
@@ -62,6 +69,7 @@ const blogPosts = [
     alt: "Study Abroad 2024",
   },
   {
+    id: "why-studying-abroad-game-changer",
     title: "Why Studying Abroad is a Game-Changer",
     image: "/images/blog2.png",
     readTime: "25 mins read",
@@ -70,6 +78,7 @@ const blogPosts = [
     alt: "Why Study Abroad",
   },
   {
+    id: "affordable-countries-quality-education",
     title: "Affordable Countries for Quality Education",
     image: "/images/blog3.png",
     readTime: "5 mins read",
@@ -152,26 +161,28 @@ export default function Blogs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {currentPosts.map((post, index) => (
-            <div key={index} className="group cursor-pointer">
-              <div className="relative aspect-video overflow-hidden mb-4">
-                <Image
-                  src={post.image}
-                  alt={post.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-4 text-xs text-gray-400">
-                  <span>{post.readTime}</span>
-                  <span>{post.date}</span>
+            <Link href={`/blogs/${post.id}`} key={index}>
+              <div className="group cursor-pointer">
+                <div className="relative aspect-video overflow-hidden mb-4">
+                  <Image
+                    src={post.image}
+                    alt={post.alt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="text-xl font-light leading-tight">
-                  {post.title}
-                </h3>
-                <p className="text-sm text-gray-400">By {post.author}</p>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-4 text-xs text-gray-400">
+                    <span>{post.readTime}</span>
+                    <span>{post.date}</span>
+                  </div>
+                  <h3 className="text-xl font-light leading-tight">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-gray-400">By {post.author}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

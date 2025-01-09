@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const blogPosts = [
   {
+    id: "top-study-abroad-destinations-2024",
     title: "Top Study Abroad Destinations for 2024",
     image: "/images/blog1.png",
     readTime: "13 mins read",
@@ -12,6 +13,7 @@ const blogPosts = [
     alt: "Study Abroad 2024",
   },
   {
+    id: "why-studying-abroad-game-changer",
     title: "Why Studying Abroad is a Game-Changer",
     image: "/images/blog2.png",
     readTime: "25 mins read",
@@ -20,6 +22,7 @@ const blogPosts = [
     alt: "Why Study Abroad",
   },
   {
+    id: "affordable-countries-quality-education",
     title: "Affordable Countries for Quality Education",
     image: "/images/blog3.png",
     readTime: "5 mins read",
@@ -39,24 +42,26 @@ const BlogPostsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <div key={index} className="group">
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <Image
-                  src={post.image}
-                  alt={post.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex justify-between text-sm text-gray-400">
-                  <span className="font-light text-xs">{post.readTime}</span>
-                  <span className="font-light text-xs">{post.date}</span>
+            <Link href={`/blogs/${post.id}`} key={index}>
+              <div className="group">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.alt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="text-xl font-light">{post.title}</h3>
-                <p className="text-sm text-gray-400">By {post.author}</p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex justify-between text-sm text-gray-400">
+                    <span className="font-light text-xs">{post.readTime}</span>
+                    <span className="font-light text-xs">{post.date}</span>
+                  </div>
+                  <h3 className="text-xl font-light">{post.title}</h3>
+                  <p className="text-sm text-gray-400">By {post.author}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

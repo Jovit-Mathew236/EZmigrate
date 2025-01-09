@@ -154,7 +154,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           </Breadcrumb>
           <div className="flex flex-col justify-between md:flex-row gap-x-8">
             <div className="max-w-2xl md:mt-20">
-              <h2 className="text-xl md:text-3xl font-normal mb-8">
+              <h2 className="text-xl md:text-3xl font-light mb-8">
                 {content.subTitle}
               </h2>
               <p className="text-base md:text-xl xl:text-2xl text-gray-700 font-light mb-8 max-w-xl xl:max-w-3xl">

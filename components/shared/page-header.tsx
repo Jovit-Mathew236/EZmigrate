@@ -56,10 +56,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
         <div className="container mx-auto px-6">
           <div className="flex justify-between flex-col md:flex-row gap-x-8">
             <div className="max-w-2xl xl:max-w-3xl md:mt-20">
-              <h2 className="text-xl md:text-3xl xl:text-5xl font-normal mb-8">
+              <h2 className="text-xl md:text-3xl xl:text-5xl font-light mb-8">
                 {content.subtitle}
               </h2>
-              <p className="text-base md:text-xl xl:text-2xl text-gray-700 font-light mb-8 max-w-xl xl:max-w-3xl">
+              <p className="text-light md:text-xl xl:text-2xl text-gray-700 font-light mb-8 max-w-xl xl:max-w-3xl">
                 {content.description}
               </p>
               {/* <Link

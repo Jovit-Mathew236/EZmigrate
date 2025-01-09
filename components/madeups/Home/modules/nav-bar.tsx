@@ -17,7 +17,8 @@ const NavBar = () => {
   // Define which routes have dark backgrounds
   const darkBackgroundRoutes = ["/about", "/contact", "/careers"];
   const whitebglogin = ["/blogs"];
-  const isDarkBackground = darkBackgroundRoutes.includes(pathname);
+  const isDarkBackground =
+    darkBackgroundRoutes.includes(pathname) || pathname.startsWith("/blogs/");
   const isWhiteBgLogin = whitebglogin.includes(pathname);
 
   useEffect(() => {

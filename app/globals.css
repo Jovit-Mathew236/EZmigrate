@@ -53,19 +53,19 @@
   h1 {
     font-size: 56px;
     line-height: 66px;
-    font-weight: 500; /* Medium */
+    font-weight: 300; /* light */
   }
 
   h2 {
-    font-size: 48px;
+    font-size: 36px;
     line-height: 58px;
-    font-weight: 500; /* Medium */
+    font-weight: 300; /* light */
   }
 
   h3 {
     font-size: 40px;
     line-height: 50px;
-    font-weight: 500; /* Medium */
+    font-weight: 500; /* light */
   }
 
   h4 {
@@ -85,7 +85,10 @@
     line-height: 30px;
     font-weight: 500; /* Medium */
   }
-
+  p {
+    font-size: 20px;
+    font-weight: 300;
+  }
   /* Axiforma Text Styles */
   .text-large-medium {
     font-size: 20px;
