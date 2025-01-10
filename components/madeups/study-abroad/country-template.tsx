@@ -10,12 +10,35 @@ import {
 } from "@/components/ui/breadcrumb";
 import ReactCountryFlag from "react-country-flag";
 import { StudyAbroadDestination } from "@/types/study-abroad";
-import { ArrowRight, Slash } from "lucide-react";
+import { ArrowRight, Plane, Slash } from "lucide-react";
+import Link from "next/link";
 
 interface CountryTemplateProps {
   country: StudyAbroadDestination;
 }
-
+const destinationCards = [
+  {
+    country: "USA",
+    countryCode: "US",
+    image: "/images/destination_banner_usa.png",
+    description: "Excellence in education and limitless opportunities.",
+    link: "/study-abroad/usa",
+  },
+  {
+    country: "Germany",
+    countryCode: "DE",
+    image: "/images/destination_banner_germany.png",
+    description: "Tuition-free education with cutting-edge innovation.",
+    link: "/study-abroad/germany",
+  },
+  {
+    country: "UK",
+    countryCode: "GB",
+    image: "/images/destination_banner_uk.png",
+    description: "Top universities in a rich cultural setting.",
+    link: "/study-abroad/uk",
+  },
+];
 const CountryTemplate = ({ country }: CountryTemplateProps) => {
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
@@ -219,8 +242,8 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
 
       {/* Unique Benefits Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-light mb-12">
+        <div className="container mx-auto px-5">
+          <h2 className="text-3xl md:text-4xl md:font-normal mb-12">
             Unique Benefits
           </h2>
 
@@ -228,15 +251,105 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
             {country.uniqueBenefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-[#D6E4FC]/30 p-8 flex flex-col items-center text-center"
+                className="bg-[#D6E4FC]/30 p-8 flex flex-col justify-center items-center text-center"
               >
-                <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm">{benefit.description}</p>
+                <h3 className="text-2xl font-medium mb-4">{benefit.title}</h3>
+                <p className="text-light text-md">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <div className="relative z-10 bg-black py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-2xl md:text-5xl text-white font-light mb-12">
+            {" "}
+            Popular Study Abroad Destinations
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {destinationCards.map((destination, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg overflow-hidden relative hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="relative h-48 flex items-end justify-center">
+                  <Image
+                    src={destination.image}
+                    alt={`${destination.country} cityscape`}
+                    fill
+                    quality={100}
+                    className="object-cover"
+                  />
+                  <div className="z-10 -mb-3 w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                    <Plane color="white" size={20} />
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <div className="flex items-start space-x-3 mb-2">
+                    <ReactCountryFlag
+                      countryCode={destination.countryCode}
+                      svg
+                      style={{
+                        width: "44px",
+                        height: "44px",
+                        objectFit: "cover",
+                      }}
+                      title={destination.country}
+                      className="rounded-full border-primary border-[1px]"
+                    />
+                    <div>
+                      <h3 className="font-light">{destination.country}</h3>
+                      <p className="text-gray-600 text-sm">
+                        {destination.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="relative my-4">
+                    <div className="absolute -left-9 -top-3 h-6 w-6 rounded-full bg-black"></div>
+                    <div className="absolute -right-9 -top-3 h-6 w-6 rounded-full bg-black"></div>
+                    <div className="border-t-2 border-dashed border-gray-800"></div>
+                  </div>
+                  <div className="inline-flex w-full place-content-end">
+                    <Link
+                      href={destination.link}
+                      className="inline-flex items-center px-2 rounded-xl bg-zinc-100 text-blue-600 text-sm font-medium"
+                    >
+                      Learn more
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 md:mt-16 text-white">
+            <Link
+              href="/study-abroad"
+              className="inline-flex font-light w-full md:w-auto justify-center items-center border border-white px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300"
+            >
+              View more destinations
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
