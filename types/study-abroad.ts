@@ -1,3 +1,8 @@
+export interface UniqueBenefit {
+  title: string;
+  description: string;
+}
+
 export interface StudyAbroadDestination {
   country: string;
   countryCode: string;
@@ -5,6 +10,8 @@ export interface StudyAbroadDestination {
   subTitle: string;
   description: string;
   link: string;
+  whyStudyImage?: string;
+  uniqueBenefits: UniqueBenefit[];
   capital?: string;
   language?: string;
   currency?: string;
@@ -30,6 +37,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/new-zealand",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Germany",
@@ -39,6 +61,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/germany",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "UK",
@@ -48,6 +85,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/uk",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "USA",
@@ -57,6 +109,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/usa",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Canada",
@@ -66,6 +133,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/canada",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Australia",
@@ -75,6 +157,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/australia",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Finland",
@@ -84,6 +181,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/finland",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "France",
@@ -93,6 +205,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/france",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Ireland",
@@ -102,6 +229,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/ireland",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Italy",
@@ -111,6 +253,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Switzerland",
@@ -120,6 +277,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "China",
@@ -129,6 +301,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Ukraine",
@@ -138,6 +325,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Georgia",
@@ -147,6 +349,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Estonia",
@@ -156,6 +373,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Armenia",
@@ -165,6 +397,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Timor Leste",
@@ -174,6 +421,21 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
   {
     country: "Philippines",
@@ -183,5 +445,20 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    uniqueBenefits: [
+      {
+        title: "Post-Study Work Opportunities",
+        description:
+          "Gain practical experience with work visas and opportunities for permanent residency.",
+      },
+      {
+        title: "Part-Time Work",
+        description: "Support your studies while earning and learning.",
+      },
+      {
+        title: "Global Mobility",
+        description: "A pathway to explore the Asia-Pacific region.",
+      },
+    ],
   },
 ];

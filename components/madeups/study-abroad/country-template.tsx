@@ -21,14 +21,6 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
     <div className="flex flex-col min-h-screen xl:min-h-fit">
       {/* Hero Banner Section */}
       <div>
-        {/* <video
-          autoPlay
-          loop
-          muted
-          className="fixed bg-top top-0 left-0 w-full h-80 md:h-96 object-cover -z-10"
-        >
-          <source src="/video/services.mp4" type="video/mp4" />
-        </video> */}
         <Image
           src={country.image}
           alt={`${country.country} education`}
@@ -199,6 +191,65 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Study Section with Image */}
+      <section className="bg-black text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-start">
+            {/* Text Content */}
+
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              Why study in {country.country}?
+            </h2>
+            <p className="text-base md:text-lg font-light leading-relaxed">
+              {country.country} offers a high-standard international education
+              system renowned for its quality and practical learning approach.
+              Its globally ranked institutions provide diverse degree programs
+              in engineering, business, healthcare, information technology,
+              sciences, and more. With affordable tuition and numerous
+              scholarships, studying here is both enriching and cost-effective.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Unique Benefits Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-light mb-12">
+            Unique Benefits
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Post-Study Work Card */}
+            <div className="bg-gray-50 p-8 rounded-lg flex flex-col items-center text-center">
+              <h3 className="text-xl font-medium mb-4">
+                Post-Study Work Opportunities
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Gain practical experience with work visas and opportunities for
+                permanent residency.
+              </p>
+            </div>
+
+            {/* Part-Time Work Card */}
+            <div className="bg-gray-50 p-8 rounded-lg flex flex-col items-center text-center">
+              <h3 className="text-xl font-medium mb-4">Part-Time Work</h3>
+              <p className="text-gray-600 text-sm">
+                Support your studies while earning and learning.
+              </p>
+            </div>
+
+            {/* Global Mobility Card */}
+            <div className="bg-gray-50 p-8 rounded-lg flex flex-col items-center text-center">
+              <h3 className="text-xl font-medium mb-4">Global Mobility</h3>
+              <p className="text-gray-600 text-sm">
+                A pathway to explore the Asia-Pacific region.
+              </p>
             </div>
           </div>
         </div>
