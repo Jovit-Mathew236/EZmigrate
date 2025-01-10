@@ -225,32 +225,15 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Post-Study Work Card */}
-            <div className="bg-gray-50 p-8 rounded-lg flex flex-col items-center text-center">
-              <h3 className="text-xl font-medium mb-4">
-                Post-Study Work Opportunities
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Gain practical experience with work visas and opportunities for
-                permanent residency.
-              </p>
-            </div>
-
-            {/* Part-Time Work Card */}
-            <div className="bg-gray-50 p-8 rounded-lg flex flex-col items-center text-center">
-              <h3 className="text-xl font-medium mb-4">Part-Time Work</h3>
-              <p className="text-gray-600 text-sm">
-                Support your studies while earning and learning.
-              </p>
-            </div>
-
-            {/* Global Mobility Card */}
-            <div className="bg-gray-50 p-8 rounded-lg flex flex-col items-center text-center">
-              <h3 className="text-xl font-medium mb-4">Global Mobility</h3>
-              <p className="text-gray-600 text-sm">
-                A pathway to explore the Asia-Pacific region.
-              </p>
-            </div>
+            {country.uniqueBenefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="bg-[#D6E4FC]/30 p-8 flex flex-col items-center text-center"
+              >
+                <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm">{benefit.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
