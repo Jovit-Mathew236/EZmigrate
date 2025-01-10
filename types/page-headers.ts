@@ -26,10 +26,26 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
     subtitle: "Discover Your Path to Global Education",
     description:
       "Embark on your international education journey with top destinations like the USA, UK, Canada, Australia, New Zealand, Germany, and more. Get insights on universities, courses, scholarships, and visas. Shape your future with personalized guidance and seamless support every step of the way!",
-    formOptionTitle: "Select Country",
+    formOptionTitle: "Country",
     formSelectOptions: [
       { label: "New Zealand", value: "new-zealand" },
       { label: "Australia", value: "australia" },
+      { label: "Germany", value: "germany" },
+      { label: "UK", value: "uk" },
+      { label: "USA", value: "usa" },
+      { label: "Canada", value: "canada" },
+      { label: "Finland", value: "finland" },
+      { label: "France", value: "france" },
+      { label: "Ireland", value: "ireland" },
+      { label: "Italy", value: "italy" },
+      { label: "Switzerland", value: "switzerland" },
+      { label: "China", value: "china" },
+      { label: "Ukraine", value: "ukraine" },
+      { label: "Georgia", value: "georgia" },
+      { label: "Estonia", value: "estonia" },
+      { label: "Armenia", value: "armenia" },
+      { label: "Timor Leste", value: "timor-leste" },
+      { label: "Philippines", value: "philippines" },
     ],
   },
   "new-zealand": {
@@ -37,7 +53,7 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
     backgroundImage: "/images/new-zealand-banner.jpg",
     subtitle: "New Zealand",
     description: "New Zealand",
-    formOptionTitle: "Select visa type",
+    formOptionTitle: "Visa Type",
     formSelectOptions: [
       { label: "Student Visa", value: "student-visa" },
       { label: "Work Visa", value: "work-visa" },
@@ -55,7 +71,7 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
     subtitle: "Seamless Visa Solutions for Every Journey",
     description:
       "Our Visa Services provide comprehensive support for work, travel, business, or migration visas. We assist with eligibility assessments, document preparation, application submissions, and interview coaching, ensuring a smooth and hassle-free process from start to finish. Let us guide you toward successfully securing your visa with confidence and ease.",
-    formOptionTitle: "Select visa type",
+    formOptionTitle: "Visa Type",
     formSelectOptions: [
       { label: "Student Visa", value: "student-visa" },
       { label: "Work Visa", value: "work-visa" },

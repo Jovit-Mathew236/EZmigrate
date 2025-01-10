@@ -1,66 +1,99 @@
 import React from "react";
-import { PageHeaderContent } from "@/types/page-headers";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import ReactCountryFlag from "react-country-flag";
+import { StudyAbroadDestination } from "@/types/study-abroad";
+import { ArrowRight, Slash } from "lucide-react";
 
-interface PageHeaderProps {
-  content: PageHeaderContent;
+interface CountryTemplateProps {
+  country: StudyAbroadDestination;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
+const CountryTemplate = ({ country }: CountryTemplateProps) => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen xl:min-h-fit">
       {/* Hero Banner Section */}
       <div>
-        {content.backgroundVideo ? (
-          <video
-            autoPlay
-            loop
-            muted
-            className={`fixed top-0 left-0 w-full h-80 md:h-96 object-cover -z-10 ${
-              content.backgroundVideo.position === "center"
-                ? "object-center"
-                : "object-bottom"
-            }`}
-          >
-            <source
-              src={content.backgroundVideo.src}
-              type={content.backgroundVideo.type}
-            />
-          </video>
-        ) : (
-          <div
-            className="fixed top-0 left-0 w-full h-80 md:h-96 -z-10 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${content.backgroundImage})`,
-            }}
-          />
-        )}
+        {/* <video
+          autoPlay
+          loop
+          muted
+          className="fixed bg-top top-0 left-0 w-full h-80 md:h-96 object-cover -z-10"
+        >
+          <source src="/video/services.mp4" type="video/mp4" />
+        </video> */}
+        <Image
+          src={country.image}
+          alt={`${country.country} education`}
+          width={2000}
+          height={2000}
+          className="fixed bg-center top-0 left-0 w-full h-80 md:h-96 object-cover -z-10"
+          priority
+        />
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50 -z-5 max-h-80 md:max-h-96" />
 
-        {/* Content */}
+        {/* country */}
         <div className="relative z-10 flex items-end justify-start min-h-80 md:min-h-96 pb-20">
           <div className="container mx-auto px-6 relative">
             <div className="max-w-3xl text-white mb-3">
               <h1 className="text-5xl font-extralight text-white -mb-16 md:mb-3">
-                {content.title}
+                {country.country}
               </h1>
             </div>
           </div>
         </div>
       </div>
+
       {/* Main Description Section */}
       <section className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-6">
-          <div className="flex justify-between flex-col md:flex-row gap-x-8">
-            <div className="max-w-2xl xl:max-w-3xl md:mt-20">
-              <h2 className="text-xl md:text-3xl xl:text-5xl font-light mb-8">
-                {content.subtitle}
+          <Breadcrumb className="mb-8 hidden md:block">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink
+                  href="/"
+                  className="text-black font-light hover:text-gray-200"
+                >
+                  Home
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="text-black">
+                <Slash className="w-4 h-4" />
+              </BreadcrumbSeparator>
+              <BreadcrumbItem>
+                <BreadcrumbLink
+                  href="/study-abroad"
+                  className="text-black hover:text-gray-200 scroll-smooth"
+                >
+                  Study Abroad
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="text-black">
+                <Slash className="w-4 h-4" />
+              </BreadcrumbSeparator>
+              <BreadcrumbItem>
+                <BreadcrumbPage className="text-black">
+                  {country.country}
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          <div className="flex flex-col justify-between md:flex-row gap-x-8">
+            <div className="max-w-2xl md:mt-20">
+              <h2 className="text-xl md:text-3xl font-light mb-8">
+                {country.subTitle}
               </h2>
-              <p className="text-light md:text-xl xl:text-2xl text-gray-700 font-light mb-8 max-w-xl xl:max-w-3xl">
-                {content.description}
+              <p className="text-base md:text-xl xl:text-2xl text-gray-700 font-light mb-8 max-w-xl xl:max-w-3xl">
+                {country.description}
               </p>
               {/* <Link
                 href="/contact"
@@ -85,17 +118,13 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                 </div>
 
                 <div>
-                  <label className="block mb">{content.formOptionTitle}*</label>
+                  <label className="block mb">Country*</label>
                   <select
-                    className="w-full p-3 border border-b-black border-stone-400 appearance-none bg-white"
+                    className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                     required
                   >
-                    <option value="">Select {content.formOptionTitle}</option>
-                    {content.formSelectOptions?.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
+                    <option>{country.country}</option>
+                    {/* Add more options as needed */}
                   </select>
                 </div>
 
@@ -178,4 +207,4 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
   );
 };
 
-export default PageHeader;
+export default CountryTemplate;
