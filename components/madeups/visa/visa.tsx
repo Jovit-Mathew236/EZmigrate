@@ -1,6 +1,7 @@
 import PageHeader from "@/components/shared/page-header";
 import { pageHeaders } from "@/types/page-headers";
 import { ArrowRight, Plane } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ReactCountryFlag from "react-country-flag";
@@ -104,10 +105,115 @@ const processSteps = [
   },
 ];
 
+const whyChooseUs = [
+  {
+    id: 1,
+    title: "100K+ Successful\nVisa Applications",
+    description:
+      "Join thousands of successful applicants who trust EZmigrate for their visa journey.",
+    icon: (
+      <svg
+        width="64"
+        height="68"
+        viewBox="0 0 64 68"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.1105 0.0109863H44.6297C45.3251 0.0109863 45.9238 0.0109862 46.4646 0.0766579C48.4027 0.318053 50.203 1.20515 51.5753 2.5949C52.9475 3.98466 53.8117 5.79608 54.0285 7.73707H57.1421C57.9611 7.72934 59.7574 7.71389 61.2408 8.70669C63.1607 9.98536 63.7402 12.1834 63.7402 14.4974C63.7402 25.028 58.1272 32.0588 50.9612 35.9643C46.963 43.2423 39.5769 48.299 31.8701 48.299C26.0021 48.299 20.4355 45.1236 16.4295 40.7313C15.0984 39.2791 13.93 37.6858 12.945 35.9798C5.78297 32.0935 0 25.0705 0 14.4974C0 12.1796 0.579456 9.98536 2.49552 8.70669C3.98279 7.71389 5.77911 7.72934 6.59807 7.73707H9.71168L9.72327 7.6289C9.96212 5.70912 10.8346 3.9239 12.2026 2.55594C13.5705 1.18799 15.3557 0.315502 17.2755 0.0766579C17.8163 0.0109862 18.4151 0.0109863 19.1105 0.0109863ZM15.4522 10.6343V10.6459L15.4135 24.155V24.1589C15.4135 26.9441 16.2093 29.7912 17.5884 32.3987L17.6425 32.4953C18.4731 34.0482 19.5122 35.5085 20.7136 36.8219C23.9663 40.3914 28.0843 42.5044 31.8739 42.5044C37.3672 42.5044 43.1579 38.5332 46.1672 32.6769C47.5342 30.044 48.2496 27.1216 48.2532 24.155L48.2455 24.1473L48.2919 9.61837C48.2919 8.68351 48.2841 8.47877 48.2687 8.34356C48.1887 7.70449 47.898 7.11029 47.4425 6.65487C46.9871 6.19944 46.3929 5.90875 45.7538 5.82873C45.3294 5.80346 44.9041 5.79573 44.479 5.80555H19.265C18.3263 5.80555 18.1254 5.80941 17.9902 5.82873C17.3511 5.90875 16.7569 6.19944 16.3015 6.65487C15.8461 7.11029 15.5554 7.70449 15.4753 8.34356C15.4501 8.768 15.4423 9.1933 15.4522 9.61837V10.6343ZM54.0748 13.5316L54.0401 24.155V24.1589M53.9512 26.241C56.4158 23.2742 57.9495 19.4035 57.9495 14.4974C57.9495 14.0415 57.9108 13.7402 57.8761 13.5509C57.579 13.533 57.2813 13.5266 56.9837 13.5316H54.0748M9.69623 26.017C9.63796 25.398 9.60959 24.7767 9.61124 24.155V24.1473L9.64601 13.5316H6.76032C6.33925 13.5316 6.0727 13.5316 5.86796 13.5509C5.81366 13.8634 5.78909 14.1803 5.79456 14.4974C5.79456 19.276 7.29342 23.0733 9.69623 26.017ZM31.8701 50.2305C32.6385 50.2305 33.3754 50.5358 33.9188 51.0791C34.4621 51.6225 34.7674 52.3594 34.7674 53.1278V61.8196H47.3222C48.0907 61.8196 48.8276 62.1249 49.3709 62.6682C49.9143 63.2116 50.2195 63.9485 50.2195 64.7169C50.2195 65.4853 49.9143 66.2223 49.3709 66.7656C48.8276 67.309 48.0907 67.6142 47.3222 67.6142H16.4179C15.6495 67.6142 14.9126 67.309 14.3692 66.7656C13.8259 66.2223 13.5206 65.4853 13.5206 64.7169C13.5206 63.9485 13.8259 63.2116 14.3692 62.6682C14.9126 62.1249 15.6495 61.8196 16.4179 61.8196H28.9728V53.1278C28.9728 52.3594 29.2781 51.6225 29.8214 51.0791C30.3647 50.5358 31.1017 50.2305 31.8701 50.2305Z"
+          fill="white"
+        />
+        <path
+          d="M30.9859 12.7779C31.0601 12.6037 31.1839 12.4552 31.3419 12.3508C31.4999 12.2463 31.685 12.1907 31.8744 12.1907C32.0638 12.1907 32.2489 12.2463 32.4069 12.3508C32.5649 12.4552 32.6887 12.6037 32.7629 12.7779L34.7137 17.4599C34.7818 17.6233 34.8935 17.7649 35.0365 17.8691C35.1796 17.9734 35.3486 18.0363 35.525 18.051L40.5817 18.4566C40.7719 18.4717 40.9534 18.5427 41.1032 18.6608C41.2531 18.779 41.3646 18.9388 41.4237 19.1202C41.4828 19.3017 41.4868 19.4965 41.4353 19.6802C41.3838 19.8639 41.279 20.0283 41.1341 20.1525L37.2827 23.4515C37.148 23.5674 37.048 23.7181 36.9934 23.8871C36.9389 24.0561 36.9321 24.2369 36.9736 24.4095L38.148 29.3388C38.1933 29.5248 38.1822 29.7201 38.1163 29.8998C38.0504 30.0796 37.9325 30.2356 37.7776 30.3482C37.6228 30.4609 37.438 30.5249 37.2467 30.5322C37.0554 30.5396 36.8662 30.4899 36.7032 30.3895L32.3766 27.7472C32.2253 27.6551 32.0515 27.6064 31.8744 27.6064C31.6973 27.6064 31.5235 27.6551 31.3722 27.7472L27.0456 30.3895C26.8826 30.4899 26.6934 30.5396 26.5021 30.5322C26.3108 30.5249 26.126 30.4609 25.9712 30.3482C25.8163 30.2356 25.6984 30.0796 25.6325 29.8998C25.5666 29.7201 25.5555 29.5248 25.6008 29.3388L26.779 24.4095C26.8206 24.2369 26.8137 24.0561 26.7592 23.8871C26.7047 23.7181 26.6046 23.5674 26.47 23.4515L22.6147 20.1525C22.4685 20.0286 22.3625 19.864 22.3102 19.6796C22.2578 19.4953 22.2615 19.2995 22.3207 19.1173C22.38 18.9351 22.4921 18.7746 22.6428 18.6562C22.7935 18.5379 22.976 18.467 23.1671 18.4527L28.22 18.051C28.397 18.037 28.5668 17.9744 28.7106 17.8701C28.8544 17.7658 28.9667 17.6239 29.0351 17.4599L30.9859 12.7779Z"
+          fill="white"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: 2,
+    title: "Experienced\nProfessionals",
+    description:
+      "Work with a team of seasoned experts skilled in handling every type of visa application.",
+    icon: (
+      <svg
+        width="68"
+        height="68"
+        viewBox="0 0 68 68"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M63.7543 54.4337C64.2911 54.0156 64.7191 53.4741 65.0017 52.8552C65.2844 52.2362 65.4133 51.5582 65.3776 50.8787C65.342 50.1992 65.1427 49.5384 64.7968 48.9524C64.4509 48.3665 63.9686 47.8728 63.3909 47.5132L63.374 22.9156L59.1491 25.7463V47.5048C58.5773 47.8635 58.0997 48.354 57.7564 48.9353C57.4132 49.5165 57.2142 50.1716 57.1761 50.8455C57.138 51.5195 57.262 52.1928 57.5377 52.809C57.8133 53.4252 58.2326 53.9664 58.7604 54.3872L57.1634 56.5081C55.743 58.3151 54.9562 60.5389 54.9242 62.8371V67.9999H58.3675C59.1947 67.9999 59.9982 67.7239 60.651 67.2158C61.3037 66.7077 61.7683 65.9965 61.9714 65.1946L63.3698 59.5501V67.9999H67.5948V62.8878C67.5581 60.5786 66.7656 58.3451 65.3386 56.5292L63.7543 54.4337ZM33.7995 0.396729L0 17.2965L33.7995 38.4212L67.599 17.2965L33.7995 0.396729Z"
+          fill="white"
+        />
+        <path
+          d="M33.7966 42.6457L12.6719 28.5767V35.8013C12.6719 39.646 25.0932 51.0956 33.7966 51.0956C42.4999 51.0956 54.9212 39.646 54.9212 35.8013V28.5767L33.7966 42.6457Z"
+          fill="white"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: 3,
+    title: "Personalized\nSupport",
+    description:
+      "Enjoy dedicated, one-on-one assistance tailored to your specific needs and goals.",
+    icon: (
+      <svg
+        width="66"
+        height="70"
+        viewBox="0 0 66 70"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.2716 60.6114L9.27189 60.6116C14.5059 63.947 21.5216 65.5021 29.0019 65.5021C30.4448 65.5021 31.8666 65.4442 33.2674 65.3284L33.8426 65.2808L33.7136 64.7183C33.4272 63.4698 33.4337 62.1721 33.7324 60.9266L33.8954 60.2473L33.1998 60.3121C31.8427 60.4386 30.4434 60.5019 29.0019 60.5019C22.1213 60.5019 16.1362 59.0569 11.9618 56.3923L11.9617 56.3923C7.88708 53.7924 5.50028 50.0503 5.50028 45.0014C5.50028 43.0687 7.06528 41.5013 9.03656 41.5013H47.0952H47.6163L47.5948 40.9806C47.554 39.9955 47.7132 39.0124 48.0628 38.0905L48.0631 38.0897L48.4071 37.1776L48.6623 36.5012H47.9393L9.03881 36.5012C9.03852 36.5012 9.03824 36.5012 9.03795 36.5012C7.91872 36.4962 6.80953 36.7124 5.77404 37.1372C4.73829 37.5621 3.79668 38.1874 3.00327 38.9773C2.20986 39.7671 1.58029 40.7059 1.15071 41.7397C0.721125 42.7735 0.499989 43.8819 0.5 45.0014C0.5 51.9572 3.93779 57.2072 9.2716 60.6114ZM52.004 36.152L52.0038 36.1526L50.8725 39.1507C50.8723 39.1511 50.8721 39.1516 50.8719 39.1521C50.5756 39.9279 50.5125 40.7734 50.6903 41.5845C50.8683 42.3961 51.2797 43.138 51.8739 43.7188C51.874 43.7188 51.874 43.7189 51.8741 43.719L55.2206 46.993C54.9006 51.0492 52.9732 54.2083 49.3978 56.5028L44.7022 55.3912L44.7 55.3907C43.8713 55.1984 43.0063 55.2308 42.1942 55.4844C41.3822 55.7381 40.6525 56.2039 40.0806 56.8337L40.0787 56.8358L37.9017 59.2604C37.3865 59.8133 36.997 60.4711 36.7602 61.1888C36.5227 61.9081 36.4442 62.6703 36.53 63.4229C36.6158 64.1754 36.8638 64.9004 37.257 65.5479C37.6501 66.1953 38.1791 66.7497 38.8073 67.1728L40.1898 68.1118L40.1902 68.1121C41.9662 69.3156 44.2581 69.9349 46.4212 69.1524L46.4219 69.1521C52.0059 67.1233 57.1719 62.1613 60.7075 56.3662C64.2413 50.5738 66.2066 43.8494 65.2655 38.2385L65.2655 38.238C64.8951 36.0425 63.1642 34.4683 61.1805 33.6212L59.6287 32.9573L59.6281 32.9571C56.6605 31.6922 53.139 33.1561 52.004 36.152ZM29.0019 0.5C24.6256 0.5 20.4285 2.23844 17.3339 5.33288C14.2393 8.42733 12.5008 12.6243 12.5008 17.0005C12.5008 21.3767 14.2393 25.5737 17.3339 28.6681C20.4285 31.7626 24.6256 33.501 29.0019 33.501C33.3783 33.501 37.5754 31.7626 40.67 28.6681C43.7645 25.5737 45.5031 21.3767 45.5031 17.0005C45.5031 12.6243 43.7645 8.42733 40.67 5.33288C37.5754 2.23844 33.3783 0.5 29.0019 0.5ZM17.5011 17.0005C17.5011 13.9504 18.7128 11.0253 20.8696 8.86852C23.0264 6.71178 25.9517 5.50013 29.0019 5.50013C32.0522 5.50013 34.9775 6.71178 37.1343 8.86852C39.2911 11.0253 40.5028 13.9504 40.5028 17.0005C40.5028 20.0506 39.2911 22.9758 37.1343 25.1325C34.9775 27.2893 32.0522 28.5009 29.0019 28.5009C25.9517 28.5009 23.0264 27.2893 20.8696 25.1325C18.7128 22.9758 17.5011 20.0506 17.5011 17.0005Z"
+          fill="white"
+          stroke="white"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: 4,
+    title: "Seamless Online\nServices",
+    description:
+      "Access convenient online services with a dedicated agent to guide you at every step.",
+    icon: (
+      <svg
+        width="72"
+        height="72"
+        viewBox="0 0 72 72"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M69.6045 36.2341C69.6045 40.6731 68.7301 45.0686 67.0314 49.1697C65.3327 53.2707 62.8428 56.9971 59.704 60.1359C56.5652 63.2747 52.8389 65.7646 48.7378 67.4633C44.6367 69.162 40.2412 70.0363 35.8022 70.0363C31.3633 70.0363 26.9677 69.162 22.8667 67.4633C18.7656 65.7646 15.0393 63.2747 11.9004 60.1359C8.76162 56.9971 6.27176 53.2707 4.57304 49.1697C2.87432 45.0686 2 40.6731 2 36.2341C2 27.2692 5.5613 18.6715 11.9004 12.3323C18.2396 5.99318 26.8373 2.43188 35.8022 2.43188C44.7671 2.43188 53.3649 5.99318 59.704 12.3323C66.0432 18.6715 69.6045 27.2692 69.6045 36.2341Z"
+          stroke="white"
+          strokeWidth="3.5"
+        />
+        <path
+          d="M49.3219 36.2341C49.3219 40.6721 48.9703 45.0696 48.291 49.1696C47.6149 53.2696 46.6178 56.9944 45.3604 60.1345C44.1064 63.2746 42.6158 65.7623 40.9765 67.4625C39.3338 69.1593 37.5762 70.0347 35.8017 70.0347C34.0271 70.0347 32.2695 69.1593 30.6302 67.4625C28.9875 65.7623 27.4969 63.2712 26.2429 60.1345C24.9855 56.9944 23.9884 53.273 23.309 49.1696C22.6157 44.8928 22.2721 40.5667 22.2814 36.2341C22.2814 31.7961 22.6296 27.3987 23.309 23.2987C23.9884 19.1987 24.9855 15.4738 26.2429 12.3338C27.4969 9.1937 28.9875 6.70598 30.6268 5.00581C32.2695 3.31241 34.0271 2.43359 35.8017 2.43359C37.5762 2.43359 39.3338 3.30903 40.9731 5.00581C42.6158 6.70598 44.1064 9.19708 45.3604 12.3338C46.6178 15.4738 47.6149 19.1953 48.291 23.2987C48.9737 27.3987 49.3219 31.7961 49.3219 36.2341Z"
+          stroke="white"
+          strokeWidth="3.5"
+        />
+        <path
+          d="M2.00781 36.2344H69.6089"
+          stroke="white"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+];
+
 const Visa = () => {
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
       <PageHeader content={pageHeaders["visa"]} />
+
       <div className="relative z-10 bg-black py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl text-white font-light mb-12">
@@ -210,7 +316,7 @@ const Visa = () => {
                     </div>
                   </div>
                   <h3 className="text-2xl font-medium mb-3">{step.title}</h3>
-                  <p className="text-sm">{step.description}</p>
+                  <p className="text-base md:text-sm">{step.description}</p>
                   {index < processSteps.length - 1 && (
                     <div className="hidden rotate-90 md:rotate-0 lg:block md:absolute md:top-8 -right-32 w-40">
                       {/* <hr className="border-t-2 border-dashed" /> */}
@@ -238,6 +344,209 @@ const Visa = () => {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-black text-white py-16 md:py-20">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-light mb-4">
+            Why Choose EZmigrate as Your Visa Partner?
+          </h2>
+          <p className="mb-16 text-lg font-light">
+            We make your global aspirations a reality!
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item) => (
+              <div key={item.id} className="text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16">{item.icon}</div>
+                </div>
+                <h3 className="text-xl font-medium mb-3">
+                  {item.title.split("\n").map((line, i) => (
+                    <React.Fragment key={i}>
+                      {line}
+                      {i < item.title.split("\n").length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </h3>
+                <p className="text-sm text-gray-300">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Add this new section before the black background section */}
+      <div className="bg-stone-600">
+        <div className="container mx-auto px-6 py-16">
+          <h1 className="text-4xl md:text-5xl font-light mb-4">
+            Visa Solutions by EZmigrate
+          </h1>
+          <p className="mb-12">
+            Simplify your global journey with EZmigrate—your trusted partner for
+            all visa-related services.
+          </p>
+
+          <div className="space-y-12">
+            <section>
+              <h2 className="text-4xl font-light mb-4">What is a Visa?</h2>
+              <p className="">
+                A visa is an official travel document that allows foreign
+                nationals to enter, stay, or travel within a country for
+                specific purposes like work, study, business, or tourism. Each
+                visa type has its unique criteria and procedures, making expert
+                guidance essential.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-4xl font-light mb-6">Types of Visa</h2>
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-xl text-info mb-2">
+                    Permanent Residency (PR) Visa
+                  </h1>
+                  <p className="">
+                    A PR visa allows you to live and work in a country
+                    permanently, with the opportunity to apply for citizenship
+                    in many cases.
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-xl text-info mb-2">Visit/Tourist Visa</h1>
+                  <p className="">
+                    For short-term stays, a tourist visa enables you to travel
+                    temporarily for leisure, business, or transit purposes.
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-xl text-info mb-2">Student Visa</h1>
+                  <p className="">
+                    Students enrolled in recognized institutions abroad need a
+                    study visa. This non-immigrant visa lets you pursue higher
+                    education in foreign countries.
+                  </p>
+                </div>
+                <div>
+                  <h1 className="text-xl text-info mb-2">Work Visa</h1>
+                  <p className="">
+                    Work visas are issued for temporary or permanent employment
+                    abroad. Employers often sponsor these visas, ensuring you
+                    meet the eligibility requirements.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-4xl font-light mb-6">
+                Why Choose EZmigrate?
+              </h2>
+              <p className=" mb-4">
+                At EZmigrate, we simplify the complex visa processes to ensure a
+                hassle-free experience for you.
+              </p>
+              <ul className="list-disc pl-5 space-y-2 ">
+                <li>
+                  Expert Guidance: From selecting the right visa to
+                  documentation and submission.
+                </li>
+                <li>
+                  Tailored Strategies: Personalized plans to enhance your visa
+                  success rate.
+                </li>
+                <li>
+                  Comprehensive Support: Financial advice, document preparation,
+                  and application review.
+                </li>
+                <li>
+                  Seamless Process: Streamlined services for confident visa
+                  filing.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-4xl font-light mb-6">
+                How EZmigrate Can Help
+              </h2>
+              <ol className="list-decimal pl-5 space-y-2 ">
+                <li>Identify the best visa strategy based on your needs.</li>
+                <li>Advise on financial and document requirements.</li>
+                <li>
+                  Assist in filling out forms and completing your application.
+                </li>
+                <li>
+                  Provide a thorough review of all documents before submission.
+                </li>
+              </ol>
+            </section>
+
+            <section>
+              <h2 className="text-4xl font-light mb-6">
+                General Steps to Apply for a Visa
+              </h2>
+              <ol className="list-decimal pl-5 space-y-2 ">
+                <li>
+                  <span className="font-medium">Choose Your Visa:</span> Select
+                  the appropriate visa type based on your purpose.
+                </li>
+                <li>
+                  <span className="font-medium">Prepare Your Application:</span>{" "}
+                  Gather and organize all required documents.
+                </li>
+                <li>
+                  <span className="font-medium">
+                    Attend Embassy/Consulate Appointment:
+                  </span>{" "}
+                  Submit biometrics or attend an interview.
+                </li>
+                <li>
+                  <span className="font-medium">Await Decision:</span> Receive
+                  updates on your application status.
+                </li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </div>
+      {/* advisor section */}
+
+      {/* Advisor Section */}
+      <div className="bg-black text-white">
+        <div className="container mx-auto px-6 py-16">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="w-full md:w-1/2 mb-8 md:mb-0 flex flex-col h-full justify-between">
+              <h3 className="text-3xl md:text-4xl font-light mb-6">
+                Immigration Advisor
+              </h3>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-light mb-6">
+                  Shamsher Singh
+                </h2>
+                <div className="space-y-3">
+                  <p className="text-lg">
+                    License Immigration Advisor No. :{" "}
+                    <span className="text-blue-500">201700472</span>
+                  </p>
+                  <p className="text-lg">
+                    Migration Agent Register No. :{" "}
+                    <span className="text-blue-500">2318106</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+              <Image
+                src="/images/advisor.png"
+                alt="Immigration Advisor"
+                width={300}
+                height={300}
+                className="w-64 md:w-96 object-cover -mb-16"
+              />
+            </div>
           </div>
         </div>
       </div>
