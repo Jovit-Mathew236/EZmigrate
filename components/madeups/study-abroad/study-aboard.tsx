@@ -32,8 +32,8 @@ const StudyAboard = () => {
                     quality={100}
                     className="object-cover"
                   />
-                  <div className="z-10 -mb-3 w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                    <Plane color="white" size={20} />
+                  <div className="z-10 -mb-4 w-8 h-8 bg-black rounded-full flex items-center rotate-45 justify-center">
+                    <Plane color="white" fill="white" size={20} />
                   </div>
                 </div>
 

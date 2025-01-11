@@ -263,7 +263,7 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
 
       <div className="relative z-10 bg-black py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-2xl md:text-5xl text-white font-light mb-12">
+          <h2 className="text-4xl md:text-5xl text-white font-light mb-12">
             {" "}
             Popular Study Abroad Destinations
           </h2>
@@ -282,8 +282,8 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
                     quality={100}
                     className="object-cover"
                   />
-                  <div className="z-10 -mb-3 w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                    <Plane color="white" size={20} />
+                  <div className="z-10 -mb-4 w-8 h-8 bg-black rounded-full flex items-center rotate-45 justify-center">
+                    <Plane color="white" fill="white" size={20} />
                   </div>
                 </div>
 
