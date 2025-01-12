@@ -1,10 +1,12 @@
+"use client";
 import PageHeader from "@/components/shared/page-header";
 import { pageHeaders } from "@/types/page-headers";
 import { ArrowRight, Plane } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
+
 const destinationCards = [
   {
     country: "New Zealand",
@@ -208,8 +210,126 @@ const whyChooseUs = [
     ),
   },
 ];
+const faqData = [
+  {
+    question: "When will I require a visa?",
+    answer:
+      "A visa is required when you plan to travel, work, study, or migrate to another country, depending on the country's immigration policies.",
+  },
+  {
+    question: "Why do I need a visa to travel?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "What is a visa policy, and how does it work?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "Why are there visa restrictions in certain countries?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "What are the different types of visas?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "What documents are required for a visa interview?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "How much does it cost to get a visa?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "How long does it take to get a visa?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+  },
+  {
+    question: "How do I apply for a visa?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "Which visa categories does EZmigrate process?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "What is a visa?",
+    answer:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];
+
+// Add this FAQ component at the top level of your file
+const FAQItem = ({
+  item,
+  isOpen,
+  index,
+  onToggle,
+}: {
+  item: { question: string; answer: string };
+  isOpen: boolean;
+  index: number;
+  onToggle: (index: number) => void;
+}) => {
+  return (
+    <div className="border-b border-black py-6">
+      <button
+        onClick={() => onToggle(index)}
+        className="flex justify-between items-center w-full text-left"
+      >
+        <h1 className="text-lg text-black font-bold">{item.question}</h1>
+        <span className="ml-6">
+          <svg
+            className="w-6 h-6 transition-transform duration-200"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M20 12H4"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 4v16m8-8H4"
+              />
+            )}
+          </svg>
+        </span>
+      </button>
+      <div
+        className={`grid transition-all duration-200 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-3">
+            <p className="font-light">{item.answer}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Visa = () => {
+  // Add this state for FAQ
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
       <PageHeader content={pageHeaders["visa"]} />
@@ -516,9 +636,9 @@ const Visa = () => {
 
       {/* Advisor Section */}
       <div className="bg-black text-white">
-        <div className="container mx-auto px-6 py-16">
+        <div className="container mx-auto px-6 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="w-full md:w-1/2 mb-8 md:mb-0 flex flex-col h-full justify-between">
+            <div className="w-full md:w-1/2 mb-8 md:mb-0 flex flex-col h-72 justify-between">
               <h3 className="text-3xl md:text-4xl font-light mb-6">
                 Immigration Advisor
               </h3>
@@ -527,14 +647,14 @@ const Visa = () => {
                   Shamsher Singh
                 </h2>
                 <div className="space-y-3">
-                  <p className="text-lg">
+                  <h3 className="text-2xl font-light">
                     License Immigration Advisor No. :{" "}
                     <span className="text-blue-500">201700472</span>
-                  </p>
-                  <p className="text-lg">
+                  </h3>
+                  <h3 className="text-2xl font-light">
                     Migration Agent Register No. :{" "}
                     <span className="text-blue-500">2318106</span>
-                  </p>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -544,12 +664,32 @@ const Visa = () => {
                 alt="Immigration Advisor"
                 width={300}
                 height={300}
-                className="w-64 md:w-96 object-cover -mb-16"
+                className="w-64 md:w-72 object-cover -mb-5"
               />
             </div>
           </div>
         </div>
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white text-black">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl text-black font-light mb-12">FAQ</h2>
+          <div className="mx-auto">
+            {faqData.map((item, index) => (
+              <FAQItem
+                key={index}
+                item={item}
+                index={index}
+                isOpen={activeIndex === index}
+                onToggle={(idx) =>
+                  setActiveIndex(activeIndex === idx ? null : idx)
+                }
+              />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
