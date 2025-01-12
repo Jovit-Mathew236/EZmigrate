@@ -375,7 +375,7 @@ const Visa = () => {
                             key={index}
                             href={destination.link.replace(
                               "[visa-type]",
-                              visaType
+                              visaType.toLowerCase().replace(/\s+/g, "-")
                             )}
                             className="font-medium text-sm"
                           >

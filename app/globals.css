@@ -5,39 +5,54 @@
 @layer base {
   :root {
     /* Brand Colors */
-    --primary: 220 70% 10%; /* #000000 */
-    --secondary: 0 0% 100%; /* #FFFFFF */
+    --primary: 220 70% 10%;
+    /* #000000 */
+    --secondary: 0 0% 100%;
+    /* #FFFFFF */
 
     /* State Colors */
-    --info: 220 100% 50%; /* #003BFF */
-    --success: 152 69% 42%; /* #27AE80 */
-    --warning: 43 77% 55%; /* #E2B93B */
-    --error: 0 65% 57%; /* #EB5757 */
+    --info: 220 100% 50%;
+    /* #003BFF */
+    --success: 152 69% 42%;
+    /* #27AE80 */
+    --warning: 43 77% 55%;
+    /* #E2B93B */
+    --error: 0 65% 57%;
+    /* #EB5757 */
 
     /* Grayscale */
-    --gray-100: 0 0% 20%; /* #333333 */
-    --gray-200: 0 0% 31%; /* #4F4F4F */
-    --gray-300: 0 0% 51%; /* #828282 */
-    --gray-400: 0 0% 74%; /* #BDBDBD */
-    --gray-500: 0 0% 88%; /* #E0E0E0 */
-    --brand-gray-600: 0 0% 96%; /* #F5F5F5 */
+    --gray-100: 0 0% 20%;
+    /* #333333 */
+    --gray-200: 0 0% 31%;
+    /* #4F4F4F */
+    --gray-300: 0 0% 51%;
+    /* #828282 */
+    --gray-400: 0 0% 74%;
+    /* #BDBDBD */
+    --gray-500: 0 0% 88%;
+    /* #E0E0E0 */
+    --brand-gray-600: 0 0% 96%;
+    /* #F5F5F5 */
     /* ... keep other existing variables ... */
     --radius: 0.5rem;
   }
 }
 
 @layer base {
+
   /* Base font settings */
   html,
   p,
   span {
     font-family: var(--font-axiforma), sans-serif;
   }
+
   a {
     text-decoration: none;
     font-family: var(--font-axiforma), sans-serif;
     font-weight: 300;
   }
+
   /* Poppins Headings */
   h1,
   h2,
@@ -53,42 +68,50 @@
   h1 {
     font-size: 56px;
     line-height: 66px;
-    font-weight: 300; /* light */
+    font-weight: 300;
+    /* light */
   }
 
   h2 {
     font-size: 36px;
     line-height: 58px;
-    font-weight: 300; /* light */
+    font-weight: 300;
+    /* light */
   }
 
   h3 {
     font-size: 40px;
     line-height: 50px;
-    font-weight: 500; /* light */
+    font-weight: 500;
+    /* light */
   }
 
   h4 {
     font-size: 32px;
     line-height: 42px;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
+    /* Medium */
   }
 
   h5 {
     font-size: 24px;
     line-height: 34px;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
+    /* Medium */
   }
 
   h6 {
     font-size: 20px;
     line-height: 30px;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
+    /* Medium */
   }
+
   p {
     font-size: 20px;
     font-weight: 300;
   }
+
   /* Axiforma Text Styles */
   .text-large-medium {
     font-size: 20px;
@@ -141,12 +164,15 @@
 
 /* Hide scrollbar but keep functionality */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 html {

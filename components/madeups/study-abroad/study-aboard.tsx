@@ -66,7 +66,9 @@ const StudyAboard = () => {
 
                   <div className="inline-flex w-full place-content-end">
                     <Link
-                      href={destination.link}
+                      href={`/study-abroad/${destination.country
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
                       className="inline-flex items-center px-2 rounded-xl bg-zinc-100 text-blue-600 text-sm font-medium"
                     >
                       Learn more

@@ -276,7 +276,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Research and innovation in stunning landscapes.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/switzerland",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -300,7 +300,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "High-quality education in a booming economy.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/china",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -324,7 +324,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Affordable, globally recognized medical degrees.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/ukraine",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -348,7 +348,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Friendly, growing destination for education.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/georgia",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -372,7 +372,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Tech innovation and quality education in Europe.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/estonia",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -396,7 +396,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Affordable studies in a culturally rich nation",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/armenia",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -420,7 +420,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Emerging opportunities in a culturally vibrant nation.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/timor-leste",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
@@ -444,7 +444,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     subTitle: "Affordable education with a global perspective.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
-    link: "/study-abroad/italy",
+    link: "/study-abroad/philippines",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",

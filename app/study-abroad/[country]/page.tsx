@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 const StudyAbroadCountryPage = async (props: { params: Params }) => {
   const params = await props.params;
   const country = studyAbroadDestinations.find(
-    (dest) => dest.link.split("/").pop() === params.country
+    (dest) => dest.country.toLowerCase().replace(/\s+/g, "-") === params.country
   );
 
   if (!country) {
