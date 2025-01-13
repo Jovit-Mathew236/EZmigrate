@@ -2,8 +2,6 @@ import React from "react";
 import { CareerPosition } from "@/types/careers";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Sheet,
   SheetContent,
@@ -12,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import ReactCountryFlag from "react-country-flag";
 
 interface CareerTemplateProps {
   position: CareerPosition;
@@ -23,76 +22,98 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="overflow-y-auto">
         <SheetHeader className="space-y-4 mb-6">
-          <SheetTitle className="text-2xl">
+          <SheetTitle className="text-2xl text-left font-light">
             We&apos;re Hiring! Submit Your Application
           </SheetTitle>
         </SheetHeader>
 
         <form className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="firstName">First Name*</Label>
-              <Input id="firstName" placeholder="Enter first name" />
+            <div>
+              <label className="block mb-2">First Name*</label>
+              <input
+                type="text"
+                placeholder="Enter first name"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
+                required
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="lastName">Last Name*</Label>
-              <Input id="lastName" placeholder="Enter last name" />
+            <div>
+              <label className="block mb-2">Last Name*</label>
+              <input
+                type="text"
+                placeholder="Enter last name"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
+                required
+              />
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email*</Label>
-              <Input id="email" type="email" placeholder="Enter email" />
+            <div>
+              <label className="block mb-2">Email*</label>
+              <input
+                type="email"
+                placeholder="Enter email"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
+                required
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number*</Label>
+            <div>
+              <label className="block mb-2">Phone Number*</label>
               <div className="flex">
-                <select className="w-[90px] border rounded-l-md border-r-0 bg-white px-2">
-                  <option value="+91">🇮🇳 +91</option>
-                </select>
-                <Input
-                  id="phone"
+                <div className="flex items-center border border-b-black border-stone-400 pl-3 pr-6">
+                  <ReactCountryFlag
+                    countryCode="IN"
+                    svg
+                    style={{
+                      width: "24px",
+                      height: "16px",
+                    }}
+                    title="India"
+                  />
+                  <span className="ml-2">+91</span>
+                </div>
+                <input
                   type="tel"
-                  className="rounded-l-none"
-                  placeholder="Enter phone number"
+                  className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light border-l-0"
+                  required
                 />
               </div>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="country">Country</Label>
+            <div>
+              <label className="block mb-2">Country</label>
               <select
-                id="country"
-                className="w-full border rounded-md h-10 px-3 bg-white"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                 defaultValue="India"
               >
                 <option value="India">India</option>
               </select>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="state">State</Label>
-              <select
-                id="state"
-                className="w-full border rounded-md h-10 px-3 bg-white"
-              >
+            <div>
+              <label className="block mb-2">State</label>
+              <select className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white">
                 <option value="">Select state</option>
               </select>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="place">Place</Label>
-              <Input id="place" placeholder="Enter your place" />
+            <div>
+              <label className="block mb-2">Place</label>
+              <input
+                type="text"
+                placeholder="Enter your place"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="position">Applying For*</Label>
+            <div>
+              <label className="block mb-2">Applying For*</label>
               <select
-                id="position"
-                className="w-full border rounded-md h-10 px-3 bg-white"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                 defaultValue="OET Trainer"
               >
                 <option value="OET Trainer">OET Trainer</option>
@@ -101,27 +122,34 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="designation">Designation</Label>
-              <Input id="designation" placeholder="Enter your designation" />
+            <div>
+              <label className="block mb-2">Designation</label>
+              <input
+                type="text"
+                placeholder="Enter your designation"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
+              />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="experience">Years of Experience</Label>
-              <Input id="experience" placeholder="Enter years of experience" />
+            <div>
+              <label className="block mb-2">Years of Experience</label>
+              <input
+                type="text"
+                placeholder="Enter years of experience"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
+              />
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="additional">Additional Information</Label>
+          <div>
+            <label className="block mb-2">Additional Information</label>
             <textarea
-              id="additional"
-              className="w-full border rounded-md min-h-[100px] p-3"
+              className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light min-h-[100px]"
               placeholder="Enter message"
             />
           </div>
 
           <div className="space-y-2">
-            <Label>Add an attachment*</Label>
+            <label>Add an attachment*</label>
             <div className="flex items-center gap-4">
               <div className="text-sm text-gray-500">
                 Max. 10 MB (Type: pdf, doc, png, jpeg, docx)
