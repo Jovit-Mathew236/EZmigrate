@@ -135,7 +135,7 @@ const VisaTypeTemplate: React.FC<VisaTypeTemplateProps> = ({
                 </div>
 
                 <div>
-                  <label className="block mb">Service*</label>
+                  <label className="block mb">Visa Type*</label>
                   <select
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                     required
