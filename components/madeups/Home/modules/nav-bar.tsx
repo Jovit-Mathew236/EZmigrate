@@ -23,7 +23,9 @@ const NavBar = () => {
   ];
   const whitebglogin = ["/blogs"];
   const isDarkBackground =
-    darkBackgroundRoutes.includes(pathname) || pathname.startsWith("/blogs/");
+    darkBackgroundRoutes.includes(pathname) ||
+    pathname.startsWith("/blogs/") ||
+    pathname.startsWith("/careers/");
   const isWhiteBgLogin = whitebglogin.includes(pathname);
 
   useEffect(() => {
