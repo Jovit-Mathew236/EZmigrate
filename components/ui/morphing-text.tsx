@@ -4,8 +4,8 @@ import { useCallback, useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-const morphTime = 1.5;
-const cooldownTime = 0.5;
+const morphTime = 0.5;
+const cooldownTime = 3;
 
 const useMorphingText = (texts: string[]) => {
   const textIndexRef = useRef(0);
@@ -101,11 +101,11 @@ const Texts: React.FC<Pick<MorphingTextProps, "texts">> = ({ texts }) => {
   return (
     <>
       <span
-        className="absolute left-1/2 top-0 -translate-x-1/2 text-center"
+        className="absolute left-1/2 top-0 -translate-x-1/2 text-center font-poppins"
         ref={text1Ref}
       />
       <span
-        className="absolute left-1/2 top-0 -translate-x-1/2 text-center"
+        className="absolute left-1/2 top-0 -translate-x-1/2 text-center font-poppins"
         ref={text2Ref}
       />
     </>

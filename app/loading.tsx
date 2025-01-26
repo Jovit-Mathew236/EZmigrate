@@ -8,14 +8,14 @@ import { useState, useEffect } from "react";
 
 // Animation duration configuration
 const ANIMATION_CONFIG = {
-  TOTAL_DURATION: 100,
+  TOTAL_DURATION: 5,
   TEXT_ANIMATION_DURATION: 1.5,
   PLANE_ANIMATION_DURATION: 3,
   FADE_OUT_DURATION: 1,
   LOGO_ANIMATION_DURATION: 2,
 };
 
-const texts = ["EZmigrate", "Success Partner"];
+const texts = ["Success Partner", "EZmigrate"];
 
 // Animated Logo SVG Component
 const AnimatedLogo = () => (
@@ -173,8 +173,8 @@ export default function Loading() {
 
             {/* Morphing Text */}
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ y: 20, opacity: 1 }}
+              //   animate={{ opacity: 1 }}
               transition={{
                 duration: ANIMATION_CONFIG.TEXT_ANIMATION_DURATION,
                 repeat: Math.floor(
