@@ -5,6 +5,8 @@ import "./globals.css";
 import FooterSection from "@/components/madeups/Home/modules/footer-section";
 import NavBar from "@/components/madeups/Home/modules/nav-bar";
 import { ConditionalConnectExpert } from "./ConditionalConnectExpert";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,11 +42,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`antialiased ${poppins.variable} ${axiforma.variable}`}>
-        <NavBar />
-        {children}
-        <ConditionalConnectExpert />
-        <FooterSection />
+      <body
+        className={`antialiased ${poppins.variable} ${axiforma.variable} absolute w-screen`}
+      >
+        <Suspense fallback={<Loading />}>
+          <Loading />
+          <NavBar />
+          {children}
+          <ConditionalConnectExpert />
+          <FooterSection />
+        </Suspense>
       </body>
     </html>
   );
