@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import {
@@ -12,6 +13,9 @@ import ReactCountryFlag from "react-country-flag";
 import { StudyAbroadDestination } from "@/types/study-abroad";
 import { ArrowRight, Plane, Slash } from "lucide-react";
 import Link from "next/link";
+
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { CircleCheckBigIcon } from "lucide-react";
 
 interface CountryTemplateProps {
   country: StudyAbroadDestination;
@@ -40,6 +44,20 @@ const destinationCards = [
   },
 ];
 const CountryTemplate = ({ country }: CountryTemplateProps) => {
+  const [submitted, setSubmitted] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState(false);
+
+  // Alert position styles - easy to modify
+  const alertPositionStyles = {
+    top: "top-4", // Change to 'bottom-4' for bottom positioning
+    center: "left-1/2 -translate-x-1/2", // Centers horizontally
+    // Alternative positions (uncomment to use):
+    // bottom: 'bottom-4 left-1/2 -translate-x-1/2',
+    // bottomRight: 'bottom-4 right-4',
+    // centerLeft: 'top-1/2 -translate-y-1/2 left-4',
+    // center: 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
+  };
+
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
       {/* Hero Banner Section */}
@@ -121,11 +139,58 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
             {/* Form */}
             <div className="md:-mt-64 z-10 bg-white px-0 md:px-8 py-12 w-full max-w-md md:shadow-md">
               <h2 className="text-2xl font-normal mb-8">Let&apos;s Connect!</h2>
-              <form className="space-y-4">
+              {showAlert && (
+                <Alert
+                  className={`
+                    fixed ${alertPositionStyles.top} ${alertPositionStyles.center}
+                    z-120 w-[400px] shadow-lg
+                    border-emerald-600/50 
+                    bg-emerald-100 
+                    text-emerald-800
+                    dark:bg-emerald-900/90 
+                    dark:text-emerald-100
+                    dark:border-emerald-800
+                    transition-all duration-300 ease-in-out
+                    [&>svg]:text-emerald-600
+                  `}
+                >
+                  <CircleCheckBigIcon className="h-4 w-4" />
+                  <AlertTitle className="font-medium">
+                    Operation Successful
+                  </AlertTitle>
+                  <AlertDescription className="text-emerald-700 dark:text-emerald-200">
+                    Your action has been completed successfully
+                  </AlertDescription>
+                </Alert>
+              )}
+              <iframe
+                name="hiddenConfirm"
+                id="hiddenConfirm"
+                style={{ display: "none" }}
+                onLoad={() => {
+                  if (submitted) {
+                    setShowAlert(true);
+                    setSubmitted(false);
+                    // Hide alert after 3 seconds
+                    setTimeout(() => setShowAlert(false), 3000);
+                    // Optional: Reset the form
+                    const form = document.querySelector("form");
+                    if (form) form.reset();
+                  }
+                }}
+              />
+              <form
+                action="https://docs.google.com/forms/d/e/1FAIpQLSdGcBn0NhP8TdPCys9VHwhBnqN_3XZcgiDBBkNXTCKDiBAl_w/formResponse"
+                method="POST"
+                target="hiddenConfirm"
+                className="space-y-4"
+                onSubmit={() => setSubmitted(true)}
+              >
                 <div>
                   <label className="block mb">Name*</label>
                   <input
                     type="text"
+                    name="entry.430808753"
                     placeholder="Enter your name"
                     className="w-full md:w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
@@ -135,11 +200,11 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
                 <div>
                   <label className="block mb">Country*</label>
                   <select
+                    name="entry.1882265817"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                     required
                   >
-                    <option>{country.country}</option>
-                    {/* Add more options as needed */}
+                    <option value={country.country}>{country.country}</option>
                   </select>
                 </div>
 
@@ -147,6 +212,7 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
                   <label className="block mb">Email*</label>
                   <input
                     type="email"
+                    name="entry.1015471046"
                     placeholder="Enter email"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
@@ -170,6 +236,7 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
                     </div>
                     <input
                       type="tel"
+                      name="entry.832855793"
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
@@ -178,7 +245,23 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
 
                 <div>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="w-4 h-4" />
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      onChange={(e) => {
+                        const whatsappInput = document.querySelector(
+                          'input[name="entry.1472688816"]'
+                        ) as HTMLInputElement;
+                        const phoneInput = document.querySelector(
+                          'input[name="entry.832855793"]'
+                        ) as HTMLInputElement;
+                        if (e.target.checked) {
+                          whatsappInput.value = phoneInput.value;
+                        } else {
+                          whatsappInput.value = "";
+                        }
+                      }}
+                    />
                     <span className="text-sm">Use this as WhatsApp number</span>
                   </label>
                 </div>
@@ -200,6 +283,7 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
                     </div>
                     <input
                       type="tel"
+                      name="entry.1472688816"
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />

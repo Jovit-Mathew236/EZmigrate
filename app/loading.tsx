@@ -2,7 +2,6 @@
 
 import { MorphingText } from "@/components/ui/morphing-text";
 // import { SparklesText } from "@/components/ui/sparkles-text";
-import { Plane } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -10,7 +9,6 @@ import { useState, useEffect } from "react";
 const ANIMATION_CONFIG = {
   TOTAL_DURATION: 5,
   TEXT_ANIMATION_DURATION: 1.5,
-  PLANE_ANIMATION_DURATION: 3,
   FADE_OUT_DURATION: 1,
   LOGO_ANIMATION_DURATION: 2,
 };
@@ -79,70 +77,6 @@ const AnimatedLogo = () => (
   </motion.div>
 );
 
-// Enhanced smoke particle component
-const SmokeParticle = ({ delay = 0, index = 0, total = 10 }) => {
-  const intensity = 1 - index / total; // More intense (opaque) near the plane
-  const spread = index * 5; // Particles spread out more as they trail
-
-  return (
-    <motion.div
-      className="absolute h-1.5 w-1.5 rounded-full bg-white/30"
-      initial={{
-        opacity: 0.7 * intensity,
-        scale: 1,
-        x: 0,
-        y: 0,
-      }}
-      animate={{
-        opacity: 0.5,
-        scale: 2,
-        x: -spread,
-        y: spread * 0.5,
-      }}
-      transition={{
-        duration: 2,
-        delay,
-        repeat: Infinity,
-        repeatDelay: ANIMATION_CONFIG.PLANE_ANIMATION_DURATION - 2,
-        ease: "easeOut",
-      }}
-    />
-  );
-};
-
-// Enhanced plane with dynamic smoke trail
-const FlyingPlane = ({ scale = 1, delay = 0, offset = 0 }) => {
-  const numParticles = 8; // Increased number of smoke particles
-
-  return (
-    <motion.div
-      className="absolute"
-      initial={{ y: 100 + offset, x: -50 + offset, rotate: -45, opacity: 0.8 }}
-      animate={{ y: -100 + offset, opacity: 0 }}
-      transition={{
-        duration: ANIMATION_CONFIG.PLANE_ANIMATION_DURATION,
-        delay,
-        repeat: Infinity,
-        ease: "linear",
-      }}
-    >
-      <div className="relative">
-        <Plane color="white" fill="white" size={20 * scale} opacity={0.5} />
-        <div className="absolute -left-2 top-1/2">
-          {[...Array(numParticles)].map((_, i) => (
-            <SmokeParticle
-              key={i}
-              delay={i * 0.15}
-              index={i}
-              total={numParticles}
-            />
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 export default function Loading() {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -174,7 +108,6 @@ export default function Loading() {
             {/* Morphing Text */}
             <motion.div
               initial={{ y: 20, opacity: 1 }}
-              //   animate={{ opacity: 1 }}
               transition={{
                 duration: ANIMATION_CONFIG.TEXT_ANIMATION_DURATION,
                 repeat: Math.floor(
@@ -189,16 +122,6 @@ export default function Loading() {
                 <MorphingText texts={texts} />
               </motion.h1>
             </motion.div>
-
-            {/* Multiple planes with different scales and paths */}
-            <div className="relative h-40">
-              <FlyingPlane scale={1.2} />
-              <FlyingPlane scale={0.8} delay={0.5} offset={-30} />
-              <FlyingPlane scale={0.6} delay={1} offset={30} />
-              <FlyingPlane scale={1.2} />
-              <FlyingPlane scale={0.8} delay={0.2} offset={-60} />
-              <FlyingPlane scale={0.6} delay={0.3} offset={60} />
-            </div>
           </div>
         </motion.div>
       )}

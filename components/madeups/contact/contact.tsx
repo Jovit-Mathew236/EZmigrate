@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const locationData = [
   {
@@ -39,8 +40,30 @@ const locationData = [
 ];
 
 const Contact = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
   return (
     <>
+      {showAlert && (
+        <Alert className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[400px] shadow-lg border-emerald-600/50 bg-emerald-100 text-emerald-800">
+          <AlertDescription>Form submitted successfully!</AlertDescription>
+        </Alert>
+      )}
+      <iframe
+        name="hiddenConfirm"
+        id="hiddenConfirm"
+        style={{ display: "none" }}
+        onLoad={() => {
+          if (submitted) {
+            setShowAlert(true);
+            setSubmitted(false);
+            setTimeout(() => setShowAlert(false), 3000);
+            const form = document.querySelector("form");
+            if (form) form.reset();
+          }
+        }}
+      />
       <div className="container mt-20 mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col md:flex-row gap-12 md:gap-24">
           {/* Left Section - Header */}
@@ -64,13 +87,20 @@ const Contact = () => {
               <div className="absolute -bottom-4 left-0 w-full h-0.5 bg-stone-500"></div>
               <div className="absolute -bottom-4 left-0 w-40 h-0.5 bg-info"></div>
             </div>
-            <form className="space-y-6">
+            <form
+              action="https://docs.google.com/forms/d/e/1FAIpQLSdOryWutLRByyS0QSyuHkgOSiR_Y51hQf4KVIZTb4mi29tsHg/formResponse"
+              method="POST"
+              target="hiddenConfirm"
+              className="space-y-6"
+              onSubmit={() => setSubmitted(true)}
+            >
               {/* Name Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block mb-2">First Name*</label>
                   <input
                     type="text"
+                    name="entry.430808753"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
                   />
@@ -79,6 +109,7 @@ const Contact = () => {
                   <label className="block mb-2">Last Name</label>
                   <input
                     type="text"
+                    name="entry.1470432501"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                   />
                 </div>
@@ -90,6 +121,7 @@ const Contact = () => {
                   <label className="block mb-2">Email*</label>
                   <input
                     type="email"
+                    name="entry.1015471046"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
                   />
@@ -115,6 +147,7 @@ const Contact = () => {
                     </div>
                     <input
                       type="tel"
+                      name="entry.832855793"
                       className="w-full flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light border-l-0"
                       required
                     />
@@ -127,10 +160,21 @@ const Contact = () => {
                 <div>
                   <label className="w-fit flex items-center gap-2">
                     <input
-                      type="radio"
+                      type="checkbox"
                       className="w-4 h-4"
-                      name="whatsappNumber"
-                      defaultChecked={false}
+                      onChange={(e) => {
+                        const whatsappInput = document.querySelector(
+                          'input[name="entry.1472688816"]'
+                        ) as HTMLInputElement;
+                        const phoneInput = document.querySelector(
+                          'input[name="entry.832855793"]'
+                        ) as HTMLInputElement;
+                        if (e.target.checked) {
+                          whatsappInput.value = phoneInput.value;
+                        } else {
+                          whatsappInput.value = "";
+                        }
+                      }}
                     />
                     <span className="text-sm">Use this as WhatsApp number</span>
                   </label>
@@ -155,6 +199,7 @@ const Contact = () => {
                     </div>
                     <input
                       type="tel"
+                      name="entry.1472688816"
                       className="w-full flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light border-l-0"
                       required
                     />
@@ -166,10 +211,15 @@ const Contact = () => {
                 <div>
                   <label className="block mb-2">Category*</label>
                   <select
+                    name="entry.1882265817"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                     required
                   >
-                    <option value="">Visa / Program / Others</option>
+                    <option value="">Select a Category</option>
+                    <option value="visa">Visa Services</option>
+                    <option value="study-abroad">Study Abroad</option>
+                    <option value="programs">Training Programs</option>
+                    <option value="other">Other Services</option>
                   </select>
                 </div>
               </div>
@@ -181,6 +231,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
+                  name="entry.1134838596"
                   className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                   required
                 />
@@ -190,6 +241,7 @@ const Contact = () => {
               <div>
                 <label className="block mb-2">Tell Us More*</label>
                 <textarea
+                  name="entry.1417227706"
                   className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light min-h-[120px]"
                   required
                 />
@@ -200,6 +252,7 @@ const Contact = () => {
                 <label className="flex items-center gap-2">
                   <input
                     type="checkbox"
+                    name="entry.1918272066"
                     className="w-5 h-5 self-start"
                     required
                   />

@@ -28,7 +28,7 @@ const HomePage = () => {
       const timer = setTimeout(() => {
         setShowPopup(true);
         sessionStorage.setItem("popupShown", "true");
-      }, 10000);
+      }, 40000);
 
       return () => clearTimeout(timer);
     }

@@ -13,6 +13,17 @@ export interface PageHeaderContent {
     label: string;
     value: string;
   }[];
+  formConnection?: {
+    action: string;
+    fields: {
+      name: string;
+      // country?: string;
+      email: string;
+      phone: string;
+      whatsapp: string;
+      option?: string;
+    };
+  };
 }
 
 export const pageHeaders: Record<string, PageHeaderContent> = {
@@ -47,6 +58,17 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
       { label: "Timor Leste", value: "timor-leste" },
       { label: "Philippines", value: "philippines" },
     ],
+    formConnection: {
+      action:
+        "https://docs.google.com/forms/d/e/1FAIpQLSdGcBn0NhP8TdPCys9VHwhBnqN_3XZcgiDBBkNXTCKDiBAl_w/formResponse",
+      fields: {
+        name: "entry.430808753",
+        option: "entry.1882265817",
+        email: "entry.1015471046",
+        phone: "entry.832855793",
+        whatsapp: "entry.1472688816",
+      },
+    },
   },
   "new-zealand": {
     title: "New Zealand",
@@ -78,6 +100,17 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
       { label: "Visitor Visa", value: "visitor-visa" },
       { label: "Other Visa", value: "other-visa" },
     ],
+    formConnection: {
+      action:
+        "https://docs.google.com/forms/d/e/1FAIpQLSetP_gF21BmmHDm0WTzSwtxaaXhagJNa2vikmbcGckRRffz4A/formResponse",
+      fields: {
+        name: "entry.270212441",
+        option: "entry.200142716",
+        email: "entry.717277890",
+        phone: "entry.1974414438",
+        whatsapp: "entry.277713494",
+      },
+    },
   },
   programs: {
     title: "Our Programs",
@@ -96,6 +129,17 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
       { label: "PTE", value: "pte" },
       { label: "Other", value: "other" },
     ],
+    formConnection: {
+      action:
+        "https://docs.google.com/forms/d/e/1FAIpQLScvLEEOsQwu9iJEbb51G8URygV3EtstfXj9JCLkVvb0UzMgXw/formResponse",
+      fields: {
+        name: "entry.430808753",
+        option: "entry.1882265817",
+        email: "entry.1015471046",
+        phone: "entry.832855793",
+        whatsapp: "entry.1472688816",
+      },
+    },
   },
   // Add more page headers as needed
 };

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { CareerPosition } from "@/types/careers";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,28 +12,83 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import ReactCountryFlag from "react-country-flag";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+// import { CircleCheckBigIcon } from "lucide-react";
 
 interface CareerTemplateProps {
   position: CareerPosition;
 }
 
 const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
+  // const [file, setFile] = useState<File | null>(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  // const handleFileUpload = async (file: File) => {
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+
+  //   try {
+  //     // You'll need a server endpoint to handle the file upload
+  //     const response = await fetch("/api/upload", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error("File upload failed");
+  //     }
+
+  //     // Handle successful upload
+  //     console.log("File uploaded successfully");
+  //   } catch (error) {
+  //     console.error("Error uploading file:", error);
+  //   }
+  // };
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="overflow-y-auto">
+        {showAlert && (
+          <Alert className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[400px] shadow-lg border-emerald-600/50 bg-emerald-100 text-emerald-800">
+            <AlertDescription>Form submitted successfully!</AlertDescription>
+          </Alert>
+        )}
+
+        <iframe
+          name="hiddenConfirm"
+          id="hiddenConfirm"
+          style={{ display: "none" }}
+          onLoad={() => {
+            if (submitted) {
+              setShowAlert(true);
+              setSubmitted(false);
+              setTimeout(() => setShowAlert(false), 3000);
+              const form = document.querySelector("form");
+              if (form) form.reset();
+            }
+          }}
+        />
+
         <SheetHeader className="space-y-4 mb-6">
           <SheetTitle className="text-2xl text-left font-light">
             We&apos;re Hiring! Submit Your Application
           </SheetTitle>
         </SheetHeader>
 
-        <form className="space-y-6">
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeGyvfp6oQmSl0Bk7FPx9cvPJwm4BRqhI0WTvqdEAYvX9EgKw/formResponse"
+          method="POST"
+          target="hiddenConfirm"
+          className="space-y-6"
+          onSubmit={() => setSubmitted(true)}
+        >
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block mb-2">First Name*</label>
               <input
                 type="text"
+                name="entry.430808753"
                 placeholder="Enter first name"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                 required
@@ -42,6 +98,7 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
               <label className="block mb-2">Last Name*</label>
               <input
                 type="text"
+                name="entry.1064510817"
                 placeholder="Enter last name"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                 required
@@ -54,6 +111,7 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
               <label className="block mb-2">Email*</label>
               <input
                 type="email"
+                name="entry.1015471046"
                 placeholder="Enter email"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                 required
@@ -76,6 +134,7 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
                 </div>
                 <input
                   type="tel"
+                  name="entry.832855793"
                   className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light border-l-0"
                   required
                 />
@@ -83,20 +142,71 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
 
+          <div>
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                className="w-4 h-4"
+                onChange={(e) => {
+                  const whatsappInput = document.querySelector(
+                    'input[name="entry.1472688816"]'
+                  ) as HTMLInputElement;
+                  const phoneInput = document.querySelector(
+                    'input[name="entry.832855793"]'
+                  ) as HTMLInputElement;
+                  if (e.target.checked) {
+                    whatsappInput.value = phoneInput.value;
+                  } else {
+                    whatsappInput.value = "";
+                  }
+                }}
+              />
+              <span className="text-sm">Use this as WhatsApp number</span>
+            </label>
+          </div>
+
+          <div>
+            <label className="block mb-2">WhatsApp Number*</label>
+            <div className="flex">
+              <div className="flex items-center border border-b-black border-stone-400 pl-3 pr-6">
+                <ReactCountryFlag
+                  countryCode="IN"
+                  svg
+                  style={{
+                    width: "24px",
+                    height: "16px",
+                  }}
+                  title="India"
+                />
+                <span className="ml-2">+91</span>
+              </div>
+              <input
+                type="tel"
+                name="entry.1472688816"
+                className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light border-l-0"
+                required
+              />
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block mb-2">Country</label>
               <select
+                name="entry.1882265817"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                 defaultValue="India"
               >
-                <option value="India">India</option>
+                <option value="india">India</option>
               </select>
             </div>
             <div>
               <label className="block mb-2">State</label>
-              <select className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white">
-                <option value="">Select state</option>
+              <select
+                name="entry.1134838596"
+                className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
+              >
+                <option value="kerala">Kerala</option>
               </select>
             </div>
           </div>
@@ -106,6 +216,7 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
               <label className="block mb-2">Place</label>
               <input
                 type="text"
+                name="entry.1417227706"
                 placeholder="Enter your place"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
               />
@@ -113,10 +224,11 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
             <div>
               <label className="block mb-2">Applying For*</label>
               <select
+                name="entry.1918272066"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
-                defaultValue="OET Trainer"
+                defaultValue="oet"
               >
-                <option value="OET Trainer">OET Trainer</option>
+                <option value="oet">OET Trainer</option>
               </select>
             </div>
           </div>
@@ -126,6 +238,7 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
               <label className="block mb-2">Designation</label>
               <input
                 type="text"
+                name="entry.136758487"
                 placeholder="Enter your designation"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
               />
@@ -134,6 +247,7 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
               <label className="block mb-2">Years of Experience</label>
               <input
                 type="text"
+                name="entry.288364632"
                 placeholder="Enter years of experience"
                 className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
               />
@@ -143,25 +257,50 @@ const ApplicationSheet = ({ children }: { children: React.ReactNode }) => {
           <div>
             <label className="block mb-2">Additional Information</label>
             <textarea
+              name="entry.534433028"
               className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light min-h-[100px]"
               placeholder="Enter message"
             />
           </div>
 
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <label>Add an attachment*</label>
             <div className="flex items-center gap-4">
               <div className="text-sm text-gray-500">
                 Max. 10 MB (Type: pdf, doc, png, jpeg, docx)
               </div>
-              <Button variant="outline" className="ml-auto">
+              <input
+                type="file"
+                id="file"
+                className="hidden"
+                accept=".pdf,.doc,.docx,.png,.jpeg,.jpg"
+                onChange={(e) => {
+                  const selectedFile = e.target.files?.[0];
+                  if (selectedFile) {
+                    setFile(selectedFile);
+                    handleFileUpload(selectedFile);
+                  }
+                }}
+              />
+              <Button
+                variant="outline"
+                className="ml-auto"
+                onClick={() => document.getElementById("file")?.click()}
+              >
                 Select your file
               </Button>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex items-start gap-2">
-            <input type="checkbox" id="consent" className="mt-1" />
+            <input
+              type="checkbox"
+              name="entry.704230229"
+              value="yes"
+              id="consent"
+              className="mt-1"
+              required
+            />
             <label htmlFor="consent" className="text-sm">
               I have read the{" "}
               <a href="#" className="text-blue-600">

@@ -6,6 +6,7 @@ import ConnectExpertSection from "@/components/madeups/Home/modules/connect-expe
 export function ConditionalConnectExpert() {
   const pathname = usePathname();
   if (
+    pathname === "/" ||
     pathname === "/careers" ||
     pathname === "/contact" ||
     pathname === "/privacy-policy"

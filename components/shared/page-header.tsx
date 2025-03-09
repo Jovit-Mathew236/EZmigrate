@@ -2,12 +2,22 @@ import React from "react";
 import { PageHeaderContent } from "@/types/page-headers";
 import { ArrowRight } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { CircleCheckBigIcon } from "lucide-react";
 
 interface PageHeaderProps {
   content: PageHeaderContent;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
+  const [submitted, setSubmitted] = React.useState(false);
+  const [showAlert, setShowAlert] = React.useState(false);
+
+  const alertPositionStyles = {
+    top: "top-4",
+    center: "left-1/2 -translate-x-1/2",
+  };
+
   return (
     <div>
       {/* Hero Banner Section */}
@@ -73,42 +83,94 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
             {/* Form */}
             <div className="md:-mt-64 z-10 bg-white px-0 md:px-8 py-12 w-full max-w-md md:shadow-md">
               <h2 className="text-2xl font-normal mb-8">Let&apos;s Connect!</h2>
-              <form className="space-y-4">
+              {showAlert && (
+                <Alert
+                  className={`
+                  fixed ${alertPositionStyles.top} ${alertPositionStyles.center}
+                  z-120 w-[400px] shadow-lg
+                  border-emerald-600/50 
+                  bg-emerald-100 
+                  text-emerald-800
+                  dark:bg-emerald-900/90 
+                  dark:text-emerald-100
+                  dark:border-emerald-800
+                  transition-all duration-300 ease-in-out
+                  [&>svg]:text-emerald-600
+                `}
+                >
+                  <CircleCheckBigIcon className="h-4 w-4" />
+                  <AlertTitle className="font-medium">Success!</AlertTitle>
+                  <AlertDescription>
+                    Your enquiry has been submitted successfully.
+                  </AlertDescription>
+                </Alert>
+              )}
+
+              <iframe
+                name="hiddenConfirm"
+                id="hiddenConfirm"
+                style={{ display: "none" }}
+                onLoad={() => {
+                  if (submitted) {
+                    setShowAlert(true);
+                    setSubmitted(false);
+                    setTimeout(() => setShowAlert(false), 3000);
+                    const form = document.querySelector("form");
+                    if (form) form.reset();
+                  }
+                }}
+              />
+
+              <form
+                action={content.formConnection?.action}
+                method="POST"
+                target="hiddenConfirm"
+                className="space-y-4"
+                onSubmit={() => setSubmitted(true)}
+              >
                 <div>
                   <label className="block mb">Name*</label>
                   <input
                     type="text"
+                    name={content.formConnection?.fields.name}
                     placeholder="Enter your name"
                     className="w-full md:w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
                   />
                 </div>
 
-                <div>
-                  <label className="block mb">{content.formOptionTitle}*</label>
-                  <select
-                    className="w-full p-3 border border-b-black border-stone-400 appearance-none bg-white"
-                    required
-                  >
-                    <option value="">Select {content.formOptionTitle}</option>
-                    {content.formSelectOptions?.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                {content.formOptionTitle && (
+                  <div>
+                    <label className="block mb">
+                      {content.formOptionTitle}*
+                    </label>
+                    <select
+                      name={content.formConnection?.fields.option}
+                      className="w-full p-3 border border-b-black border-stone-400 appearance-none bg-white"
+                      required
+                    >
+                      <option value="">Select {content.formOptionTitle}</option>
+                      {content.formSelectOptions?.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
 
                 <div>
                   <label className="block mb">Email*</label>
                   <input
                     type="email"
+                    name={content.formConnection?.fields.email}
                     placeholder="Enter email"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
                   />
                 </div>
 
+                {/* Phone Number Input */}
                 <div>
                   <label className="block mb">Phone Number*</label>
                   <div className="flex">
@@ -126,6 +188,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
+                      name={content.formConnection?.fields.phone}
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
@@ -134,11 +197,28 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
 
                 <div>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="w-4 h-4" />
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4"
+                      onChange={(e) => {
+                        const whatsappInput = document.querySelector(
+                          `input[name="${content.formConnection?.fields.whatsapp}"]`
+                        ) as HTMLInputElement;
+                        const phoneInput = document.querySelector(
+                          `input[name="${content.formConnection?.fields.phone}"]`
+                        ) as HTMLInputElement;
+                        if (e.target.checked) {
+                          whatsappInput.value = phoneInput.value;
+                        } else {
+                          whatsappInput.value = "";
+                        }
+                      }}
+                    />
                     <span className="text-sm">Use this as WhatsApp number</span>
                   </label>
                 </div>
 
+                {/* WhatsApp Number Input */}
                 <div>
                   <label className="block mb-2">Whatsapp Number*</label>
                   <div className="flex">
@@ -156,6 +236,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
+                      name={content.formConnection?.fields.whatsapp}
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
