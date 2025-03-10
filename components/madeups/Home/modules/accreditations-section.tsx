@@ -3,12 +3,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const accreditationLogos = [
-  { src: "/images/logos/c1.webp", alt: "CGFNS International" },
-  { src: "/images/logos/c2.webp", alt: "Think New" },
-  { src: "/images/logos/c3.webp", alt: "Australian Government" },
-  { src: "/images/logos/c4.webp", alt: "UK Agent Quality Framework" },
-  { src: "/images/logos/c5.webp", alt: "Nursing Council of New Zealand" },
-  { src: "/images/logos/c6.webp", alt: "Nursing and Midwifery Board" },
+  { src: "/images/logos/c1.png", alt: "CGFNS International" },
+  { src: "/images/logos/c2.png", alt: "Think New" },
+  { src: "/images/logos/c3.png", alt: "Australian Government" },
+  { src: "/images/logos/c4.png", alt: "UK Agent Quality Framework" },
+  { src: "/images/logos/c5.png", alt: "Nursing Council of New Zealand" },
+  { src: "/images/logos/c6.png", alt: "Nursing and Midwifery Board" },
 ];
 
 const AccreditationsSection = () => {

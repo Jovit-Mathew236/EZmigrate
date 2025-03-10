@@ -10,7 +10,7 @@ import StudentStoriesSection from "@/components/madeups/Home/modules/student-sto
 // import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
 import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
 // import FooterSection from "@/components/madeups/Home/modules/footer-section";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import Image from "next/image";
 
@@ -73,6 +73,13 @@ const HomePage = () => {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-2 z-50 ">
           <div className="bg-white w-full max-w-[1000px] relative flex md:flex-row max-h-[750px] h-full md:max-h-[710px] overflow-x-auto md:overflow-y-auto">
             {/* Left Section - Image */}
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute right-4 top-4 text-black hover:text-gray-600 z-20 transition-colors bg-white rounded-full p-2"
+            >
+              <X />
+            </button>
             <div className="w-full flex-shrink-0 md:w-1/2 relative min-h-[300px] md:min-h-[500px] bg-white">
               <Image
                 src="/images/popup.webp"
@@ -100,27 +107,6 @@ const HomePage = () => {
                 showForm ? "block" : "hidden md:block"
               }`}
             >
-              {/* Close Button */}
-              <button
-                onClick={() => setShowPopup(false)}
-                className="absolute right-4 top-4 text-black hover:text-gray-600 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-
               <div>
                 <h2 className="text-2xl mb-3 md:mb-6 font-light">
                   Let&apos;s Connect!
