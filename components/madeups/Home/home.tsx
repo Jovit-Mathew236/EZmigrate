@@ -7,7 +7,7 @@ import DestinationsSection from "@/components/madeups/Home/modules/destinations-
 import StorySection from "@/components/madeups/Home/modules/story-section";
 import ConnectExpertSection from "@/components/madeups/Home/modules/connect-expert-section";
 import StudentStoriesSection from "@/components/madeups/Home/modules/student-stories-section";
-import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
+// import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
 import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
 // import FooterSection from "@/components/madeups/Home/modules/footer-section";
 import { ArrowRight } from "lucide-react";
