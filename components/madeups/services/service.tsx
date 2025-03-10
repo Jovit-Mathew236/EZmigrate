@@ -45,7 +45,7 @@ const ServicePage = () => {
           muted
           className="fixed bg-top top-0 left-0 w-full h-96 md:h-72 object-cover -z-10"
         >
-          <source src="/video/services.mp4" type="video/mp4" />
+          <source src="/video/services.webm" type="video/mp4" />
         </video>
 
         {/* Overlay */}
@@ -109,7 +109,7 @@ const ServicePage = () => {
             {/* Image - Order changes on mobile */}
             <div className="w-full md:w-auto z-10 bg-cover -mt-40 md:mt-0 place-self-start order-1 md:order-2">
               <Image
-                src="/images/services.png"
+                src="/images/services.webp"
                 alt="Educational counselling session"
                 className="h-[350px] md:h-[500px] w-full md:w-auto bg-top object-cover shadow-lg"
                 width={500}

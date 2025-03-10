@@ -660,7 +660,7 @@ const Visa = () => {
             </div>
             <div className="w-full md:w-1/2 flex justify-center md:justify-end">
               <Image
-                src="/images/advisor.png"
+                src="/images/advisor.webp"
                 alt="Immigration Advisor"
                 width={300}
                 height={300}

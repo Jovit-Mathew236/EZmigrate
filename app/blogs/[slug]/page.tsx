@@ -24,7 +24,7 @@ export default async function BlogPost(props: { params: Params }) {
             </h1>
             <div className="flex items-center gap-4 py-5">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt={post.alt}
                 width={500}
                 height={500}

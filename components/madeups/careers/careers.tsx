@@ -27,7 +27,7 @@ const CareersPage = () => {
 
           <div className="relative w-screen -ml-5 md:ml-0 md:w-full aspect-video overflow-hidden">
             <Image
-              src="/images/careers.png"
+              src="/images/careers.webp"
               alt="Students collaborating outdoors"
               fill
               className="object-cover"

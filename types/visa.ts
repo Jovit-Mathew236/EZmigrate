@@ -44,7 +44,7 @@ export const visaDestinations: VisaDestination[] = [
   {
     country: "New Zealand",
     countryCode: "NZ",
-    image: "/images/destination_banner_new_zealand.png",
+    image: "/images/destination_banner_new_zealand.webp",
     subTitle: "Seamless Visa Solutions for Every Journey",
     description:
       "Explore diverse visa options for work, study, and permanent residence in New Zealand.",
@@ -268,7 +268,7 @@ export const visaDestinations: VisaDestination[] = [
   {
     country: "Australia",
     countryCode: "AU",
-    image: "/images/destination_banner_australia.png",
+    image: "/images/destination_banner_australia.webp",
     subTitle: "Seamless Visa Solutions for Every Journey",
     description:
       "Discover various pathways to live, work, and study in Australia.",
@@ -463,7 +463,7 @@ export const visaDestinations: VisaDestination[] = [
   {
     country: "Canada",
     countryCode: "CA",
-    image: "/images/destination_banner_canada.png",
+    image: "/images/destination_banner_canada.webp",
     subTitle: "Seamless Visa Solutions for Every Journey",
     description:
       "Explore immigration pathways to live, study, and work in Canada.",
@@ -601,7 +601,7 @@ export const visaDestinations: VisaDestination[] = [
   {
     country: "USA",
     countryCode: "US",
-    image: "/images/destination_banner_usa.png",
+    image: "/images/destination_banner_usa.webp",
     subTitle: "Seamless Visa Solutions for Every Journey",
     description:
       "Navigate various visa options for studying and immigrating to the United States.",

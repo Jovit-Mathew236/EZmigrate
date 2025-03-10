@@ -13,7 +13,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "top-study-abroad-destinations-2024",
     title: "Top Study Abroad Destinations for 2024",
-    image: "/images/blog1.png",
+    image: "/images/blog1.webp",
     readTime: "13 mins read",
     date: "November 28, 2024",
     author: "Anjaly Chandran",
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "why-studying-abroad-game-changer",
     title: "Why Studying Abroad is a Game-Changer?",
-    image: "/images/blog2.png",
+    image: "/images/blog2.webp",
     readTime: "25 mins read",
     date: "November 28, 2024",
     author: "John",
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: "affordable-countries-quality-education",
     title: "Affordable Countries for Quality Education",
-    image: "/images/blog3.png",
+    image: "/images/blog3.webp",
     readTime: "5 mins read",
     date: "November 28, 2024",
     author: "Evan",

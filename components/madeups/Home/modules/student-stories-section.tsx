@@ -4,13 +4,13 @@ import Marquee from "@/components/ui/marquee";
 const studentStories = [
   {
     name: "Jincy Ouseph",
-    avatar: "/images/female.png",
+    avatar: "/images/female.webp",
     testimonial:
       '"I was really pleased with EZmigrate\'s assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick."',
   },
   {
     name: "Santhosh Kumar",
-    avatar: "/images/male.png",
+    avatar: "/images/male.webp",
     testimonial:
       '"I was really pleased with EZmigrate\'s assistance with the New Zealand VISA and prompt entrance to the CAP course. Extremely dependable and quick."',
   },

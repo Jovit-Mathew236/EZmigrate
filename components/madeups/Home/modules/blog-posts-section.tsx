@@ -6,7 +6,7 @@ const blogPosts = [
   {
     id: "top-study-abroad-destinations-2024",
     title: "Top Study Abroad Destinations for 2024",
-    image: "/images/blog1.png",
+    image: "/images/blog1.webp",
     readTime: "13 mins read",
     date: "November 28, 2024",
     author: "Anjaly Chandran",
@@ -15,7 +15,7 @@ const blogPosts = [
   {
     id: "why-studying-abroad-game-changer",
     title: "Why Studying Abroad is a Game-Changer",
-    image: "/images/blog2.png",
+    image: "/images/blog2.webp",
     readTime: "25 mins read",
     date: "November 28, 2024",
     author: "John",
@@ -24,7 +24,7 @@ const blogPosts = [
   {
     id: "affordable-countries-quality-education",
     title: "Affordable Countries for Quality Education",
-    image: "/images/blog3.png",
+    image: "/images/blog3.webp",
     readTime: "5 mins read",
     date: "November 28, 2024",
     author: "Evan",

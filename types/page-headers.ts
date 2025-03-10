@@ -30,7 +30,7 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
   "study-abroad": {
     title: "Study Abroad",
     backgroundVideo: {
-      src: "/video/study-aboard.mp4",
+      src: "/video/study-aboard.webm",
       type: "video/mp4",
       position: "bottom",
     },
@@ -86,7 +86,7 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
   visa: {
     title: "Visa",
     backgroundVideo: {
-      src: "/video/visa.mp4",
+      src: "/video/visa.webm",
       type: "video/mp4",
       position: "center",
     },
@@ -115,7 +115,7 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
   programs: {
     title: "Our Programs",
     backgroundVideo: {
-      src: "/video/program.mp4",
+      src: "/video/program.webm",
       type: "video/mp4",
       position: "center",
     },

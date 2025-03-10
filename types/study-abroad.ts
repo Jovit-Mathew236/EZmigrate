@@ -32,7 +32,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "New Zealand",
     countryCode: "NZ",
-    image: "/images/destination_banner_new_zealand.png",
+    image: "/images/destination_banner_new_zealand.webp",
     subTitle: "Explore globally recognized education systems.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -56,7 +56,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Germany",
     countryCode: "DE",
-    image: "/images/destination_banner_germany.png",
+    image: "/images/destination_banner_germany.webp",
     subTitle: "Tuition-free education with cutting-edge innovation.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -80,7 +80,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "UK",
     countryCode: "GB",
-    image: "/images/destination_banner_uk.png",
+    image: "/images/destination_banner_uk.webp",
     subTitle: "Top universities in a rich cultural setting.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -104,7 +104,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "USA",
     countryCode: "US",
-    image: "/images/destination_banner_usa.png",
+    image: "/images/destination_banner_usa.webp",
     subTitle: "Excellence in education and limitless opportunities.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -128,7 +128,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Canada",
     countryCode: "CA",
-    image: "/images/destination_banner_canada.png",
+    image: "/images/destination_banner_canada.webp",
     subTitle: "Quality education in a diverse, welcoming environment.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -152,7 +152,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Australia",
     countryCode: "AU",
-    image: "/images/destination_banner_australia.png",
+    image: "/images/destination_banner_australia.webp",
     subTitle: "Globally recognized degrees in vibrant cities.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -176,7 +176,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Finland",
     countryCode: "FI",
-    image: "/images/destination_banner_finland.png",
+    image: "/images/destination_banner_finland.webp",
     subTitle: "Exceptional education in the world's happiest nation.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -200,7 +200,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "France",
     countryCode: "FR",
-    image: "/images/destination_banner_france.png",
+    image: "/images/destination_banner_france.webp",
     subTitle: "Quality learning in a hub of culture and art.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -224,7 +224,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Ireland",
     countryCode: "IE",
-    image: "/images/destination_banner_ireland.png",
+    image: "/images/destination_banner_ireland.webp",
     subTitle: "Innovative programs in a friendly, green country.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -248,7 +248,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Italy",
     countryCode: "IT",
-    image: "/images/destination_banner_italy.png",
+    image: "/images/destination_banner_italy.webp",
     subTitle: "Education meets history, art, and design.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -272,7 +272,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Switzerland",
     countryCode: "CH",
-    image: "/images/destination_banner_switzerland.png",
+    image: "/images/destination_banner_switzerland.webp",
     subTitle: "Research and innovation in stunning landscapes.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -296,7 +296,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "China",
     countryCode: "CN",
-    image: "/images/destination_banner_china.png",
+    image: "/images/destination_banner_china.webp",
     subTitle: "High-quality education in a booming economy.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -320,7 +320,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Ukraine",
     countryCode: "UA",
-    image: "/images/destination_banner_ukraine.png",
+    image: "/images/destination_banner_ukraine.webp",
     subTitle: "Affordable, globally recognized medical degrees.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -344,7 +344,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Georgia",
     countryCode: "GE",
-    image: "/images/destination_banner_georgia.png",
+    image: "/images/destination_banner_georgia.webp",
     subTitle: "Friendly, growing destination for education.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -368,7 +368,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Estonia",
     countryCode: "EE",
-    image: "/images/destination_banner_estonia.png",
+    image: "/images/destination_banner_estonia.webp",
     subTitle: "Tech innovation and quality education in Europe.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -392,7 +392,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Armenia",
     countryCode: "AM",
-    image: "/images/destination_banner_armenia.png",
+    image: "/images/destination_banner_armenia.webp",
     subTitle: "Affordable studies in a culturally rich nation",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -416,7 +416,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Timor Leste",
     countryCode: "TL",
-    image: "/images/destination_banner_timor_leste.png",
+    image: "/images/destination_banner_timor_leste.webp",
     subTitle: "Emerging opportunities in a culturally vibrant nation.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
@@ -440,7 +440,7 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
   {
     country: "Philippines",
     countryCode: "PH",
-    image: "/images/destination_banner_philippines.png",
+    image: "/images/destination_banner_philippines.webp",
     subTitle: "Affordable education with a global perspective.",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",

@@ -11,7 +11,7 @@ const locationData = [
   {
     country: "INDIA",
     countryCode: "IN",
-    image: "/images/india.png",
+    image: "/images/india.webp",
     address:
       "Thannickal Towers, Kothaikunnu Bypass, Thodupuzha - 685575, Kerala, India",
     phone: {
@@ -26,7 +26,7 @@ const locationData = [
   {
     country: "NEW ZEALAND",
     countryCode: "NZ",
-    image: "/images/newzealand.png",
+    image: "/images/newzealand.webp",
     address: "19 Halyard Close, Flagstaff, Hamilton, New Zealand - 3210",
     phone: {
       label: "General Enquiry",

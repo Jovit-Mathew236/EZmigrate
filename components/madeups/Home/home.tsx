@@ -51,7 +51,7 @@ const HomePage = () => {
         muted
         className="fixed top-0 left-0 w-full h-screen object-cover -z-10"
       >
-        <source src="/video/home.mp4" type="video/mp4" />
+        <source src="/video/home.webm" type="video/mp4" />
       </video>
 
       {/* Overlay */}
@@ -64,7 +64,7 @@ const HomePage = () => {
       <StorySection />
       <ConnectExpertSection />
       <StudentStoriesSection />
-      <BlogPostsSection />
+      {/* <BlogPostsSection /> */}
       <AccreditationsSection />
       {/* <FooterSection /> */}
 
@@ -75,7 +75,7 @@ const HomePage = () => {
             {/* Left Section - Image */}
             <div className="w-full flex-shrink-0 md:w-1/2 relative min-h-[300px] md:min-h-[500px] bg-white">
               <Image
-                src="/images/popup.png"
+                src="/images/popup.webp"
                 alt="Explore the world"
                 width={2000}
                 height={2000}

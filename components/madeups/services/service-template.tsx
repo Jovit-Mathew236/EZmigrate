@@ -97,7 +97,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           muted
           className="fixed bg-top top-0 left-0 w-full h-80 md:h-96 object-cover -z-10"
         >
-          <source src="/video/services.mp4" type="video/mp4" />
+          <source src="/video/services.webm" type="video/mp4" />
         </video>
 
         {/* Overlay */}

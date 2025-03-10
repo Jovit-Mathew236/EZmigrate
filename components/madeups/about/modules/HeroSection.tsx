@@ -23,7 +23,7 @@ const HeroSection = () => {
 
         <div className="relative w-screen -ml-5 md:ml-0 md:w-full aspect-video overflow-hidden">
           <Image
-            src="/images/about.png"
+            src="/images/about.webp"
             alt="Students collaborating outdoors"
             fill
             className="object-cover"
