@@ -7,6 +7,7 @@ import NavBar from "@/components/madeups/Home/modules/nav-bar";
 import { ConditionalConnectExpert } from "./ConditionalConnectExpert";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -52,6 +53,19 @@ export default function RootLayout({
           <ConditionalConnectExpert />
           <FooterSection />
         </Suspense>
+        <Toaster
+          position="top-center"
+          expand={false}
+          // closeButton
+          className="z-[100]"
+          toastOptions={{
+            className: "z-[100] border-2 border-stone-200",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          }}
+        />
       </body>
     </html>
   );

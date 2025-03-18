@@ -69,7 +69,7 @@ const DestinationsSection = () => {
   }, []);
 
   return (
-    <div className="relative z-10 bg-stone-600 py-20">
+    <div className="relative z-10 bg-stone-600 py-20" id="destination">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-light mb-4">Destinations</h2>
         <p className="text-xl md:text-2xl font-light mb-12">

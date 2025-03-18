@@ -5,7 +5,7 @@ import ReactCountryFlag from "react-country-flag";
 import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { toast } from "sonner";
 
 const locationData = [
   {
@@ -41,24 +41,19 @@ const locationData = [
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
 
   return (
     <>
-      {showAlert && (
-        <Alert className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[400px] shadow-lg border-emerald-600/50 bg-emerald-100 text-emerald-800">
-          <AlertDescription>Form submitted successfully!</AlertDescription>
-        </Alert>
-      )}
       <iframe
         name="hiddenConfirm"
         id="hiddenConfirm"
         style={{ display: "none" }}
         onLoad={() => {
           if (submitted) {
-            setShowAlert(true);
+            toast.success("Form submitted successfully!", {
+              className: "bg-emerald-600/50 text-emerald-800",
+            });
             setSubmitted(false);
-            setTimeout(() => setShowAlert(false), 3000);
             const form = document.querySelector("form");
             if (form) form.reset();
           }

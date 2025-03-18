@@ -33,7 +33,7 @@ const AccreditationsSection = () => {
               international students.
             </p>
             <Link
-              href="/schedule"
+              href="/contact"
               className="inline-flex font-light w-full md:w-auto justify-center items-center bg-black text-white px-8 py-4 hover:bg-gray-800 transition-colors duration-300"
             >
               Schedule an appointment

@@ -2,8 +2,7 @@ import React from "react";
 import { PageHeaderContent } from "@/types/page-headers";
 import { ArrowRight } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { CircleCheckBigIcon } from "lucide-react";
+import { toast } from "sonner";
 
 interface PageHeaderProps {
   content: PageHeaderContent;
@@ -11,12 +10,6 @@ interface PageHeaderProps {
 
 const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
   const [submitted, setSubmitted] = React.useState(false);
-  const [showAlert, setShowAlert] = React.useState(false);
-
-  const alertPositionStyles = {
-    top: "top-4",
-    center: "left-1/2 -translate-x-1/2",
-  };
 
   return (
     <div>
@@ -83,28 +76,6 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
             {/* Form */}
             <div className="md:-mt-64 z-10 bg-white px-0 md:px-8 py-12 w-full max-w-md md:shadow-md">
               <h2 className="text-2xl font-normal mb-8">Let&apos;s Connect!</h2>
-              {showAlert && (
-                <Alert
-                  className={`
-                  fixed ${alertPositionStyles.top} ${alertPositionStyles.center}
-                  z-120 w-[400px] shadow-lg
-                  border-emerald-600/50 
-                  bg-emerald-100 
-                  text-emerald-800
-                  dark:bg-emerald-900/90 
-                  dark:text-emerald-100
-                  dark:border-emerald-800
-                  transition-all duration-300 ease-in-out
-                  [&>svg]:text-emerald-600
-                `}
-                >
-                  <CircleCheckBigIcon className="h-4 w-4" />
-                  <AlertTitle className="font-medium">Success!</AlertTitle>
-                  <AlertDescription>
-                    Your enquiry has been submitted successfully.
-                  </AlertDescription>
-                </Alert>
-              )}
 
               <iframe
                 name="hiddenConfirm"
@@ -112,9 +83,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ content }) => {
                 style={{ display: "none" }}
                 onLoad={() => {
                   if (submitted) {
-                    setShowAlert(true);
+                    toast.success("Form submitted successfully!");
                     setSubmitted(false);
-                    setTimeout(() => setShowAlert(false), 3000);
                     const form = document.querySelector("form");
                     if (form) form.reset();
                   }

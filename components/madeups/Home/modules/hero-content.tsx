@@ -11,7 +11,7 @@ const HeroContent = () => {
             Studying Abroad
           </h1>
           <Link
-            href="/learn-more"
+            href="#destination"
             className="inline-flex items-center text-xl hover:underline"
           >
             Learn more

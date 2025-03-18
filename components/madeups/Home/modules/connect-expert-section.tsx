@@ -21,14 +21,14 @@ const ConnectExpertSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/schedule"
+                href="/contact"
                 className="inline-flex font-light justify-center items-center bg-black text-white px-8 py-3 hover:bg-gray-800 transition-colors duration-300"
               >
                 Schedule an appointment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
-                href="/learn-more"
+                href="/about"
                 className="inline-flex justify-center items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors duration-300"
               >
                 Learn more
@@ -58,7 +58,7 @@ const ConnectExpertSection = () => {
             </Link>
 
             <Link
-              href="https://wa.me/911234567890"
+              href="https://wa.me/642109029528"
               className="block p-6 bg-white border hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-center justify-between">
@@ -70,7 +70,7 @@ const ConnectExpertSection = () => {
                     <h3 className="text-sm text-gray-600 font-regular">
                       WhatsApp
                     </h3>
-                    <p className="text-lg font-bold">+91 12345 67890</p>
+                    <p className="text-lg font-bold">+64 210 902 9528</p>
                   </div>
                 </div>
                 <ArrowRight size={32} strokeWidth={1} />
