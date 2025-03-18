@@ -11,26 +11,56 @@ import ReactCountryFlag from "react-country-flag";
 const destinationCards = [
   {
     country: "New Zealand",
-    countryCode: "US",
-    visaType: ["Visit Visa", "Work Visa", "Student Visa", "PR Visa"],
+    countryCode: "NZ",
+    visaType: [
+      "Visit Visa",
+      "Work Visa",
+      "Student Visa",
+      "PR Visa",
+      "Post-Study Work Visa",
+      "Parent Visa",
+      "Family Visa",
+    ],
     link: "/visa/new-zealand/[visa-type]",
   },
   {
     country: "Australia",
     countryCode: "DE",
-    visaType: ["Visit Visa", "Work Visa", "Student Visa", "PR Visa"],
+    visaType: [
+      "Visitor Visa",
+      "Working Visa",
+      "Student Visa",
+      "PR Visa",
+      "Post-study Work Visa",
+      "Parent Visa",
+      "Family Visa",
+    ],
     link: "/visa/australia/[visa-type]",
   },
   {
     country: "Canada",
-    countryCode: "GB",
-    visaType: ["Student Visa", "PR Visa"],
+    countryCode: "CA",
+    visaType: [
+      "Student Visa",
+      "PR Visa",
+      "Post-Study Work Visa",
+      "Parent Visa",
+      "Family Visa",
+      "Visitor Visa",
+    ],
     link: "/visa/canada/[visa-type]",
   },
   {
     country: "USA",
     countryCode: "US",
-    visaType: ["Student Visa", "PR Visa"],
+    visaType: [
+      "Student Visa",
+      "PR Visa",
+      "Post-Study Work Visa",
+      "Parent Visa",
+      "Family Visa",
+      "Visitor Visa",
+    ],
     link: "/visa/usa/[visa-type]",
   },
 ];
@@ -348,7 +378,7 @@ const Visa = () => {
                 key={index}
                 className="bg-white shadow-lg overflow-hidden relative hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="p-6 relative">
+                <div className="p-6 relative w-full">
                   <div className="flex items-start space-x-3 mb-2">
                     <ReactCountryFlag
                       countryCode={destination.countryCode}
@@ -386,12 +416,11 @@ const Visa = () => {
                       </p>
                     </div>
                   </div>
-
-                  <div className="relative my-2 -bottom-16">
-                    <div className="absolute -left-9 -top-3 h-6 w-6 rounded-full bg-black"></div>
-                    <div className="absolute -right-9 -top-3 h-6 w-6 rounded-full bg-black"></div>
-                    <div className="border-t-2 border-dashed border-gray-800"></div>
-                  </div>
+                </div>
+                <div className="absolute w-full bottom-8">
+                  <div className="absolute -left-3 -top-3 h-6 w-6 rounded-full bg-black"></div>
+                  <div className="absolute -right-3 -top-3 h-6 w-6 rounded-full bg-black"></div>
+                  <div className="border-t-2 border-dashed border-gray-800 w-[90%] m-auto"></div>
                 </div>
               </div>
             ))}
