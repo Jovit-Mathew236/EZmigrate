@@ -1,7 +1,8 @@
 "use client";
 import PageHeader from "@/components/shared/page-header";
 import { pageHeaders } from "@/types/page-headers";
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React from "react";
 
 const solutions = [
   {
@@ -116,90 +117,90 @@ const solutions = [
   },
 ];
 
-const FAQItem = ({
-  item,
-  isOpen,
-  index,
-  onToggle,
-}: {
-  item: { question: string; answer: string };
-  isOpen: boolean;
-  index: number;
-  onToggle: (index: number) => void;
-}) => {
-  return (
-    <div className="border-b border-black py-6">
-      <button
-        onClick={() => onToggle(index)}
-        className="flex justify-between items-center w-full text-left"
-      >
-        <h1 className="text-lg text-black font-medium">{item.question}</h1>
-        <span className="ml-6">
-          <svg
-            className="w-6 h-6 transition-transform duration-200"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {isOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M20 12H4"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 4v16m8-8H4"
-              />
-            )}
-          </svg>
-        </span>
-      </button>
-      <div
-        className={`grid transition-all duration-200 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <div className="mt-3">
-            <p className="text-gray-600 font-light">{item.answer}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+// const FAQItem = ({
+//   item,
+//   isOpen,
+//   index,
+//   onToggle,
+// }: {
+//   item: { question: string; answer: string };
+//   isOpen: boolean;
+//   index: number;
+//   onToggle: (index: number) => void;
+// }) => {
+//   return (
+//     <div className="border-b border-black py-6">
+//       <button
+//         onClick={() => onToggle(index)}
+//         className="flex justify-between items-center w-full text-left"
+//       >
+//         <h1 className="text-lg text-black font-medium">{item.question}</h1>
+//         <span className="ml-6">
+//           <svg
+//             className="w-6 h-6 transition-transform duration-200"
+//             fill="none"
+//             viewBox="0 0 24 24"
+//             stroke="currentColor"
+//           >
+//             {isOpen ? (
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M20 12H4"
+//               />
+//             ) : (
+//               <path
+//                 strokeLinecap="round"
+//                 strokeLinejoin="round"
+//                 strokeWidth={2}
+//                 d="M12 4v16m8-8H4"
+//               />
+//             )}
+//           </svg>
+//         </span>
+//       </button>
+//       <div
+//         className={`grid transition-all duration-200 ease-in-out ${
+//           isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+//         }`}
+//       >
+//         <div className="overflow-hidden">
+//           <div className="mt-3">
+//             <p className="text-gray-600 font-light">{item.answer}</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Programs = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  // const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const faqData = [
-    {
-      question: "What is better: IELTS or CELPIP?",
-      answer:
-        "IELTS is globally accepted, while CELPIP is tailored for Canadian immigration. Choose based on your goals—IELTS for wider opportunities, CELPIP for Canadian-specific needs.",
-    },
-    {
-      question: "Which one is harder: TOEFL or IELTS?",
-      answer: "lorem ipsum...",
-    },
-    {
-      question: "Which countries accept PTE for immigration?",
-      answer: "lorem ipsum...",
-    },
-    {
-      question: "Which is better for Canada: IELTS or TOEFL?",
-      answer: "lorem ipsum...",
-    },
-    {
-      question: "Does Europe accept PTE?",
-      answer: "lorem ipsum...",
-    },
-  ];
+  // const faqData = [
+  //   {
+  //     question: "What is better: IELTS or CELPIP?",
+  //     answer:
+  //       "IELTS is globally accepted, while CELPIP is tailored for Canadian immigration. Choose based on your goals—IELTS for wider opportunities, CELPIP for Canadian-specific needs.",
+  //   },
+  //   {
+  //     question: "Which one is harder: TOEFL or IELTS?",
+  //     answer: "lorem ipsum...",
+  //   },
+  //   {
+  //     question: "Which countries accept PTE for immigration?",
+  //     answer: "lorem ipsum...",
+  //   },
+  //   {
+  //     question: "Which is better for Canada: IELTS or TOEFL?",
+  //     answer: "lorem ipsum...",
+  //   },
+  //   {
+  //     question: "Does Europe accept PTE?",
+  //     answer: "lorem ipsum...",
+  //   },
+  // ];
 
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
@@ -263,7 +264,7 @@ const Programs = () => {
       </div>
 
       {/* faq section */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-normal mb-12">FAQ</h2>
           <div className="mx-auto">
@@ -280,7 +281,7 @@ const Programs = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

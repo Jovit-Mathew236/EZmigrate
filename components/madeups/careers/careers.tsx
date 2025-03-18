@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import TeamSection from "../about/modules/TeamSection";
+// import TeamSection from "../about/modules/TeamSection";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -43,14 +43,14 @@ const CareersPage = () => {
 
           <div className="space-y-8">
             {[
-              "Student Counsellor (Fresher)",
-              "Senior Student Counsellor",
-              "PTE Trainer",
+              // "Student Counsellor (Fresher)",
+              // "Senior Student Counsellor",
+              // "PTE Trainer",
               "OET Trainer",
-              "OSCE Trainer",
-              "IELTS Trainer",
-              "Receptionist",
-              "Accountant",
+              // "OSCE Trainer",
+              // "IELTS Trainer",
+              // "Receptionist",
+              // "Accountant",
             ].map((position) => (
               <div
                 key={position}
@@ -72,7 +72,7 @@ const CareersPage = () => {
           </div>
         </div>
       </div>
-      <TeamSection />
+      {/* <TeamSection /> */}
     </>
   );
 };

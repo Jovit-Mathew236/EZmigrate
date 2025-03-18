@@ -16,7 +16,7 @@ const locationData = [
       "Thannickal Towers, Kothaikunnu Bypass, Thodupuzha - 685575, Kerala, India",
     phone: {
       label: "General Enquiry",
-      number: "+91 12345 67890",
+      number: "+91 99461 77111",
     },
     email: {
       label: "Email",

@@ -21,12 +21,12 @@ const NavBar = () => {
     "/careers",
     "/privacy-policy",
   ];
-  const whitebglogin = ["/blogs"];
+  // const whitebglogin = ["/blogs"];
   const isDarkBackground =
     darkBackgroundRoutes.includes(pathname) ||
     pathname.startsWith("/blogs/") ||
     pathname.startsWith("/careers/");
-  const isWhiteBgLogin = whitebglogin.includes(pathname);
+  // const isWhiteBgLogin = whitebglogin.includes(pathname);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -133,14 +133,14 @@ const NavBar = () => {
                 </button>
               ))}
 
-              <button
+              {/* <button
                 onClick={() => router.push("/login")}
                 className={`hidden md:block text-sm px-4 py-2 transition-colors duration-300 ${
                   isWhiteBgLogin ? "bg-white text-black" : "bg-black text-white"
                 }`}
               >
                 Login
-              </button>
+              </button> */}
             </div>
 
             <div className="md:hidden flex flex-row items-center">

@@ -27,12 +27,12 @@ const ConnectExpertSection = () => {
                 Schedule an appointment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <Link
+              {/* <Link
                 href="/about"
                 className="inline-flex justify-center items-center border border-black px-8 py-3 hover:bg-black hover:text-white transition-colors duration-300"
               >
                 Learn more
-              </Link>
+              </Link> */}
             </div>
           </div>
 

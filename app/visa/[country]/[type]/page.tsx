@@ -1,7 +1,7 @@
 import { visaDestinations } from "@/types/visa";
 import VisaTypeTemplate from "@/components/madeups/visa/visa-type-template";
 import { notFound } from "next/navigation";
-import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
+// import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
 type Params = Promise<{ country: string; type: string }>;
 
 export async function generateStaticParams() {
@@ -36,7 +36,7 @@ export default async function VisaTypePage(props: { params: Params }) {
         visaType={visaType}
         visaCategory={params.type.replace(/-/g, " ").toUpperCase()}
       />
-      <BlogPostsSection />
+      {/* <BlogPostsSection /> */}
     </>
   );
 }
