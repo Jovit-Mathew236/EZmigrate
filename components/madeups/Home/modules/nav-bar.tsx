@@ -144,12 +144,12 @@ const NavBar = () => {
             </div>
 
             <div className="md:hidden flex flex-row items-center">
-              <button
+              {/* <button
                 onClick={() => router.push("/login")}
                 className="md:hidden px-3 py-2 bg-black text-white text-sm"
               >
                 Login
-              </button>
+              </button> */}
               <button
                 className="md:hidden w-6 h-6 flex flex-col justify-center items-center ml-4"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}

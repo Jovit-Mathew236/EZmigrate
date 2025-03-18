@@ -25,7 +25,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           "Programs",
           "About",
           "Join our Team",
-          "Blogs",
+          // "Blogs",
         ].map((item) => (
           <Link
             key={item}

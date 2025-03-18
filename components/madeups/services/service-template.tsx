@@ -186,8 +186,9 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                   }
                 }}
               />
+
               <form
-                action="https://docs.google.com/forms/d/e/1FAIpQLScRyYtgQWYgQxGCF77q2W74kfz5sX0Wk4kxqmTiD7TyuIP_zw/formResponse"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSfgn2A34uKQe4nu9v-_4dnqQAprxy_odhU_DjqJBaPw5Vz3mw/formResponse"
                 method="POST"
                 target="hiddenConfirm"
                 className="space-y-4"
@@ -197,7 +198,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                   <label className="block mb">Name*</label>
                   <input
                     type="text"
-                    name="entry.270212441"
+                    name="entry.430808753"
                     placeholder="Enter your name"
                     className="w-full md:w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
@@ -207,7 +208,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                 <div>
                   <label className="block mb">Service*</label>
                   <select
-                    name="entry.200142716"
+                    name="entry.1882265817"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light appearance-none bg-white"
                     required
                   >
@@ -219,7 +220,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                   <label className="block mb">Email*</label>
                   <input
                     type="email"
-                    name="entry.717277890"
+                    name="entry.1015471046"
                     placeholder="Enter email"
                     className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                     required
@@ -243,7 +244,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
-                      name="entry.1974414438"
+                      name="entry.832855793"
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
@@ -290,7 +291,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                     </div>
                     <input
                       type="tel"
-                      name="entry.277713494"
+                      name="entry.1472688816"
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
                     />
