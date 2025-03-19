@@ -8,7 +8,8 @@ import { ConditionalConnectExpert } from "./ConditionalConnectExpert";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { Toaster } from "@/components/ui/sonner";
-// import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -44,10 +45,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
+      <head>
+        <Script id="microsoft-clarity">
+          {`
+          (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "qqiryimkxc");
+            `}
+        </Script>
+      </head>
       <body
         className={`antialiased ${poppins.variable} ${axiforma.variable} absolute w-screen`}
       >
-        {/* <GoogleAnalytics gaId="G-XYZ" /> */}
+        <GoogleAnalytics gaId="G-RZZ7MB82PY" />
+        <GoogleTagManager gtmId="G-M6XX9G9N" />
         <Suspense fallback={<Loading />}>
           <Loading />
           <NavBar />
