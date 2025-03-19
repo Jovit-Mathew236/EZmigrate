@@ -47,7 +47,7 @@ export default function RootLayout({
       <body
         className={`antialiased ${poppins.variable} ${axiforma.variable} absolute w-screen`}
       >
-        <GoogleAnalytics gaId="G-XYZ" />
+        {/* <GoogleAnalytics gaId="G-XYZ" /> */}
         <Suspense fallback={<Loading />}>
           <Loading />
           <NavBar />
