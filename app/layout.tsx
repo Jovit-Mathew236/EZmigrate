@@ -8,6 +8,7 @@ import { ConditionalConnectExpert } from "./ConditionalConnectExpert";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { Toaster } from "@/components/ui/sonner";
+// import { GoogleAnalytics } from '@next/third-parties/google'
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
       <body
         className={`antialiased ${poppins.variable} ${axiforma.variable} absolute w-screen`}
       >
+        <GoogleAnalytics gaId="G-XYZ" />
         <Suspense fallback={<Loading />}>
           <Loading />
           <NavBar />
@@ -72,7 +74,7 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://e-zmigrate.vercel.app/"),
+  metadataBase: new URL("https://www.ezmigrate.co.nz/"),
   title: {
     default: "EZmigrate - Study Abroad Consultants",
     template: "%s | EZmigrate",
@@ -102,7 +104,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://e-zmigrate.vercel.app/",
+    url: "https://www.ezmigrate.co.nz/",
     siteName: "EZmigrate",
     title: "EZmigrate - Your Gateway to Global Education",
     description:
@@ -137,8 +139,20 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google:
+      "google-site-verification=pdlinnoRKr0_mGib3SY5YJgGkeEvGoFAcP91IN3nHCY",
+    yandex: "your-actual-yandex-verification-code",
+    yahoo: "your-actual-yahoo-verification-code",
+  },
+  alternates: {
+    canonical: "https://www.ezmigrate.co.nz",
+    types: {
+      "application/xml": [
+        {
+          url: "sitemap.xml",
+          title: "Sitemap",
+        },
+      ],
+    },
   },
 };
