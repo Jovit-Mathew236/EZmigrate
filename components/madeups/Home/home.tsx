@@ -10,7 +10,7 @@ import StudentStoriesSection from "@/components/madeups/Home/modules/student-sto
 // import BlogPostsSection from "@/components/madeups/Home/modules/blog-posts-section";
 import AccreditationsSection from "@/components/madeups/Home/modules/accreditations-section";
 // import FooterSection from "@/components/madeups/Home/modules/footer-section";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Check } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import Image from "next/image";
 
@@ -18,6 +18,7 @@ const HomePage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     // Check if popup has been shown before
@@ -70,13 +71,19 @@ const HomePage = () => {
 
       {/* Popup Modal */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-2 z-50 ">
+        <div className="fixed inset-0 bg-black/50 flex flex-col items-end md:items-center justify-center p-2 z-50">
+          <button
+            onClick={() => setShowPopup(false)}
+            className="sticky md:hidden right-4 -mb-12 top-4 text-black hover:text-gray-600 z-20 transition-colors bg-white rounded-full p-2"
+          >
+            <X />
+          </button>
           <div className="bg-white w-full max-w-[1000px] relative flex md:flex-row max-h-[750px] h-full md:max-h-[710px] overflow-x-auto md:overflow-y-auto">
             {/* Left Section - Image */}
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute right-4 top-4 text-black hover:text-gray-600 z-20 transition-colors bg-white rounded-full p-2"
+              className="absolute hidden md:block right-4 -mb-12 top-4 text-black hover:text-gray-600 z-20 transition-colors bg-white rounded-full p-2"
             >
               <X />
             </button>
@@ -111,12 +118,36 @@ const HomePage = () => {
                 <h2 className="text-2xl mb-3 md:mb-6 font-light">
                   Let&apos;s Connect!
                 </h2>
-                <form className="space-y-2 md:space-y-4">
+                <iframe
+                  name="hiddenConfirm"
+                  id="hiddenConfirm"
+                  style={{ display: "none" }}
+                  title="Hidden form target"
+                />
+                <form
+                  action="https://docs.google.com/forms/d/e/1FAIpQLSeagvHCYVro_bXozSpe_CqJ7OzteJe2fQ30-EO34t0HrWFpOw/formResponse"
+                  method="POST"
+                  target="hiddenConfirm"
+                  className="space-y-2 md:space-y-4"
+                  onSubmit={(e) => {
+                    if (!isSubmitted) {
+                      setIsSubmitted(true);
+                      // Reset form after 3 seconds
+                      setTimeout(() => {
+                        setIsSubmitted(false);
+                        (e.target as HTMLFormElement).reset();
+                      }, 3000);
+                    } else {
+                      e.preventDefault();
+                    }
+                  }}
+                >
                   <div className="flex flex-col md:flex-row gap-4">
                     <div className="flex-1">
                       <label className="block mb-1">First Name*</label>
                       <input
                         type="text"
+                        name="entry.430808753"
                         placeholder="Enter first name"
                         className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                         required
@@ -126,6 +157,7 @@ const HomePage = () => {
                       <label className="block mb-1">Last Name</label>
                       <input
                         type="text"
+                        name="entry.917355917"
                         placeholder="Enter last name"
                         className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                       />
@@ -136,6 +168,7 @@ const HomePage = () => {
                     <label className="block mb-1">Email*</label>
                     <input
                       type="email"
+                      name="entry.1015471046"
                       placeholder="Enter email"
                       className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                       required
@@ -159,6 +192,7 @@ const HomePage = () => {
                       </div>
                       <input
                         type="tel"
+                        name="entry.832855793"
                         className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                         required
                       />
@@ -167,7 +201,23 @@ const HomePage = () => {
 
                   <div>
                     <label className="flex items-center gap-2">
-                      <input type="checkbox" className="w-4 h-4" />
+                      <input
+                        type="checkbox"
+                        className="w-4 h-4"
+                        onChange={(e) => {
+                          const whatsappInput = document.querySelector(
+                            'input[name="entry.1472688816"]'
+                          ) as HTMLInputElement;
+                          const phoneInput = document.querySelector(
+                            'input[name="entry.832855793"]'
+                          ) as HTMLInputElement;
+                          if (e.target.checked) {
+                            whatsappInput.value = phoneInput.value;
+                          } else {
+                            whatsappInput.value = "";
+                          }
+                        }}
+                      />
                       <span className="text-sm">
                         Use this as WhatsApp number
                       </span>
@@ -191,6 +241,7 @@ const HomePage = () => {
                       </div>
                       <input
                         type="tel"
+                        name="entry.1472688816"
                         className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                         required
                       />
@@ -200,6 +251,7 @@ const HomePage = () => {
                   <div>
                     <label className="block mb-1">Tell Us More</label>
                     <textarea
+                      name="entry.1882265817"
                       placeholder="Brief about your aim"
                       className="w-full p-3 border border-b-black border-stone-400 placeholder:font-light"
                       rows={2}
@@ -210,9 +262,19 @@ const HomePage = () => {
                     <button
                       type="submit"
                       className="bg-black w-full md:w-auto justify-center text-white px-8 py-3 flex items-center gap-2"
+                      disabled={isSubmitted}
                     >
-                      Send Enquiry
-                      <ArrowRight className="w-4 h-4" />
+                      {isSubmitted ? (
+                        <>
+                          <Check className="h-4 w-4 mr-1" />
+                          Submitted
+                        </>
+                      ) : (
+                        <>
+                          Send Enquiry
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>
