@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-// import TeamSection from "../about/modules/TeamSection";
+import TeamSection from "../about/modules/TeamSection";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -72,7 +72,7 @@ const CareersPage = () => {
           </div>
         </div>
       </div>
-      {/* <TeamSection /> */}
+      <TeamSection />
     </>
   );
 };
