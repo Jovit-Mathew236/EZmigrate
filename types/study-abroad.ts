@@ -10,7 +10,7 @@ export interface StudyAbroadDestination {
   subTitle: string;
   description: string;
   link: string;
-  whyStudyImage?: string;
+  whyStudy: string;
   uniqueBenefits: UniqueBenefit[];
   capital?: string;
   language?: string;
@@ -33,23 +33,25 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "New Zealand",
     countryCode: "NZ",
     image: "/images/destination_banner_new_zealand.webp",
-    subTitle: "Explore globally recognized education systems.",
+    subTitle: "A Gateway to Innovation and Scenic Beauty",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/new-zealand",
+    whyStudy:
+      "New Zealand is a leading destination for students seeking globally recognized education and practical learning experiences. The country offers a safe, inclusive environment and vibrant student life.",
     uniqueBenefits: [
       {
         title: "Post-Study Work Opportunities",
+        description: "Gain valuable experience after graduation.",
+      },
+      {
+        title: "Affordable Tuition & Scholarships",
+        description: "Lower education costs with scholarship support.",
+      },
+      {
+        title: "Quality of Life",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
-      },
-      {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
-      },
-      {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+          "Enjoy a peaceful, culturally rich lifestyle surrounded by breathtaking landscapes.",
       },
     ],
   },
@@ -57,23 +59,25 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Germany",
     countryCode: "DE",
     image: "/images/destination_banner_germany.webp",
-    subTitle: "Tuition-free education with cutting-edge innovation.",
+    subTitle: "The Hub of Innovation and Excellence",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/germany",
+    whyStudy:
+      "Germany stands out for its tuition-free education at most public universities and world-renowned academic programs.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Tuition-Free Education",
+        description: "Save on education costs at public universities.",
+      },
+      {
+        title: "Cutting-Edge Research",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Access innovative programs and state-of-the-art facilities.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
-      },
-      {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Strong Industry Connections",
+        description: "Hands-on learning through industry collaborations.",
       },
     ],
   },
@@ -81,23 +85,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "UK",
     countryCode: "GB",
     image: "/images/destination_banner_uk.webp",
-    subTitle: "Top universities in a rich cultural setting.",
+    subTitle: "Pursue Academic Excellence in the UK",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/uk",
+    whyStudy:
+      "The UK offers globally recognized education and innovative teaching methods that foster creativity and independent thinking.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Globally Recognized Degrees",
+        description: "Highly valued by employers worldwide.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Extensive Post-Study Work Rights",
+        description: "Build a career in the UK after graduation.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Diverse Academic Offerings",
+        description: "Explore varied programs in top-ranked universities.",
       },
     ],
   },
@@ -105,23 +110,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "USA",
     countryCode: "US",
     image: "/images/destination_banner_usa.webp",
-    subTitle: "Excellence in education and limitless opportunities.",
+    subTitle: "Shape Your Future in the USA",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/usa",
+    whyStudy:
+      "The USA leads in higher education, innovation, and research, offering unmatched academic opportunities.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "World-Class Education",
+        description: "Top universities and research opportunities.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Post-Study Work Options",
+        description: "Explore internships and career pathways.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Global Exposure",
+        description: "Network with students and professionals worldwide.",
       },
     ],
   },
@@ -129,23 +135,25 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Canada",
     countryCode: "CA",
     image: "/images/destination_banner_canada.webp",
-    subTitle: "Quality education in a diverse, welcoming environment.",
+    subTitle: "Achieve Academic Excellence in Canada",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/canada",
+    whyStudy:
+      "Canada is celebrated for its diverse, high-quality education system, cutting-edge research, and welcoming multicultural environment.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Post-Graduation Work Permits (PGWP)",
+        description: "Pathway to permanent residency.",
+      },
+      {
+        title: "Affordable Tuition Fees",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Value-driven education options for international students.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
-      },
-      {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Safe & Inclusive Environment",
+        description: "Enjoy living in one of the world's safest countries.",
       },
     ],
   },
@@ -153,23 +161,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Australia",
     countryCode: "AU",
     image: "/images/destination_banner_australia.webp",
-    subTitle: "Globally recognized degrees in vibrant cities.",
+    subTitle: "Unlock Endless Opportunities in Australia",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/australia",
+    whyStudy:
+      "Australia offers world-class education with numerous top-ranked universities and diverse program offerings.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Extensive Post-Study Work Rights",
+        description: "Build your career after graduation.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Vibrant Campus Life",
+        description: "Join a diverse, multicultural student community.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Strong Industry Partnerships",
+        description: "Practical learning through real-world experiences.",
       },
     ],
   },
@@ -177,23 +186,26 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Finland",
     countryCode: "FI",
     image: "/images/destination_banner_finland.webp",
-    subTitle: "Exceptional education in the world's happiest nation.",
+    subTitle: "Discover Academic Diversity Across Europe",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/finland",
+    whyStudy:
+      "Finland offers a world-renowned education system with innovative teaching methods and a strong focus on research and sustainability.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Quality Education",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Top-ranked universities with student-centered approaches.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "English-Taught Programs",
+        description: "Wide range of degrees fully available in English.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "High Quality of Life",
+        description:
+          "Study in one of the world's happiest and safest countries.",
       },
     ],
   },
@@ -201,23 +213,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "France",
     countryCode: "FR",
     image: "/images/destination_banner_france.webp",
-    subTitle: "Quality learning in a hub of culture and art.",
+    subTitle: "Discover Academic Diversity Across Europe",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/france",
+    whyStudy:
+      "France provides excellent higher education with renowned institutions and a rich cultural heritage in the heart of Europe.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Affordable Education",
+        description: "Lower tuition fees than many English-speaking countries.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "International Recognition",
+        description: "Degrees valued by employers worldwide.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Cultural Experience",
+        description: "Immerse yourself in French art, history, and cuisine.",
       },
     ],
   },
@@ -225,23 +238,25 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Ireland",
     countryCode: "IE",
     image: "/images/destination_banner_ireland.webp",
-    subTitle: "Innovative programs in a friendly, green country.",
+    subTitle: "Discover Academic Diversity Across Europe",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/ireland",
+    whyStudy:
+      "Ireland offers high-quality education with strong connections to industry and a welcoming environment for international students.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "English-Speaking Country",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Study in an English-speaking environment with a unique cultural experience.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Post-Study Work Opportunities",
+        description: "Stay and work for up to 24 months after graduation.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Tech Hub",
+        description: "Home to European headquarters of major tech companies.",
       },
     ],
   },
@@ -249,23 +264,25 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Italy",
     countryCode: "IT",
     image: "/images/destination_banner_italy.webp",
-    subTitle: "Education meets history, art, and design.",
+    subTitle: "Discover Academic Diversity Across Europe",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/italy",
+    whyStudy:
+      "Italy combines prestigious education with unparalleled cultural heritage in a country renowned for art, design, and innovation.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Historical Universities",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Study at some of the world's oldest academic institutions.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Affordable Tuition",
+        description: "Lower fees than many other European destinations.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Rich Cultural Experience",
+        description: "Immerse yourself in Italian art, history, and lifestyle.",
       },
     ],
   },
@@ -273,23 +290,26 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Switzerland",
     countryCode: "CH",
     image: "/images/destination_banner_switzerland.webp",
-    subTitle: "Research and innovation in stunning landscapes.",
+    subTitle: "Discover Academic Diversity Across Europe",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/switzerland",
+    whyStudy:
+      "Switzerland offers world-class education with top-ranked universities and an exceptional quality of life in a multilingual environment.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Research Excellence",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Access cutting-edge research and innovation opportunities.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "International Environment",
+        description:
+          "Study in a multilingual setting with students from around the world.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Industry Connections",
+        description: "Strong ties to global businesses and organizations.",
       },
     ],
   },
@@ -297,23 +317,26 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "China",
     countryCode: "CN",
     image: "/images/destination_banner_china.webp",
-    subTitle: "High-quality education in a booming economy.",
+    subTitle: "Pursue Global Education in Russia",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/china",
+    whyStudy:
+      "China provides world-class education with increasing global recognition and considerable investment in higher education development.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Scholarships",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Numerous scholarship opportunities for international students.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Economic Opportunities",
+        description: "Study in one of the world's largest economies.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Cultural Immersion",
+        description:
+          "Experience ancient traditions alongside modern innovations.",
       },
     ],
   },
@@ -321,23 +344,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Ukraine",
     countryCode: "UA",
     image: "/images/destination_banner_ukraine.webp",
-    subTitle: "Affordable, globally recognized medical degrees.",
+    subTitle: "Explore Educational Growth in Uzbekistan",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/ukraine",
+    whyStudy:
+      "Ukraine offers quality education with globally recognized degrees, particularly in medicine and engineering, at affordable costs.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Affordable Education",
+        description: "Lower tuition fees compared to Western countries.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "English-Taught Programs",
+        description: "Wide range of programs available in English.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Strong Academic Tradition",
+        description: "Well-established universities with excellent facilities.",
       },
     ],
   },
@@ -345,23 +369,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Georgia",
     countryCode: "GE",
     image: "/images/destination_banner_georgia.webp",
-    subTitle: "Friendly, growing destination for education.",
+    subTitle: "Expand Horizons in Georgia",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/georgia",
+    whyStudy:
+      "Georgia is a rising educational hub with high-quality institutions and an affordable lifestyle.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Affordable Living & Tuition",
+        description: "Cost-effective education without compromising quality.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "English-Taught Programs",
+        description: "Study in English across various fields.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Safe & Welcoming Environment",
+        description: "Experience Georgian hospitality.",
       },
     ],
   },
@@ -369,23 +394,25 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Estonia",
     countryCode: "EE",
     image: "/images/destination_banner_estonia.webp",
-    subTitle: "Tech innovation and quality education in Europe.",
+    subTitle: "Discover Academic Diversity Across Europe",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/estonia",
+    whyStudy:
+      "Estonia offers innovative education in Europe's digital leader, with strong emphasis on technology and entrepreneurship.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
+        title: "Digital Society",
         description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+          "Study in one of the world's most advanced digital nations.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Startup Ecosystem",
+        description: "Opportunities in a vibrant entrepreneurial environment.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Quality Education",
+        description: "Modern approaches to learning with practical components.",
       },
     ],
   },
@@ -393,23 +420,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Armenia",
     countryCode: "AM",
     image: "/images/destination_banner_armenia.webp",
-    subTitle: "Affordable studies in a culturally rich nation",
+    subTitle: "Discover Academic Excellence in Armenia",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/armenia",
+    whyStudy:
+      "Armenia offers a growing higher education system with affordable tuition and rich cultural experiences.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Affordable Tuition & Living Costs",
+        description: "Cost-effective education options.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Rich Cultural Experience",
+        description: "Blend of ancient history and modern innovation.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Growing International Community",
+        description: "Increasing popularity among global students.",
       },
     ],
   },
@@ -417,23 +445,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Timor Leste",
     countryCode: "TL",
     image: "/images/destination_banner_timor_leste.webp",
-    subTitle: "Emerging opportunities in a culturally vibrant nation.",
+    subTitle: "Explore Academic Possibilities in Timor-Leste",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/timor-leste",
+    whyStudy:
+      "Timor-Leste is an emerging educational destination focusing on innovation and sustainability.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "Emerging Educational Hub",
+        description: "Growing focus on education reforms.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Affordable Living Costs",
+        description: "Cost-effective education and lifestyle.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Multicultural Community",
+        description: "Dynamic environment for learning.",
       },
     ],
   },
@@ -441,23 +470,24 @@ export const studyAbroadDestinations: StudyAbroadDestination[] = [
     country: "Philippines",
     countryCode: "PH",
     image: "/images/destination_banner_philippines.webp",
-    subTitle: "Affordable education with a global perspective.",
+    subTitle: "Achieve Academic Growth in the Philippines",
     description:
       "Discover a student-friendly haven with top-ranked universities, stunning landscapes, and a thriving economy. Learn and grow in a nation that blends cultural richness with modern education.",
     link: "/study-abroad/philippines",
+    whyStudy:
+      "The Philippines offers high-quality education with English-taught programs in medicine, technology, and business.",
     uniqueBenefits: [
       {
-        title: "Post-Study Work Opportunities",
-        description:
-          "Gain practical experience with work visas and opportunities for permanent residency.",
+        title: "English-Taught Programs",
+        description: "Widely recognized for medical education.",
       },
       {
-        title: "Part-Time Work",
-        description: "Support your studies while earning and learning.",
+        title: "Affordable Tuition",
+        description: "Competitive education costs for international students.",
       },
       {
-        title: "Global Mobility",
-        description: "A pathway to explore the Asia-Pacific region.",
+        title: "Vibrant Cultural Life",
+        description: "Experience Filipino hospitality and diverse cultures.",
       },
     ],
   },
