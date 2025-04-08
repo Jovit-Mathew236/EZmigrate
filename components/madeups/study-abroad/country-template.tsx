@@ -313,12 +313,7 @@ const CountryTemplate = ({ country }: CountryTemplateProps) => {
               Why study in {country.country}?
             </h2>
             <p className="text-base md:text-lg font-light leading-relaxed">
-              {country.country} offers a high-standard international education
-              system renowned for its quality and practical learning approach.
-              Its globally ranked institutions provide diverse degree programs
-              in engineering, business, healthcare, information technology,
-              sciences, and more. With affordable tuition and numerous
-              scholarships, studying here is both enriching and cost-effective.
+              {country.whyStudy}
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ import WhySection from "./modules/WhySection";
 import HeroSection from "./modules/HeroSection";
 import VisionSection from "./modules/VisionSection";
 import CoreValuesSection from "./modules/CoreValuesSection";
-// import TeamSection from "./modules/TeamSection";
+import TeamSection from "./modules/TeamSection";
 
 const AboutPage = () => {
   return (
@@ -14,7 +14,7 @@ const AboutPage = () => {
       <WhySection />
       <VisionSection />
       <CoreValuesSection />
-      {/* <TeamSection /> */}
+      <TeamSection />
     </div>
   );
 };

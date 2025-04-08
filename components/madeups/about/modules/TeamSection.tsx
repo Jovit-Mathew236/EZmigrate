@@ -5,22 +5,22 @@ const teamMembers = [
   {
     name: "Georgukutty Mathew",
     role: "Chief Operations Manager",
-    image: "/images/team/georgukutty.jpg",
+    image: "/images/team/Georgukutty Mathew.png",
   },
   {
     name: "Asakh Salim Kumar",
     role: "Business Development Manager",
-    image: "/images/team/asakh.jpg",
+    image: "/images/team/Asakh Salim Kumar.png",
   },
   {
     name: "Febin Jose Thekkan",
     role: "Relationship Manager",
-    image: "/images/team/febin.jpg",
+    image: "/images/team/Febin Thekkan.png",
   },
   {
     name: "Shamsher Singh",
     role: "Licensed Immigration Advisor",
-    image: "/images/team/shamsher.jpg",
+    image: "/images/team/Shamsher Singh.png",
   },
 ];
 
