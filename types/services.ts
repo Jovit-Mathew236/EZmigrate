@@ -167,11 +167,13 @@ export const serviceContents: Record<string, ServiceContent> = {
       },
       {
         question: "Can you help if my visa application gets rejected?",
-        answer: "lorem ipsum",
+        answer:
+          "Yes, we offer guidance and support in case of visa rejection, helping you improve your chances for a successful re-application.",
       },
       {
         question: "How long does the visa process take?",
-        answer: "lorem ipsum",
+        answer:
+          "It varies depending on the country and visa type. Typically, it takes 2 to 12 weeks.",
       },
     ],
   },
