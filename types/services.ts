@@ -39,20 +39,18 @@ export const serviceContents: Record<string, ServiceContent> = {
       {
         question: "How does educational counselling benefit me?",
         answer:
-          "It helps you make well-informed decisions, maximizing your chances of success in your academic and career pursuits.",
+          "Helps you make well-informed decisions, maximizing your chances of success in academic and career pursuits.",
       },
       {
         question:
           "Can I seek counselling if I'm undecided about my career path?",
         answer:
-          //   "Yes, our counselors can help you explore various career options and guide you towards making an informed decision.",
-          "lorem ipsum",
+          "Yes, educational counsellors can guide you, offering personalized support to explore various career options based on your interests and strengths.",
       },
       {
         question: "How early should I start educational counselling?",
         answer:
-          //   "It's recommended to start as early as possible to ensure thorough preparation and planning for your educational journey.",
-          "lorem ipsum",
+          "It's best to start 1-2 years before your intended study abroad date to allow for thorough research, test preparation, university applications, and other steps.",
       },
     ],
   },
@@ -83,16 +81,18 @@ export const serviceContents: Record<string, ServiceContent> = {
       {
         question: "Why is career counselling important for studying abroad?",
         answer:
-          "It ensures your educational choices align with future career opportunities, enhancing your employability.",
+          "It aligns your educational choices with future career opportunities, enhancing your employability.",
       },
       {
         question:
           "Can I seek counselling if I'm undecided about my career path?",
-        answer: "lorem ipsum",
+        answer:
+          "Absolutely! Career counselling helps you understand your strengths and interests, and identify career options based on your skills and aspirations.",
       },
       {
-        question: "How early should I start educational counselling?",
-        answer: "lorem ipsum",
+        question: "How early should I start career counselling?",
+        answer:
+          "Ideally, begin career counselling in high school or at the start of your undergraduate studies to allow time for exploration and planning.",
       },
     ],
   },
@@ -127,11 +127,13 @@ export const serviceContents: Record<string, ServiceContent> = {
       },
       {
         question: "Do you assist with scholarship applications?",
-        answer: "lorem ipsum",
+        answer:
+          "Yes, we offer support with identifying and applying for scholarships to reduce financial burdens.",
       },
       {
         question: "Is there support for interview preparation?",
-        answer: "lorem ipsum",
+        answer:
+          "Yes, we offer comprehensive interview preparation to ensure you're confident for university admissions.",
       },
     ],
   },
@@ -201,16 +203,18 @@ export const serviceContents: Record<string, ServiceContent> = {
       {
         question: "Can I get guidance for non-traditional study programs?",
         answer:
-          "Yes, we cater to diverse academic interests, including niche programs and certifications.",
+          "Yes, we offer guidance for diverse academic interests, including niche programs and certifications.",
       },
       {
         question: "Is the guidance ongoing or a one-time service?",
-        answer: "lorem ipsum",
+        answer:
+          "It's an ongoing service supporting you throughout your entire study abroad journey.",
       },
       {
         question:
           "How does personalised guidance differ from general counselling?",
-        answer: "lorem ipsum",
+        answer:
+          "Personalized guidance is tailored to your specific needs and goals, offering more in-depth, one-on-one support.",
       },
     ],
   },
@@ -245,11 +249,13 @@ export const serviceContents: Record<string, ServiceContent> = {
       },
       {
         question: "What does pre-departure orientation include?",
-        answer: "lorem ipsum",
+        answer:
+          "Covers topics like travel tips, cultural adaptation, safety, financial management, and more to prepare you for studying abroad.",
       },
       {
         question: "Can you help me connect with local communities?",
-        answer: "lorem ipsum",
+        answer:
+          "Yes, we help you connect with student organizations, social groups, and alumni networks to support your integration.",
       },
     ],
   },
@@ -280,15 +286,17 @@ export const serviceContents: Record<string, ServiceContent> = {
       {
         question: "How often can I seek mentorship?",
         answer:
-          "As often as you need! Our team is here to support you throughout your journey.",
+          "You can seek mentorship as often as needed throughout your journey.",
       },
       {
         question: "Can I connect with alumni for guidance?",
-        answer: "lorem ipsum",
+        answer:
+          "Yes, we offer opportunities to connect with alumni for insights and advice on studying abroad.",
       },
       {
         question: "What kind of career advice is offered?",
-        answer: "lorem ipsum",
+        answer:
+          "We provide advice related to job search strategies, resume building, networking, and gaining work experience.",
       },
     ],
   },

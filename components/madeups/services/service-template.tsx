@@ -338,7 +338,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           </div>
         </div>
       </section>
-      FAQ Section
+      {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-normal mb-12">FAQ</h2>
