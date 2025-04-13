@@ -15,7 +15,7 @@ const StatsSection = () => {
                 stats={
                   <div className="flex flex-col items-center">
                     <div className="text-6xl md:text-8xl font-light mb-2">
-                      5000+
+                      3000+
                     </div>
                     <div className="text-2xl font-light md:text-3xl text-gray-200">
                       Students placed
@@ -52,10 +52,10 @@ const StatsSection = () => {
 
           <div className="grid grid-cols-2 gap-x-20 gap-y-10">
             {[
-              { value: 5000, label: "Students placed" },
-              { value: 700, label: "Universities" },
-              { value: 10000, label: "Programs" },
-              { value: 30, label: "Countries" },
+              { value: 3000, label: "Students placed" },
+              { value: 500, label: "Universities" },
+              { value: 5000, label: "Programs" },
+              { value: 15, label: "Countries" },
             ].map((stat, index) => (
               <div key={index}>
                 <div className="text-5xl font-light flex">

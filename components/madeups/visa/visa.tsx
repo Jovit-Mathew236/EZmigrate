@@ -37,32 +37,32 @@ const destinationCards = [
     ],
     link: "/visa/australia/[visa-type]",
   },
-  {
-    country: "Canada",
-    countryCode: "CA",
-    visaType: [
-      "Student Visa",
-      "PR Visa",
-      "Post-Study Work Visa",
-      "Parent Visa",
-      "Family Visa",
-      "Visitor Visa",
-    ],
-    link: "/visa/canada/[visa-type]",
-  },
-  {
-    country: "USA",
-    countryCode: "US",
-    visaType: [
-      "Student Visa",
-      "PR Visa",
-      "Post-Study Work Visa",
-      "Parent Visa",
-      "Family Visa",
-      "Visitor Visa",
-    ],
-    link: "/visa/usa/[visa-type]",
-  },
+  // {
+  //   country: "Canada",
+  //   countryCode: "CA",
+  //   visaType: [
+  //     "Student Visa",
+  //     "PR Visa",
+  //     "Post-Study Work Visa",
+  //     "Parent Visa",
+  //     "Family Visa",
+  //     "Visitor Visa",
+  //   ],
+  //   link: "/visa/canada/[visa-type]",
+  // },
+  // {
+  //   country: "USA",
+  //   countryCode: "US",
+  //   visaType: [
+  //     "Student Visa",
+  //     "PR Visa",
+  //     "Post-Study Work Visa",
+  //     "Parent Visa",
+  //     "Family Visa",
+  //     "Visitor Visa",
+  //   ],
+  //   link: "/visa/usa/[visa-type]",
+  // },
 ];
 
 const processSteps = [
