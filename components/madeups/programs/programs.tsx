@@ -2,6 +2,8 @@
 import PageHeader from "@/components/shared/page-header";
 import { pageHeaders } from "@/types/page-headers";
 import React, { useState } from "react";
+import Link from "next/link";
+import { programCategories } from "@/types/programs";
 
 const solutions = [
   {
@@ -205,6 +207,15 @@ const Programs = () => {
     },
   ];
 
+  // Flatten program ids by category for UI display
+  const languageEducationPrograms =
+    programCategories.find((cat) => cat.id === "language-education")
+      ?.programs || {};
+
+  const professionalRegistrationPrograms =
+    programCategories.find((cat) => cat.id === "professional-registration")
+      ?.programs || {};
+
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
       <PageHeader content={pageHeaders["programs"]} />
@@ -213,14 +224,25 @@ const Programs = () => {
           <div className="container mx-auto px-6 ">
             <h2 className="text-4xl font-light mb-16">Language Education</h2>
             <div className="space-y-8">
-              {["OET", "IELTS", "PTE"].map((position) => (
-                <div
-                  key={position}
-                  className="flex flex-col md:flex-row md:items-center gap-8 justify-between border-b border-gray-400 pb-8"
-                >
-                  <h3 className="text-2xl font-light">{position}</h3>
-                </div>
-              ))}
+              {Object.entries(languageEducationPrograms).map(
+                ([programId, program]) => (
+                  <div
+                    key={programId}
+                    className="flex flex-col md:flex-row md:items-center gap-8 justify-between border-b border-gray-400 pb-8"
+                  >
+                    <div>
+                      <Link
+                        href={`/programs/${programId}`}
+                        className="hover:text-gray-300"
+                      >
+                        <h3 className="text-2xl font-light">
+                          {program.shortForm}
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           </div>
           <div className="container mx-auto px-6">
@@ -228,14 +250,25 @@ const Programs = () => {
               Professional Registration
             </h2>
             <div className="space-y-8">
-              {["OSCE", "NCLEX-RN", "FMGE", "CBT"].map((position) => (
-                <div
-                  key={position}
-                  className="flex flex-col md:flex-row md:items-center gap-8 justify-between border-b border-gray-400 pb-8"
-                >
-                  <h3 className="text-2xl font-light">{position}</h3>
-                </div>
-              ))}
+              {Object.entries(professionalRegistrationPrograms).map(
+                ([programId, program]) => (
+                  <div
+                    key={programId}
+                    className="flex flex-col md:flex-row md:items-center gap-8 justify-between border-b border-gray-400 pb-8"
+                  >
+                    <div>
+                      <Link
+                        href={`/programs/${programId}`}
+                        className="hover:text-gray-300"
+                      >
+                        <h3 className="text-2xl font-light">
+                          {program.shortForm}
+                        </h3>
+                      </Link>
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>

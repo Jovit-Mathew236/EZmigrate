@@ -127,6 +127,10 @@ export const pageHeaders: Record<string, PageHeaderContent> = {
       { label: "OET", value: "oet" },
       { label: "IELTS", value: "ielts" },
       { label: "PTE", value: "pte" },
+      { label: "OSCE", value: "osce" },
+      { label: "NCLEX-RN", value: "nclex-rn" },
+      { label: "FMGE", value: "fmge" },
+      { label: "CBT", value: "cbt" },
       { label: "Other", value: "other" },
     ],
     formConnection: {

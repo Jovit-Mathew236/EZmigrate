@@ -56,9 +56,7 @@ export default function RootLayout({
             `}
         </Script>
       </head>
-      <body
-        className={`antialiased ${poppins.variable} ${axiforma.variable} absolute w-screen`}
-      >
+      <body className={`antialiased ${poppins.variable} ${axiforma.variable}`}>
         <GoogleAnalytics gaId="G-RZZ7MB82PY" />
         <GoogleTagManager gtmId="G-M6XX9G9N" />
         <Suspense fallback={<Loading />}>
