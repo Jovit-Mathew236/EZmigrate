@@ -355,117 +355,125 @@ export const programCategories: ProgramCategory[] = [
       "Specialized training programs designed to help healthcare professionals pass registration exams for practicing in foreign countries.",
     programs: {
       osce: {
-        title: "Objective Structured Clinical Examination (OSCE)",
+        title: "OSCE for RN Registration in New Zealand",
         shortForm: "OSCE",
         description:
-          "The OSCE is a practical assessment used to evaluate healthcare professionals' clinical skills, knowledge, and competencies in simulated clinical scenarios. It's a crucial part of the registration process for nurses, doctors, and allied health professionals seeking to practice in countries like the UK, Ireland, Australia, and Canada.",
-        duration: "4-12 weeks (depending on individual needs)",
+          "The OSCE (Objective Structured Clinical Examination) is a critical component of the process for registering as a Registered Nurse (RN) in New Zealand. The OSCE assesses an individual's clinical skills, knowledge, and practical competencies, ensuring that international nurses meet the required standards for safe practice within New Zealand's healthcare system. This examination is a mandatory requirement for international nurses who wish to become licensed to practice as RNs in New Zealand. The OSCE evaluates both theoretical understanding and practical application of nursing skills in real-life scenarios.",
+        duration:
+          "One day examination (typically 6-10 stations, 8-10 minutes each)",
         eligibilityRequirements: [
-          "Healthcare professionals who have passed the theory component of their registration process",
-          "Completion of required documentation and eligibility checks by the regulatory body",
-          "Invitation to take the OSCE from the relevant regulatory authority",
+          "Hold an internationally recognized nursing qualification equivalent to the New Zealand nursing standard",
+          "Application for registration with the Nursing Council of New Zealand (NCNZ)",
+          "Demonstrate English proficiency through tests like IELTS or OET",
+          "Provide evidence of recent clinical experience (may be required on a case-by-case basis)",
         ],
         syllabus: [
           {
-            title: "Patient Assessment",
+            title: "Theory Component",
             description:
-              "Comprehensive history taking, physical examinations, and systematic assessment techniques",
+              "Evaluation of nursing theory, principles, and guidelines including nursing assessment, care planning, infection control, medications administration, ethical and legal principles, patient advocacy, and cultural safety and competence.",
           },
           {
-            title: "Clinical Skills",
+            title: "Clinical Skills Stations",
             description:
-              "Practical procedures, medication administration, wound care, and essential clinical interventions",
+              "Performance of basic nursing procedures (vital signs, wound care, medication administration), patient assessment, and management of critical care scenarios.",
           },
           {
-            title: "Communication Skills",
+            title: "Communication and Interpersonal Skills",
             description:
-              "Professional interaction with patients, families, and healthcare team members",
+              "Demonstration of effective communication with patients, families, and healthcare team members in various scenarios.",
           },
           {
-            title: "Documentation",
+            title: "Clinical Reasoning",
             description:
-              "Accurate record-keeping, care planning, and clinical documentation",
+              "Critical thinking and decision-making in simulated scenarios, including prioritization of care, problem identification, and appropriate nursing interventions.",
           },
           {
-            title: "Professional Behavior",
+            title: "Patient Safety",
             description:
-              "Ethical practice, consent, dignity, privacy, and cultural sensitivity",
+              "Demonstration of safe practice following New Zealand's healthcare standards, including proper infection control, medication safety, and culturally safe care.",
           },
         ],
         benefits: [
           {
-            title: "Practical Assessment",
+            title: "New Zealand Registration",
             description:
-              "Real-world scenarios that mirror actual healthcare settings",
+              "Successful completion is a key step toward obtaining registration as a Registered Nurse in New Zealand",
           },
           {
-            title: "Final Step to Registration",
+            title: "International Recognition",
             description:
-              "Successful completion leads to professional registration",
+              "New Zealand nursing qualifications are well-respected globally, opening opportunities for international practice",
           },
           {
-            title: "Standardized Evaluation",
-            description: "Objective assessment of clinical competencies",
+            title: "Career Advancement",
+            description:
+              "Access to diverse nursing roles in New Zealand's comprehensive healthcare system",
           },
           {
-            title: "International Practice Preparation",
+            title: "Standardized Assessment",
             description:
-              "Alignment with host country healthcare practices and standards",
+              "Objective evaluation of clinical competencies relevant to New Zealand nursing practice",
           },
         ],
         examDetails: {
-          format: "Series of stations with simulated clinical scenarios",
+          format: "Series of 6-10 stations with simulated clinical scenarios",
           sections: [
-            "Multiple stations (typically 10-18)",
-            "Each station lasts 5-15 minutes",
-            "Total examination time: 3-4 hours",
+            "Station 1: Patient history and assessment",
+            "Station 2: Medication administration",
+            "Station 3: Emergency situation management",
+            "Station 4: Wound assessment and care",
+            "Station 5: Health education and counseling",
+            "Station 6: Communication with patients/family members",
           ],
           scoringSystem:
-            "Pass/Fail based on meeting specific competency standards",
-          cost: "Varies by country ($1,000-$3,000 USD)",
+            "Based on meeting required criteria outlined by the Nursing Council of New Zealand",
+          validity: "Results valid for the registration application process",
+          cost: "Approximately NZD 1,100 to 1,400",
         },
         whoShouldApply: [
-          "International nurses seeking registration in the UK (NMC), Ireland, Australia, or Canada",
-          "Doctors undergoing international medical graduate assessment",
-          "Allied health professionals requiring clinical competency verification",
-          "Healthcare professionals with conditional registration pending OSCE completion",
+          "International nurses seeking registration in New Zealand",
+          "Nurses with qualifications from outside New Zealand",
+          "Healthcare professionals planning to relocate to New Zealand",
+          "Nurses interested in expanding their practice to New Zealand's healthcare system",
         ],
         trainingApproach: [
           {
-            title: "Simulated Clinical Environment",
+            title: "NCNZ Guidelines Review",
             description:
-              "Practice in settings that replicate actual OSCE stations",
+              "Comprehensive study of Nursing Council of New Zealand standards and expectations",
           },
           {
-            title: "Expert Coaching",
+            title: "Practice Examinations",
             description:
-              "Guidance from professionals experienced in the host country's healthcare system",
+              "Simulated OSCE scenarios to familiarize candidates with the exam format",
           },
           {
-            title: "Video Analysis",
+            title: "Clinical Skills Enhancement",
             description:
-              "Recording and reviewing your performance for refinement",
+              "Hands-on practice of core nursing skills required for the examination",
           },
           {
-            title: "Personalized Feedback",
+            title: "Communication Training",
             description:
-              "Individual assessment and targeted improvement strategies",
+              "Development of effective interpersonal and professional communication skills",
           },
           {
-            title: "Mock Examinations",
-            description: "Full OSCE simulations under timed conditions",
+            title: "Time Management Strategies",
+            description:
+              "Techniques for completing tasks efficiently within the time constraints of each station",
           },
         ],
         successStories: [
           {
-            name: "Nurse Maria Fernandez",
+            name: "Nurse Maria Rodriguez",
             testimonial:
-              "The OSCE training at EZmigrate was exceptional. The realistic simulations and detailed feedback prepared me thoroughly for my UK NMC exam, which I passed on the first attempt.",
+              "The OSCE preparation at EZmigrate was incredibly thorough. Their simulated stations were almost identical to what I experienced in the actual exam, which gave me the confidence to perform well. I'm now registered and working as an RN in Auckland.",
           },
           {
-            name: "Dr. Ahmed Khalid",
+            name: "Nurse David Chen",
             testimonial:
-              "After failing my first OSCE attempt, I enrolled with EZmigrate. Their structured approach and attention to detail helped me identify my weak areas and improve substantially. I passed with confidence the second time.",
+              "After struggling with the clinical reasoning components, EZmigrate's focused coaching helped me understand exactly what the examiners were looking for. Their cultural competence training was particularly valuable for practicing in New Zealand's diverse healthcare environment.",
           },
         ],
       },

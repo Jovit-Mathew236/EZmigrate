@@ -7,13 +7,13 @@ import { useState, useEffect } from "react";
 
 // Animation duration configuration
 const ANIMATION_CONFIG = {
-  TOTAL_DURATION: 5,
-  TEXT_ANIMATION_DURATION: 1.5,
-  FADE_OUT_DURATION: 1,
-  LOGO_ANIMATION_DURATION: 2,
+  TOTAL_DURATION: 2.5,
+  TEXT_ANIMATION_DURATION: 0.5,
+  FADE_OUT_DURATION: 0.5,
+  LOGO_ANIMATION_DURATION: 1,
 };
 
-const texts = ["Success Partner", "EZmigrate"];
+const texts = ["EZmigrate"];
 
 // Animated Logo SVG Component
 const AnimatedLogo = () => (
