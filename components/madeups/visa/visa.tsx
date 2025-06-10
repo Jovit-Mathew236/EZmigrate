@@ -13,7 +13,7 @@ const destinationCards = [
     country: "New Zealand",
     countryCode: "NZ",
     visaType: [
-      "Visit Visa",
+      "Visitor Visa",
       "Work Visa",
       "Student Visa",
       "PR Visa",

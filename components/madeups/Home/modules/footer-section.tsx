@@ -75,7 +75,7 @@ const FooterSection = () => {
                 ].map((country) => (
                   <li key={country}>
                     <Link
-                      href={`/destinations/${country
+                      href={`/study-abroad/${country
                         .toLowerCase()
                         .replace(" ", "-")}`}
                       className="text-gray-300 hover:text-white transition-colors"

@@ -50,8 +50,8 @@ export const visaDestinations: VisaDestination[] = [
       "Explore diverse visa options for work, study, and permanent residence in New Zealand.",
     link: "/visa/new-zealand/[visa-type]",
     visaTypes: {
-      "visit-visa": {
-        title: "New Zealand Visit Visa",
+      "visitor-visa": {
+        title: "New Zealand Visitor Visa",
         description:
           "Experience New Zealand's breathtaking landscapes and rich culture with our comprehensive visitor visa services.",
         why: [
@@ -636,8 +636,8 @@ export const visaDestinations: VisaDestination[] = [
         processingTime: "Varies by visa type (typically 3-6 months)",
         validity: "Varies (temporary to permanent depending on visa type)",
       },
-      "visitor-visa": {
-        title: "New Zealand Visit Visa",
+      "visit-visa": {
+        title: "New Zealand Visitor Visa",
         description:
           "A New Zealand Visitor Visa allows individuals to visit New Zealand temporarily for tourism, visiting family or friends, business activities, or short-term study purposes.",
         visaOptions: [

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ServiceContent } from "@/types/services";
 // import Link from "next/link";
 import { ArrowRight, Handshake, Slash } from "lucide-react";
@@ -81,6 +81,28 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
+  // State for form fields
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [whatsappNumber, setWhatsappNumber] = useState("");
+  const [usePhoneForWhatsapp, setUsePhoneForWhatsapp] = useState(false);
+
+  // Effect to sync WhatsApp number with phone number when checkbox is checked
+  useEffect(() => {
+    if (usePhoneForWhatsapp) {
+      setWhatsappNumber(phoneNumber);
+    }
+  }, [phoneNumber, usePhoneForWhatsapp]);
+
+  // Function to reset form fields and state
+  const handleFormReset = (form: HTMLFormElement | null) => {
+    if (!form) return;
+    form.reset();
+    setPhoneNumber("");
+    setWhatsappNumber("");
+    setUsePhoneForWhatsapp(false);
+    setSubmitted(false); // Reset submitted state after handling
+  };
+
   return (
     <div className="flex flex-col min-h-screen xl:min-h-fit">
       {/* Hero Banner Section */}
@@ -108,6 +130,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           </div>
         </div>
       </div>
+
       {/* Main Description Section */}
       <section className="py-8 md:py-16 bg-white">
         <div className="container mx-auto px-6">
@@ -169,6 +192,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                 <ArrowRight className="w-4 h-4" />
               </Link> */}
             </div>
+
             {/* Form */}
             <div className="md:-mt-64 z-10 bg-white px-0 md:px-8 py-12 w-full max-w-md md:shadow-md">
               <h2 className="text-2xl font-normal mb-8">Let&apos;s Connect!</h2>
@@ -179,9 +203,10 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                 onLoad={() => {
                   if (submitted) {
                     toast("Form submitted successfully!");
-                    setSubmitted(false);
-                    const form = document.querySelector("form");
-                    if (form) form.reset();
+                    const form = document.querySelector(
+                      'form[target="hiddenConfirm"]'
+                    ) as HTMLFormElement | null;
+                    handleFormReset(form);
                   }
                 }}
               />
@@ -233,10 +258,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                       <ReactCountryFlag
                         countryCode="IN"
                         svg
-                        style={{
-                          width: "24px",
-                          height: "16px",
-                        }}
+                        style={{ width: "24px", height: "16px" }}
                         title="India"
                       />
                       <span className="ml-2">+91</span>
@@ -246,6 +268,8 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                       name="entry.832855793"
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                   </div>
                 </div>
@@ -255,17 +279,12 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                     <input
                       type="checkbox"
                       className="w-4 h-4"
+                      checked={usePhoneForWhatsapp}
                       onChange={(e) => {
-                        const whatsappInput = document.querySelector(
-                          'input[name="entry.277713494"]'
-                        ) as HTMLInputElement;
-                        const phoneInput = document.querySelector(
-                          'input[name="entry.1974414438"]'
-                        ) as HTMLInputElement;
-                        if (e.target.checked) {
-                          whatsappInput.value = phoneInput.value;
-                        } else {
-                          whatsappInput.value = "";
+                        const isChecked = e.target.checked;
+                        setUsePhoneForWhatsapp(isChecked);
+                        if (!isChecked) {
+                          setWhatsappNumber(""); // Clear if unchecked
                         }
                       }}
                     />
@@ -280,10 +299,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                       <ReactCountryFlag
                         countryCode="IN"
                         svg
-                        style={{
-                          width: "24px",
-                          height: "16px",
-                        }}
+                        style={{ width: "24px", height: "16px" }}
                         title="India"
                       />
                       <span className="ml-2">+91</span>
@@ -293,6 +309,9 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
                       name="entry.1472688816"
                       className="flex-1 p-3 border border-b-black border-stone-400 placeholder:font-light w-full md:w-fit border-l-0"
                       required
+                      value={whatsappNumber}
+                      onChange={(e) => setWhatsappNumber(e.target.value)}
+                      readOnly={usePhoneForWhatsapp} // Make it readonly when synced
                     />
                   </div>
                 </div>
@@ -309,6 +328,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           </div>
         </div>
       </section>
+
       {/* Services Include Section */}
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-6">
@@ -338,6 +358,7 @@ const ServiceTemplate: React.FC<ServiceTemplateProps> = ({ content }) => {
           </div>
         </div>
       </section>
+
       {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
